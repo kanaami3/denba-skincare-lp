@@ -72,6 +72,11 @@
     nav a:hover, nav a.active { color: var(--gold); }
     .btn-header { font-size: 11px; letter-spacing: 0.2em; padding: 10px 24px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; text-transform: uppercase; transition: all 0.3s; }
     .btn-header:hover { background: var(--gold); color: var(--bg-dark); }
+    .lang-switcher { display: flex; align-items: center; gap: 6px; margin-left: 24px; }
+    .lang-btn { background: none; border: none; cursor: pointer; font-size: 11px; letter-spacing: 0.15em; color: rgba(255,255,255,0.6); padding: 4px 2px; transition: color 0.2s; font-family: inherit; }
+    .lang-btn.active, .lang-btn:hover { color: var(--gold, #C9A961); }
+    .lang-sep { font-size: 10px; color: rgba(255,255,255,0.2); }
+    @media(max-width:768px){ .lang-switcher { margin-left: 12px; } }
 
     /* ── TECH NAV ── */
     .tech-nav {
@@ -629,20 +634,27 @@
   <a href="index.html" class="logo">DENBA <span>Skincare</span></a>
   <nav>
     <a href="index.html#essentials">Ingredients</a>
-    <a href="technology.html" class="active">Technology</a>
-    <a href="products.html">Products</a>
+    <a href="technology.html" class="active" data-i18n="nav_technology">Technology</a>
+    <a href="products.html" data-i18n="nav_products">Products</a>
   </nav>
-  <a href="products.html" class="btn-header">Shop Now</a>
+  <div class="lang-switcher">
+    <button class="lang-btn active" data-lang="ja" onclick="applyLanguage('ja')">JA</button>
+    <span class="lang-sep">|</span>
+    <button class="lang-btn" data-lang="en" onclick="applyLanguage('en')">EN</button>
+    <span class="lang-sep">|</span>
+    <button class="lang-btn" data-lang="zh" onclick="applyLanguage('zh')">中文</button>
+  </div>
+  <a href="products.html" class="btn-header" data-i18n="nav_shop">Shop Now</a>
 </header>
 
 <!-- TECH NAV -->
 <nav class="tech-nav">
-  <a href="#what-is">DENBA技術とは</a>
-  <a href="#molecular">作用メカニズム</a>
-  <a href="#evidence">科学的エビデンス</a>
-  <a href="#patent">特許・知財</a>
-  <a href="#freshness">業界での実績</a>
-  <a href="#application">スキンケアへの応用</a>
+  <a href="#what-is" data-i18n="tnav_01">DENBA技術とは</a>
+  <a href="#molecular" data-i18n="tnav_02">作用メカニズム</a>
+  <a href="#evidence" data-i18n="tnav_03">科学的エビデンス</a>
+  <a href="#patent" data-i18n="tnav_04">特許・知財</a>
+  <a href="#freshness" data-i18n="tnav_05">業界での実績</a>
+  <a href="#application" data-i18n="tnav_06">スキンケアへの応用</a>
 </nav>
 
 <!-- ══════════════════════════════════════
@@ -651,12 +663,12 @@
 <section class="tech-hero">
   <div class="hero-grid"></div>
   <div class="hero-glow"></div>
-  <p class="eyebrow">DENBA 空間水分子活性技術</p>
-  <p class="hero-proverb">流れる水は腐らない</p>
-  <p class="hero-proverb-sub">Japanese Proverb — The Origin of DENBA Philosophy</p>
-  <h1>水分子を動かし、<br><span>生命の環境</span>を整える。</h1>
+  <p class="eyebrow" data-i18n="tech_hero_eyebrow">DENBA 空間水分子活性技術</p>
+  <p class="hero-proverb" data-i18n="tech_hero_proverb">流れる水は腐らない</p>
+  <p class="hero-proverb-sub" data-i18n="tech_hero_proverb_sub">Japanese Proverb — The Origin of DENBA Philosophy</p>
+  <h1 data-i18n="tech_hero_h1">水分子を動かし、<br><span>生命の環境</span>を整える。</h1>
   <div class="hero-divider"></div>
-  <p class="hero-sub">
+  <p class="hero-sub" data-i18n="tech_hero_desc">
     電気エネルギーで電場空間を作り出し、大気中の水分子を低周波で振動させる。<br>
     その振動がクラスターを細かくし、鮮度を保ち、浸透力を高める。<br>
     水を含むすべての生体に作用する、汎用性の高い技術。
@@ -674,10 +686,10 @@
 ══════════════════════════════════════ -->
 <section class="sec what-is" id="what-is">
   <div class="sec-inner">
-    <span class="sec-label">01 — What is DENBA Technology</span>
-    <h2 class="sec-title">DENBA独自の<br>空間水分子活性技術</h2>
+    <span class="sec-label" data-i18n="s01_eyebrow">01 — What is DENBA Technology</span>
+    <h2 class="sec-title" data-i18n="s01_title">DENBA独自の<br>空間水分子活性技術</h2>
     <div class="gold-line"></div>
-    <p class="sec-lead">
+    <p class="sec-lead" data-i18n="tech_hero_desc">
       DENBAの技術は、電気エネルギーによって低電位の空間（電場空間）を作り出し、
       その空間中にある生体や大気に含まれる水分子を低周波で振動させるものです。
       振動によって水分子クラスターを細かくし、食品の鮮度を保持、
@@ -691,25 +703,25 @@
         <span class="aeb-letter">1</span>
         <div class="aeb-icon">⚡</div>
         <span class="aeb-tag">Step 01</span>
-        <p class="aeb-name">電場空間の生成</p>
+        <p class="aeb-name" data-i18n="s01_step1_title">電場空間の生成</p>
         <p class="aeb-jp">Electric Field Space</p>
-        <p class="aeb-desc">電気エネルギーによって低電位の空間（電場空間）を作り出します。この特殊な空間環境が、DENBAのすべての作用の起点となります。特許で守られた独自のユニットが、製造ラインに設置されます。</p>
+        <p class="aeb-desc" data-i18n="s01_step1_desc">電気エネルギーによって低電位の空間（電場空間）を作り出します。この特殊な空間環境が、DENBAのすべての作用の起点となります。特許で守られた独自のユニットが、製造ラインに設置されます。</p>
       </div>
       <div class="aeb-card">
         <span class="aeb-letter">2</span>
         <div class="aeb-icon">〜</div>
         <span class="aeb-tag">Step 02</span>
-        <p class="aeb-name">低周波による水分子の振動</p>
+        <p class="aeb-name" data-i18n="s01_step2_title">低周波による水分子の振動</p>
         <p class="aeb-jp">Low-frequency Vibration</p>
-        <p class="aeb-desc">電場空間の中にある水分子を、低周波で振動させます。生体や大気に含まれる水分子に作用するため、対象物を直接触れることなく、空間ごとアプローチできることが特徴です。</p>
+        <p class="aeb-desc" data-i18n="s01_step2_desc">電場空間の中にある水分子を、低周波で振動させます。生体や大気に含まれる水分子に作用するため、対象物を直接触れることなく、空間ごとアプローチできることが特徴です。</p>
       </div>
       <div class="aeb-card">
         <span class="aeb-letter">3</span>
         <div class="aeb-icon">◎</div>
         <span class="aeb-tag">Step 03</span>
-        <p class="aeb-name">クラスター細分化と多面的な効果</p>
+        <p class="aeb-name" data-i18n="s01_step3_title">クラスター細分化と多面的な効果</p>
         <p class="aeb-jp">Cluster Refinement</p>
-        <p class="aeb-desc">振動によって水分子クラスターが細かくなります。その結果として、食品の鮮度保持・菌の発生抑制、そしてスキンケアにおける有効成分の浸透力向上が実現します。水を含むすべての生体に作用する汎用性の高さが、DENBAの最大の強みです。</p>
+        <p class="aeb-desc" data-i18n="s01_step3_desc">振動によって水分子クラスターが細かくなります。その結果として、食品の鮮度保持・菌の発生抑制、そしてスキンケアにおける有効成分の浸透力向上が実現します。水を含むすべての生体に作用する汎用性の高さが、DENBAの最大の強みです。</p>
       </div>
     </div>
   </div>
@@ -720,8 +732,8 @@
 ══════════════════════════════════════ -->
 <section class="sec molecular" id="molecular">
   <div class="sec-inner">
-    <span class="sec-label">02 — Mechanism</span>
-    <h2 class="sec-title">作用メカニズム</h2>
+    <span class="sec-label" data-i18n="s02_eyebrow">02 — Mechanism</span>
+    <h2 class="sec-title" data-i18n="s02_title">作用メカニズム</h2>
     <div class="gold-line"></div>
 
     <div class="mol-layout">
@@ -810,8 +822,8 @@
 ══════════════════════════════════════ -->
 <section class="sec evidence" id="evidence">
   <div class="sec-inner">
-    <span class="sec-label">03 — Scientific Evidence</span>
-    <h2 class="sec-title">科学的エビデンス</h2>
+    <span class="sec-label" data-i18n="s03_eyebrow">03 — Scientific Evidence</span>
+    <h2 class="sec-title" data-i18n="s03_title">科学的エビデンス</h2>
     <div class="gold-line"></div>
 
     <div class="evidence-layout">
@@ -870,10 +882,10 @@
 ══════════════════════════════════════ -->
 <section class="sec patent-sec" id="patent">
   <div class="sec-inner">
-    <span class="sec-label">04 — Patents & Intellectual Property</span>
-    <h2 class="sec-title" style="color:var(--white);">特許・知財</h2>
+    <span class="sec-label" data-i18n="s04_eyebrow">04 — Patents & Intellectual Property</span>
+    <h2 class="sec-title" style="color:var(--white);" data-i18n="s04_title">特許・知財</h2>
     <div class="gold-line"></div>
-    <p class="sec-lead" style="color:rgba(255,255,255,0.55);">
+    <p class="sec-lead" style="color:rgba(255,255,255,0.55);" data-i18n="s04_desc">
       DENBA技術の独自性は、特許という形で法的に保護されています。
       世界49カ国での商標登録・特許取得が、この技術の国際的な信頼性を証明しています。
     </p>
@@ -927,8 +939,8 @@
 ══════════════════════════════════════ -->
 <section class="sec freshness" id="freshness">
   <div class="sec-inner">
-    <span class="sec-label">05 — Industry Leadership</span>
-    <h2 class="sec-title">鮮度保持技術の<br>トップランナー</h2>
+    <span class="sec-label" data-i18n="s05_eyebrow">05 — Industry Leadership</span>
+    <h2 class="sec-title" data-i18n="s05_title">鮮度保持技術の<br>トップランナー</h2>
     <div class="gold-line"></div>
 
     <div class="freshness-intro">
@@ -978,8 +990,8 @@
 ══════════════════════════════════════ -->
 <section class="sec application" id="application">
   <div class="sec-inner">
-    <span class="sec-label">06 — Application to Skincare</span>
-    <h2 class="sec-title">スキンケアへの<br>応用</h2>
+    <span class="sec-label" data-i18n="s06_eyebrow">06 — Application to Skincare</span>
+    <h2 class="sec-title" data-i18n="s06_title">スキンケアへの<br>応用</h2>
     <div class="gold-line"></div>
 
     <div class="app-layout">
@@ -1080,9 +1092,10 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-logo">DENBA <span>Skincare</span></div>
-    <p class="footer-copy">© 2026 DENBA JAPAN Co., Ltd. All rights reserved.</p>
+    <p class="footer-copy" data-i18n="footer_copyright">© 2026 DENBA JAPAN Co., Ltd. All rights reserved.</p>
   </div>
 </footer>
 
+<script src="translations.js"></script>
 </body>
 </html>

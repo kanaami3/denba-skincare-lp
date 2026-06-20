@@ -39,6 +39,11 @@
     nav a:hover { color: var(--gold); }
     .btn-header { font-size: 11px; letter-spacing: 0.2em; padding: 10px 24px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; text-transform: uppercase; transition: all 0.3s; }
     .btn-header:hover { background: var(--gold); color: var(--white); }
+    .lang-switcher { display: flex; align-items: center; gap: 6px; margin-left: 24px; }
+    .lang-btn { background: none; border: none; cursor: pointer; font-size: 11px; letter-spacing: 0.15em; color: var(--text-mid, #5A5550); padding: 4px 2px; transition: color 0.2s; font-family: inherit; }
+    .lang-btn.active, .lang-btn:hover { color: var(--gold, #C9A961); }
+    .lang-sep { font-size: 10px; color: rgba(150,140,130,0.4); }
+    @media(max-width:768px){ .lang-switcher { margin-left: 12px; } }
 
     /* ── HERO (動画・テキストなし) ── */
     .hero {
@@ -455,10 +460,17 @@
   <div class="logo">DENBA <span>Skincare</span></div>
   <nav>
     <a href="#essentials">Ingredients</a>
-    <a href="technology.html">Technology</a>
-    <a href="products.html">Products</a>
+    <a href="technology.html" data-i18n="nav_technology">Technology</a>
+    <a href="products.html" data-i18n="nav_products">Products</a>
   </nav>
-  <a href="products.html" class="btn-header">Shop Now</a>
+  <div class="lang-switcher">
+    <button class="lang-btn active" data-lang="ja" onclick="applyLanguage('ja')">JA</button>
+    <span class="lang-sep">|</span>
+    <button class="lang-btn" data-lang="en" onclick="applyLanguage('en')">EN</button>
+    <span class="lang-sep">|</span>
+    <button class="lang-btn" data-lang="zh" onclick="applyLanguage('zh')">中文</button>
+  </div>
+  <a href="products.html" class="btn-header" data-i18n="nav_shop">Shop Now</a>
 </header>
 
 <!-- HERO：動画のみ・テキストなし -->
@@ -476,19 +488,19 @@
 
 <!-- BRAND STATEMENT -->
 <section class="brand-statement">
-  <p class="eyebrow">Three Premium Ingredients × DENBA Technology</p>
-  <h2>世界最高水準の成分を、<br><em>生に近い形</em>で届ける。</h2>
+  <p class="eyebrow" data-i18n="brand_eyebrow">Three Premium Ingredients × DENBA Technology</p>
+  <h2 data-i18n-html="brand_h2">世界最高水準の成分を、<br><em>生に近い形</em>で届ける。</h2>
   <div class="gold-line"></div>
-  <p>PDRN・黒松露（黒トリュフ）・NAD+。生命活動に深く関わる3つの核心成分を厳選し、DENBA独自の技術で最高の状態のまま肌の深部へ。成分の力を最大限に引き出すために、製造・保管・浸透のすべてにこだわりました。</p>
+  <p data-i18n="brand_p">PDRN・黒松露（黒トリュフ）・NAD+。生命活動に深く関わる3つの核心成分を厳選し、DENBA独自の技術で最高の状態のまま肌の深部へ。成分の力を最大限に引き出すために、製造・保管・浸透のすべてにこだわりました。</p>
 </section>
 
 <!-- THREE ESSENTIALS：核心3成分 -->
 <section class="three-essentials" id="essentials">
   <div class="inner">
-    <p class="eyebrow">Three Core Ingredients</p>
-    <h2 class="sec-title">生に近い形で、<br>最高品質を届ける。</h2>
+    <p class="eyebrow" data-i18n="ess_eyebrow">Three Core Ingredients</p>
+    <h2 class="sec-title" data-i18n-html="ess_title">生に近い形で、<br>最高品質を届ける。</h2>
     <div class="divider"></div>
-    <p class="sec-desc">DENBA Skincareが選んだ3つの核心成分。いずれも生命活動に直結した高機能素材であり、その品質を最大限に保ったまま配合することにこだわっています。</p>
+    <p class="sec-desc" data-i18n="ess_desc">DENBA Skincareが選んだ3つの核心成分。いずれも生命活動に直結した高機能素材であり、その品質を最大限に保ったまま配合することにこだわっています。</p>
     <div class="ess-grid">
 
       <!-- 01 PDRN -->
@@ -555,12 +567,12 @@
 <!-- PROMISE：開発の約束（コンパクト統合版） -->
 <section class="philosophy">
   <div class="inner">
-    <p class="eyebrow" style="color:var(--gold);">Our Promise</p>
-    <div class="phil-quote">
+    <p class="eyebrow" style="color:var(--gold);" data-i18n="promise_eyebrow">Our Promise</p>
+    <div class="phil-quote" data-i18n-html="promise_quote">
       本物の力は、<em>本物の形</em>でしか届かない。
     </div>
     <div class="phil-body">
-      <p class="phil-text">
+      <p class="phil-text" data-i18n="promise_p">
         DENBAはもともと、電位技術で食品の鮮度を守り、空間の環境を整えてきた企業です。その技術をスキンケアに応用したとき確信したのは——自然が生み出した生命力あふれる成分を、できるだけ本来の形のまま届けること。PDRN・黒松露・NAD+の品質を守るために、製造・保管・浸透のすべてにDENBAの技術が宿っています。
       </p>
       <div class="phil-pillars">
@@ -584,10 +596,10 @@
 <!-- TECHNOLOGY -->
 <section class="tech" id="technology">
   <div class="inner">
-    <p class="eyebrow">DENBA Molecular Technology</p>
-    <h2 class="sec-title">成分を、<br>届けるための技術</h2>
+    <p class="eyebrow" data-i18n="tech_eyebrow">DENBA Molecular Technology</p>
+    <h2 class="sec-title" data-i18n-html="tech_title">成分を、<br>届けるための技術</h2>
     <div class="divider"></div>
-    <p class="sec-desc">PDRN・黒松露・NAD+の力を最大限に活かすために。DENBA照射技術が全成分を微粒子化し、特許取得済みの製造プロセスで通常の4倍速で肌の深部へ届けます。<br><span style="font-size:11px; color:rgba(255,255,255,0.28); letter-spacing:0.1em;">特許第7809311号</span></p>
+    <p class="sec-desc" data-i18n="tech_desc">PDRN・黒松露・NAD+の力を最大限に活かすために。DENBA照射技術が全成分を微粒子化し、特許取得済みの製造プロセスで通常の4倍速で肌の深部へ届けます。<br><span style="font-size:11px; color:rgba(255,255,255,0.28); letter-spacing:0.1em;">特許第7809311号</span></p>
 
     <!-- 顕微鏡比較エビデンス -->
     <div class="micro-compare">
@@ -641,11 +653,11 @@
   <div class="inner">
     <div class="products-hd">
       <div>
-        <p class="eyebrow">Phase 1 Collection</p>
+        <p class="eyebrow" data-i18n="line_eyebrow">Phase 1 Collection</p>
         <h2 class="sec-title">The Line</h2>
         <div class="divider"></div>
       </div>
-      <p class="sec-desc" style="max-width:320px; font-size:13px; margin-bottom:0;">
+      <p class="sec-desc" style="max-width:320px; font-size:13px; margin-bottom:0;" data-i18n="line_desc">
         PDRN・黒松露・NAD+の核心3成分とDENBA分子浸透理念が融合した新世代スキンケア。
       </p>
     </div>
@@ -882,12 +894,12 @@
 <!-- CTA -->
 <section class="cta-sec">
   <div class="inner">
-    <p class="eyebrow" style="text-align:center;">Start Your Ritual</p>
-    <h2 class="sec-title" style="text-align:center;">あなたの肌に、<br>分子設計のケアを。</h2>
+    <p class="eyebrow" style="text-align:center;" data-i18n="cta_eyebrow">Start Your Ritual</p>
+    <h2 class="sec-title" style="text-align:center;" data-i18n-html="cta_title">あなたの肌に、<br>分子設計のケアを。</h2>
     <div class="divider" style="margin: 20px auto 32px;"></div>
     <p class="sec-desc">全5種のラインナップから、あなたのスキンケアルーティンをはじめましょう。</p>
-    <a href="products.html" class="cta-primary">製品を見る</a>
-    <a href="technology.html" class="cta-secondary">技術について</a>
+    <a href="products.html" class="cta-primary" data-i18n="cta_btn1">製品を見る</a>
+    <a href="technology.html" class="cta-secondary" data-i18n="cta_btn2">技術について</a>
   </div>
 </section>
 
@@ -898,20 +910,21 @@
       <div class="footer-logo">DENBA <span>Skincare</span></div>
       <ul class="footer-links">
         <li><a href="#freshness">Story</a></li>
-        <li><a href="technology.html">Technology</a></li>
-        <li><a href="products.html">Products</a></li>
+        <li><a href="technology.html" data-i18n="nav_technology">Technology</a></li>
+        <li><a href="products.html" data-i18n="nav_products">Products</a></li>
         <li><a href="#ingredients">Ingredients</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
     </div>
     <div class="footer-bottom">
-      <p class="copyright">© 2026 DENBA JAPAN Co., Ltd. All rights reserved.</p>
+      <p class="copyright" data-i18n="footer_copyright">© 2026 DENBA JAPAN Co., Ltd. All rights reserved.</p>
       <p class="footer-note">※本製品は化粧品です。医薬品・医薬部外品ではありません。※効能・効果には個人差があります。※セラムは初回使用前に必ずパッチテストを実施してください。</p>
     </div>
   </div>
 </footer>
 
+<script src="translations.js"></script>
 <script>
   // ヘッダーの透過制御
   const header = document.querySelector('header');
