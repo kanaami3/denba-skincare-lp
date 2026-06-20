@@ -12,18 +12,18 @@ window.DENBA_I18N = {
     /* ── index.html：ブランドステートメント ── */
     brand_eyebrow: 'AEB TECHNOLOGY',
     brand_h2: '分子設計から、<em>究極の浸透</em>へ。',
-    brand_p: 'DENBAが独自開発した分子コントロール技術により、全成分をナノレベルまで微粒子化。通常の4倍速で肌の深部へ届けます。',
+    brand_p: 'DENBAが独自開発した分子コントロール技術により、全成分をナノレベルまで微粒子化。通常の4倍速で角層まで届けます（自社比較）。',
 
     /* ── index.html：TECHNOLOGYセクション ── */
     tech_eyebrow: 'DENBA MOLECULAR CONTROL TECHNOLOGY',
     tech_title: '細胞環境を、<br>分子レベルで整える。',
-    tech_desc: 'DENBA独自の電位制御技術が水分子クラスターを3〜5個まで細分化。全成分の浸透力を通常の4倍に高め、有効成分を角層の深部まで届けます。',
+    tech_desc: 'DENBA独自の電位制御技術が水分子クラスターを3〜5個まで細分化。全成分の浸透力を通常の4倍に高め、有効成分を角層まで届けます（自社比較）。',
     tech_link: '技術の詳細を見る →',
 
     /* ── index.html：THREE ESSENTIALSセクション ── */
     ess_eyebrow: 'THREE ESSENTIALS',
     ess_title: '核心3成分の、<br>品質哲学。',
-    ess_desc: 'DENBA Skincareが選んだ3つの核心成分。いずれも生命活動に直結した高機能素材であり、その品質を最大限に保ったまま配合することにこだわっています。',
+    ess_desc: 'DENBA Skincareが選んだ3つの核心成分。いずれも自然界で注目される高機能素材であり、その品質を最大限に保ったまま配合することにこだわっています。',
 
     /* ── index.html：PROMISEセクション ── */
     promise_eyebrow: 'OUR PROMISE',
@@ -62,7 +62,7 @@ window.DENBA_I18N = {
     p2_price: '¥5,500',
     p2_feature: 'Gravity®複合成分と植物型レチノールの三重複合が、肌の弾力と引き締まりを集中ケアするエマルジョン。',
 
-    p3_name: 'ハリ弾力リペア クリーム',
+    p3_name: 'ハリ弾力ケア クリーム',
     p3_type: 'クリーム',
     p3_price: '¥5,500',
     p3_feature: 'SAKADIKIUM®とムレイン（毛蕊花エキス）が、深いハリとうるおいを夜間に集中補修するリッチクリーム。',
@@ -190,7 +190,7 @@ window.DENBA_I18N = {
     p2_price: '¥5,500',
     p2_feature: 'An emulsion featuring a triple combination of Gravity® complex and botanical retinol for intensive firmness and elasticity care.',
 
-    p3_name: 'Firmness Repair Cream',
+    p3_name: 'Firmness &amp; Care Cream',
     p3_type: 'Cream',
     p3_price: '¥5,500',
     p3_feature: 'A rich cream with SAKADIKIUM® and Mullein (Verbascum extract) for intensive overnight repair of deep firmness and moisture.',
