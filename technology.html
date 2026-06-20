@@ -8,6 +8,39 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* 流れる水は腐らない — ヒーロー引用 */
+    .hero-proverb {
+      font-family: var(--serif);
+      font-size: clamp(28px, 4vw, 52px);
+      font-weight: 300;
+      color: var(--white);
+      letter-spacing: 0.12em;
+      line-height: 1.3;
+      margin-bottom: 12px;
+      position: relative;
+    }
+    .hero-proverb::before {
+      content: '"';
+      font-size: 0.7em;
+      color: rgba(201,169,97,0.5);
+      margin-right: 4px;
+    }
+    .hero-proverb::after {
+      content: '"';
+      font-size: 0.7em;
+      color: rgba(201,169,97,0.5);
+      margin-left: 4px;
+    }
+    .hero-proverb-sub {
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      color: rgba(255,255,255,0.3);
+      text-transform: uppercase;
+      margin-bottom: 48px;
+      position: relative;
+    }
+
     :root {
       --gold: #C9A961;
       --gold-light: #E8D5A3;
@@ -605,7 +638,7 @@
 <!-- TECH NAV -->
 <nav class="tech-nav">
   <a href="#what-is">DENBA技術とは</a>
-  <a href="#molecular">分子レベルの研究</a>
+  <a href="#molecular">作用メカニズム</a>
   <a href="#evidence">科学的エビデンス</a>
   <a href="#patent">特許・知財</a>
   <a href="#freshness">業界での実績</a>
@@ -618,12 +651,15 @@
 <section class="tech-hero">
   <div class="hero-grid"></div>
   <div class="hero-glow"></div>
-  <p class="eyebrow">DENBA Molecular Control Technology</p>
-  <h1>分子設計から、<br><span>究極の浸透</span>へ。</h1>
+  <p class="eyebrow">DENBA 空間水分子活性技術</p>
+  <p class="hero-proverb">流れる水は腐らない</p>
+  <p class="hero-proverb-sub">Japanese Proverb — The Origin of DENBA Philosophy</p>
+  <h1>水分子を動かし、<br><span>生命の環境</span>を整える。</h1>
   <div class="hero-divider"></div>
   <p class="hero-sub">
-    電位水化技術と分子クラスター制御により、<br>
-    全成分を微粒子化。製造工程そのものが、他にない技術基盤。
+    電気エネルギーで電場空間を作り出し、大気中の水分子を低周波で振動させる。<br>
+    その振動がクラスターを細かくし、鮮度を保ち、浸透力を高める。<br>
+    水を含むすべての生体に作用する、汎用性の高い技術。
   </p>
   <div class="hero-badges">
     <span class="hero-badge">特許取得済</span>
@@ -639,39 +675,41 @@
 <section class="sec what-is" id="what-is">
   <div class="sec-inner">
     <span class="sec-label">01 — What is DENBA Technology</span>
-    <h2 class="sec-title">DENBA技術とは</h2>
+    <h2 class="sec-title">DENBA独自の<br>空間水分子活性技術</h2>
     <div class="gold-line"></div>
     <p class="sec-lead">
-      DENBA（電場）技術とは、電位と振動の力を応用して物質の分子構造を制御する独自技術です。
-      水分子を3〜5クラスターに小型化し、電位水として全成分を微粒子化することで、
-      これまでにない浸透力と安定性を実現します。化粧品・食品・医療領域で応用される、
-      DENBA JAPANが世界に誇る中核テクノロジー。
+      DENBAの技術は、電気エネルギーによって低電位の空間（電場空間）を作り出し、
+      その空間中にある生体や大気に含まれる水分子を低周波で振動させるものです。
+      振動によって水分子クラスターを細かくし、食品の鮮度を保持、
+      さらには菌の発生も抑えてくれます。
+      水を含むすべての生体に作用するため汎用性が高く、
+      今後「人類の未来をより良いものに変える」テクノロジーです。
     </p>
 
     <div class="aeb-grid">
       <div class="aeb-card">
-        <span class="aeb-letter">A</span>
-        <div class="aeb-icon">💧</div>
-        <span class="aeb-tag">Aqua</span>
-        <p class="aeb-name">分子クラスター制御</p>
-        <p class="aeb-jp">水分子の小型化</p>
-        <p class="aeb-desc">通常13〜17個の水分子クラスターを、DENBA照射により3〜5個に小型化。水分子が小さくなることで、成分の浸透経路が広がり、有効成分が肌のより深い層まで届きやすくなります。</p>
-      </div>
-      <div class="aeb-card">
-        <span class="aeb-letter">E</span>
+        <span class="aeb-letter">1</span>
         <div class="aeb-icon">⚡</div>
-        <span class="aeb-tag">Energy</span>
-        <p class="aeb-name">電位水化テクノロジー</p>
-        <p class="aeb-jp">DENBA特許技術</p>
-        <p class="aeb-desc">電位エネルギーを付与することで、水を「電位水」に変換。この状態で全原料を製造プロセスに投入することで、単なる水分子の小型化にとどまらず、全成分の微粒子化を実現します。製造工程自体がDENBA独自の技術です。</p>
+        <span class="aeb-tag">Step 01</span>
+        <p class="aeb-name">電場空間の生成</p>
+        <p class="aeb-jp">Electric Field Space</p>
+        <p class="aeb-desc">電気エネルギーによって低電位の空間（電場空間）を作り出します。この特殊な空間環境が、DENBAのすべての作用の起点となります。特許で守られた独自のユニットが、製造ラインに設置されます。</p>
       </div>
       <div class="aeb-card">
-        <span class="aeb-letter">B</span>
-        <div class="aeb-icon">🌿</div>
-        <span class="aeb-tag">Botanical</span>
-        <p class="aeb-name">名匠成分の微粒子化</p>
-        <p class="aeb-jp">有効成分の最大化</p>
-        <p class="aeb-desc">PDRN・黒松露細胞外分泌産物・NAD+など、分子量の大きい高機能成分こそ、微粒子化の恩恵を最大限に受けます。成分ポテンシャルを最大限に引き出した状態で、肌の深部へ届けます。</p>
+        <span class="aeb-letter">2</span>
+        <div class="aeb-icon">〜</div>
+        <span class="aeb-tag">Step 02</span>
+        <p class="aeb-name">低周波による水分子の振動</p>
+        <p class="aeb-jp">Low-frequency Vibration</p>
+        <p class="aeb-desc">電場空間の中にある水分子を、低周波で振動させます。生体や大気に含まれる水分子に作用するため、対象物を直接触れることなく、空間ごとアプローチできることが特徴です。</p>
+      </div>
+      <div class="aeb-card">
+        <span class="aeb-letter">3</span>
+        <div class="aeb-icon">◎</div>
+        <span class="aeb-tag">Step 03</span>
+        <p class="aeb-name">クラスター細分化と多面的な効果</p>
+        <p class="aeb-jp">Cluster Refinement</p>
+        <p class="aeb-desc">振動によって水分子クラスターが細かくなります。その結果として、食品の鮮度保持・菌の発生抑制、そしてスキンケアにおける有効成分の浸透力向上が実現します。水を含むすべての生体に作用する汎用性の高さが、DENBAの最大の強みです。</p>
       </div>
     </div>
   </div>
@@ -682,8 +720,8 @@
 ══════════════════════════════════════ -->
 <section class="sec molecular" id="molecular">
   <div class="sec-inner">
-    <span class="sec-label">02 — Molecular Research</span>
-    <h2 class="sec-title">分子レベルの革新</h2>
+    <span class="sec-label">02 — Mechanism</span>
+    <h2 class="sec-title">作用メカニズム</h2>
     <div class="gold-line"></div>
 
     <div class="mol-layout">
@@ -699,7 +737,7 @@
             </div>
             <span class="cluster-arrow">→</span>
             <div class="cluster-box">
-              <span class="cluster-label">DENBA照射後</span>
+              <span class="cluster-label">DENBA電場空間内</span>
               <div class="cluster-visual cluster-after">3〜5</div>
               <p class="cluster-num">分子クラスター数</p>
             </div>
@@ -716,7 +754,7 @@
           </div>
           <div class="mol-stat">
             <span class="mol-stat-num">100%</span>
-            <span class="mol-stat-label">全成分に照射</span>
+            <span class="mol-stat-label">全成分に作用</span>
           </div>
           <div class="mol-stat">
             <span class="mol-stat-num">国内</span>
@@ -727,37 +765,38 @@
 
       <div class="mol-content">
         <p class="sec-lead" style="margin-bottom: 0;">
-          「水を変えれば、全てが変わる」——DENBA技術の原点はここにあります。
-          製造工程の最初の段階でDENBA照射を行い、ベースとなる水を電位水に変換。
-          その後に加えられる全成分が、この電位水の環境の中で微粒子化されます。
+          電場空間の中で、水分子が低周波によって振動する——
+          その物理的な作用が、クラスターを細かくし、
+          食品の鮮度保持から化粧品成分の浸透まで、
+          多様な効果を同じ原理で実現します。
         </p>
         <div class="process-list">
           <div class="process-item">
             <span class="process-num">1</span>
             <div class="process-text">
-              <h4>DENBA照射 — 電位水の生成</h4>
-              <p>製造ラインにDENBAユニットを設置。精製水にDENBAエネルギーを照射し、水分子クラスターを3〜5個に縮小。電位を帯びた「電位水」を生成します。</p>
+              <h4>電場空間の生成</h4>
+              <p>DENBAユニットが電気エネルギーを使い、周囲に低電位の電場空間を作り出します。直接触れることなく、空間ごと作用するのが特徴です。</p>
             </div>
           </div>
           <div class="process-item">
             <span class="process-num">2</span>
             <div class="process-text">
-              <h4>全原料の微粒子化 — 空間照射方式</h4>
-              <p>DENBA空間照射方式により、製造空間内のすべての原料に電位エネルギーが作用。水溶性・油溶性を問わず、全成分が微粒子化された状態でブレンドされます。</p>
+              <h4>水分子の低周波振動</h4>
+              <p>電場空間内にある生体や大気中の水分子が、低周波によって振動を始めます。この振動が、クラスターの分解とエネルギー的な活性化を促します。</p>
             </div>
           </div>
           <div class="process-item">
             <span class="process-num">3</span>
             <div class="process-text">
-              <h4>国内充填 — 品質を維持したまま製品化</h4>
-              <p>微粒子化された状態の原液を、国内の充填ラインで製品化。「Made in Japan」の品質管理のもと、成分の状態を保ったまま容器に封入します。</p>
+              <h4>クラスターの細分化</h4>
+              <p>振動により水分子クラスターが細かく分かれます。通常13〜17個のクラスターが、DENBA電場空間では3〜5個に縮小。これが鮮度保持・菌抑制・浸透力向上の基盤となります。</p>
             </div>
           </div>
           <div class="process-item">
             <span class="process-num">4</span>
             <div class="process-text">
-              <h4>肌への到達 — 深部への確かな浸透</h4>
-              <p>微粒子化された成分は、肌の浸透経路を通りやすく、通常よりも速いスピードで深部まで届きます。自社比較で4倍の浸透速度を確認しています。</p>
+              <h4>スキンケアへの応用 — 有効成分の深部浸透</h4>
+              <p>DENBA電場空間内で製造されたスキンケア製品は、全成分がクラスター細分化の恩恵を受けた状態に。自社比較で4倍の浸透速度を確認しています。</p>
             </div>
           </div>
         </div>
@@ -894,14 +933,17 @@
 
     <div class="freshness-intro">
       <p class="freshness-quote">
-        「物質の鮮度を守る技術が、<br>
-        スキンケアの常識を変える。」
+        「流れる水は腐らない」——<br>
+        動かし続けることが、鮮度を保つ。
       </p>
       <p class="freshness-desc">
-        DENBA技術の根幹にある「分子レベルでの鮮度保持」は、化粧品だけの技術ではありません。
-        食品業界では食材の細胞を傷めない冷凍・保存技術として、医療・健康機器の分野では
-        生体細胞の環境を整える電場治療器として、先行して実績を積み上げてきました。
-        分野を超えて証明されてきた技術力が、スキンケアという新たなフィールドで融合します。
+        水分子を低周波で「振動＝流動」させるDENBA技術は、
+        この古来の智慧を科学で体現したものです。
+        振動によって細かくなった水分子クラスターは、
+        食品では鮮度保持と菌の発生抑制に、
+        スキンケアでは有効成分の深部浸透に作用します。
+        水を含むすべての生体に作用するその汎用性が、
+        食品・医療・化粧品の垣根を超えてDENBAを選ばせる理由です。
       </p>
     </div>
 
@@ -910,21 +952,21 @@
         <span class="domain-num">01</span>
         <div class="domain-icon-wrap">🥩</div>
         <p class="domain-title">食品・鮮度保持</p>
-        <p class="domain-desc">電場技術により食材の細胞を傷めることなく低温保存を実現。食肉・鮮魚・農産物の鮮度を長期間維持し、食品ロス削減・品質向上で評価される先行領域です。</p>
+        <p class="domain-desc">電場空間内で水分子を振動・活性化させることで、食材の細胞を傷めずに鮮度を長期保持。同時に菌の発生も抑制します。食肉・鮮魚・農産物で先行して実績を持つ、DENBAの中核応用領域です。</p>
         <span class="domain-tag">先行実績あり</span>
       </div>
       <div class="domain-card">
         <span class="domain-num">02</span>
         <div class="domain-icon-wrap">🏥</div>
         <p class="domain-title">医療・健康機器</p>
-        <p class="domain-desc">電位治療器として、血流促進・自律神経ケアへの応用を医療機器の区分で展開。北米での規制認証取得に向けたプロセスも進行中。生体への安全性が確認された技術基盤です。</p>
+        <p class="domain-desc">電場空間が生体内の水分子に作用し、細胞の環境を整える。その原理を応用した健康・医療機器を展開。北米での認証プロセスも進行中で、国際的な安全性基準のもと開発が続きます。</p>
         <span class="domain-tag">国際展開中</span>
       </div>
       <div class="domain-card">
         <span class="domain-num">03</span>
         <div class="domain-icon-wrap">✨</div>
-        <p class="domain-title">スキンケア — 新応用領域</p>
-        <p class="domain-desc">食品・医療で培った「細胞環境を整える電場技術」を、スキンケアの製造工程に応用。有効成分の微粒子化という形で、化粧品業界に新たな技術軸をもたらします。</p>
+        <p class="domain-title">スキンケア — 成分浸透への応用</p>
+        <p class="domain-desc">食品・医療で証明された「電場空間内での水分子活性化」を、スキンケア製造工程に応用。全成分がクラスター細分化の状態で製品化され、4倍速（自社比較）の浸透力を実現します。</p>
         <span class="domain-tag">DENBA Skincare</span>
       </div>
     </div>
