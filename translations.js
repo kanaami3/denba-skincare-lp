@@ -1,6 +1,7 @@
 window.DENBA_I18N = {
   ja: {
     /* ── 共通ナビ・フッター ── */
+    nav_ingredients: 'INGREDIENTS',
     nav_technology: 'TECHNOLOGY',
     nav_products: 'PRODUCTS',
     nav_shop: 'SHOP NOW',
@@ -127,6 +128,7 @@ window.DENBA_I18N = {
 
   en: {
     /* ── 共通ナビ・フッター ── */
+    nav_ingredients: 'INGREDIENTS',
     nav_technology: 'TECHNOLOGY',
     nav_products: 'PRODUCTS',
     nav_shop: 'SHOP NOW',
@@ -253,6 +255,7 @@ window.DENBA_I18N = {
 
   zh: {
     /* ── 共通ナビ・フッター ── */
+    nav_ingredients: '成分',
     nav_technology: '技术',
     nav_products: '产品',
     nav_shop: '立即购买',

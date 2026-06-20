@@ -451,6 +451,44 @@
       .products-grid { grid-template-columns: 1fr; }
       .cta-primary, .cta-secondary { display: block; margin: 8px 0; }
     }
+
+    /* ── HAMBURGER / MOBILE MENU ── */
+    .ham-btn {
+      display: none; background: none; border: none; cursor: pointer;
+      padding: 6px; flex-direction: column; justify-content: center; gap: 5px; z-index: 110;
+    }
+    .ham-btn span { display: block; width: 22px; height: 1.5px; background: var(--text); transition: all 0.3s; }
+    .mob-menu {
+      display: none; position: fixed; inset: 0; z-index: 300;
+      background: rgba(26,23,18,0.97); backdrop-filter: blur(10px);
+      flex-direction: column; align-items: center; justify-content: center; gap: 36px;
+    }
+    .mob-menu.open { display: flex; }
+    .mob-close {
+      position: absolute; top: 22px; right: 24px; background: none; border: none;
+      cursor: pointer; font-size: 26px; color: rgba(255,255,255,0.5); line-height: 1; transition: color 0.2s;
+    }
+    .mob-close:hover { color: var(--white); }
+    .mob-menu-nav { display: flex; flex-direction: column; align-items: center; gap: 32px; }
+    .mob-menu-nav a {
+      font-family: var(--serif); font-size: 28px; font-weight: 300;
+      letter-spacing: 0.12em; color: rgba(255,255,255,0.85); text-decoration: none; transition: color 0.3s;
+    }
+    .mob-menu-nav a:hover { color: var(--gold); }
+    .mob-lang { display: flex; align-items: center; gap: 12px; }
+    .mob-lang .lang-btn { color: rgba(255,255,255,0.4); font-size: 13px; letter-spacing: 0.2em; }
+    .mob-lang .lang-btn.active, .mob-lang .lang-btn:hover { color: var(--gold); }
+    .mob-lang .lang-sep { color: rgba(255,255,255,0.15); font-size: 11px; }
+    .mob-shop-btn {
+      font-size: 11px; letter-spacing: 0.25em; padding: 14px 48px;
+      border: 1px solid var(--gold); color: var(--gold);
+      text-decoration: none; text-transform: uppercase; transition: all 0.3s;
+    }
+    .mob-shop-btn:hover { background: var(--gold); color: var(--bg-dark); }
+    @media (max-width: 768px) {
+      .ham-btn { display: flex; }
+      .lang-switcher { display: none !important; }
+    }
   </style>
 </head>
 <body>
@@ -471,7 +509,29 @@
     <button class="lang-btn" data-lang="zh" onclick="applyLanguage('zh')">中文</button>
   </div>
   <a href="products.html" class="btn-header" data-i18n="nav_shop">Shop Now</a>
+  <button class="ham-btn" onclick="document.getElementById('mobMenu').classList.add('open')" aria-label="メニューを開く">
+    <span></span><span></span><span></span>
+  </button>
 </header>
+
+<!-- モバイルメニュー -->
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" onclick="document.getElementById('mobMenu').classList.remove('open')">✕</button>
+  <div style="font-family:var(--serif);font-size:18px;font-weight:300;letter-spacing:0.25em;color:var(--white);">DENBA <span style="color:var(--gold)">Skincare</span></div>
+  <nav class="mob-menu-nav">
+    <a href="#essentials" onclick="document.getElementById('mobMenu').classList.remove('open')" data-i18n="nav_ingredients">Ingredients</a>
+    <a href="technology.html" data-i18n="nav_technology">Technology</a>
+    <a href="products.html" data-i18n="nav_products">Products</a>
+  </nav>
+  <div class="mob-lang">
+    <button class="lang-btn active" data-lang="ja" onclick="applyLanguage('ja')">JA</button>
+    <span class="lang-sep">|</span>
+    <button class="lang-btn" data-lang="en" onclick="applyLanguage('en')">EN</button>
+    <span class="lang-sep">|</span>
+    <button class="lang-btn" data-lang="zh" onclick="applyLanguage('zh')">中文</button>
+  </div>
+  <a href="products.html" class="mob-shop-btn" data-i18n="nav_shop">Shop Now</a>
+</div>
 
 <!-- HERO：動画のみ・テキストなし -->
 <section class="hero">
