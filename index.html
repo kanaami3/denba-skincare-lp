@@ -464,7 +464,7 @@
 <!-- HERO：動画のみ・テキストなし -->
 <section class="hero">
   <div class="hero-video">
-    <video id="heroVideo" autoplay muted loop playsinline webkit-playsinline preload="auto">
+    <video id="heroVideo" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="images/hero-bg.jpg">
       <source src="images/hero-bg.mp4" type="video/mp4">
     </video>
   </div>
@@ -927,17 +927,18 @@
   const heroVideo = document.getElementById('heroVideo');
   if (heroVideo) {
     heroVideo.muted = true;
-    // スマホ（768px以下）はモバイル用動画に切り替え
+    // スマホ（768px以下）はHTMLの時点でモバイル用動画を先行設定
+    // ※ DOMContentLoaded前に実行されるため、最初のload()は不要
     if (window.innerWidth <= 768) {
-      heroVideo.querySelector('source').src = 'images/hero-bg-mobile.mp4';
+      const src = heroVideo.querySelector('source');
+      if (src) src.src = 'images/hero-bg-mobile.mp4';
       heroVideo.load();
     }
     const tryPlay = () => {
       heroVideo.play().catch(() => {});
     };
-    document.addEventListener('DOMContentLoaded', tryPlay);
+    heroVideo.addEventListener('loadeddata', tryPlay, { once: true });
     document.addEventListener('touchstart', tryPlay, { once: true });
-    heroVideo.addEventListener('loadedmetadata', tryPlay);
     window.addEventListener('load', tryPlay);
   }
 </script>
