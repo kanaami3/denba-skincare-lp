@@ -60,6 +60,15 @@
       opacity: 0; transition: opacity 0.6s ease;
       width: auto; height: auto; object-fit: cover;
     }
+    @media (max-width: 768px) {
+      .hero-video video {
+        opacity: 1 !important;
+        width: 100%; height: 100%;
+        min-width: unset; min-height: unset;
+        object-fit: cover;
+        transform: translate(-50%, -50%);
+      }
+    }
     .hero-video::after {
       content: ''; position: absolute; inset: 0;
       background: linear-gradient(to top, rgba(15,12,8,0.5) 0%, transparent 35%);
@@ -161,6 +170,10 @@
     .p-price small { font-size: 10px; color: var(--text-light); font-family: var(--sans); }
     .btn-buy { display: block; width: 100%; padding: 11px; margin-top: 12px; background: var(--gold); color: var(--white); border: none; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; transition: background 0.3s; text-align: center; text-decoration: none; }
     .btn-buy:hover { background: #B8943A; }
+    .btn-coming-soon { background: transparent; border: 1px solid var(--gold); color: var(--gold); cursor: default; pointer-events: none; }
+    .btn-coming-soon:hover { background: transparent; }
+    .btn-header-cs { font-size: 11px; letter-spacing: 0.2em; padding: 10px 24px; border: 1px solid var(--gold); color: var(--gold); text-transform: uppercase; cursor: default; opacity: 0.75; }
+    .cta-coming-soon { display: inline-block; padding: 18px 60px; border: 1px solid var(--bg-dark); color: var(--bg-dark); font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; cursor: default; opacity: 0.6; margin-right: 16px; }
     .p-alert { font-size: 10px; color: #c0392b; line-height: 1.6; margin-top: 10px; padding: 8px; background: rgba(192,57,43,0.05); border-left: 2px solid rgba(192,57,43,0.3); }
 
     /* ── PRODUCT DETAIL (折りたたみ対応) ── */
@@ -205,6 +218,64 @@
     .mij-icon { width: 60px; height: 60px; border: 1px solid rgba(201,169,97,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 22px; }
     .mij-lbl { font-size: 11px; letter-spacing: 0.15em; color: rgba(255,255,255,0.65); text-align: center; line-height: 1.7; }
     .mij-lbl strong { display: block; color: var(--gold); font-weight: 400; margin-bottom: 2px; }
+
+    /* ── ABOUT ── */
+    .about-sec { background: var(--bg-dark); color: var(--white); }
+    .about-sec .eyebrow { color: var(--gold); }
+    .about-sec .sec-title { color: var(--white); }
+    .about-badges-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 48px 0;
+    }
+    .about-badge-card {
+      border: 1px solid rgba(201,169,97,0.4);
+      padding: 24px 16px; text-align: center;
+      background: rgba(201,169,97,0.04);
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .about-badge-card:hover { border-color: var(--gold); background: rgba(201,169,97,0.08); }
+    .about-badge-icon { font-size: 28px; margin-bottom: 12px; }
+    .about-badge-text { font-size: 13px; color: rgba(255,255,255,0.85); line-height: 1.7; letter-spacing: 0.05em; }
+    .about-desc { font-size: 15px; color: rgba(255,255,255,0.75); line-height: 2.3; max-width: 800px; margin: 0 auto 48px; text-align: center; }
+    .about-desc p + p { margin-top: 20px; }
+    .sdg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 48px 0; }
+    .sdg-card {
+      padding: 32px 24px; border: 1px solid rgba(201,169,97,0.15);
+      background: rgba(201,169,97,0.03); transition: border-color 0.3s;
+    }
+    .sdg-card:hover { border-color: rgba(201,169,97,0.45); }
+    .sdg-num {
+      font-family: var(--serif); font-size: 48px; font-weight: 300;
+      color: var(--gold); opacity: 0.4; line-height: 1; margin-bottom: 16px;
+    }
+    .sdg-title { font-size: 13px; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 10px; }
+    .sdg-desc { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.9; }
+    .about-philosophy {
+      text-align: center; padding: 48px 0 32px;
+      border-top: 1px solid rgba(201,169,97,0.15);
+      border-bottom: 1px solid rgba(201,169,97,0.15);
+      margin: 48px 0;
+    }
+    .about-philosophy-line {
+      width: 40px; height: 1px; background: var(--gold); margin: 16px auto;
+    }
+    .about-philosophy-text {
+      font-family: var(--serif); font-size: clamp(18px, 2.5vw, 28px);
+      font-weight: 300; color: var(--white); letter-spacing: 0.06em; line-height: 1.7;
+    }
+    .about-awards { margin-top: 40px; text-align: center; }
+    .about-awards-list { list-style: none; display: flex; flex-direction: column; gap: 10px; align-items: center; }
+    .about-awards-list li {
+      font-size: 12px; letter-spacing: 0.1em; color: rgba(255,255,255,0.5);
+      padding: 6px 20px; border: 1px solid rgba(201,169,97,0.15);
+      display: inline-block;
+    }
+    @media (max-width: 768px) {
+      .about-badges-grid { grid-template-columns: repeat(2, 1fr); }
+      .sdg-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .about-badges-grid { grid-template-columns: 1fr; }
+    }
 
     /* ── CTA ── */
     .cta-sec { background: var(--gold-pale); text-align: center; }
@@ -258,15 +329,22 @@
     .ess-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 64px; }
     .ess-card { background: var(--white); border: 1px solid rgba(201,169,97,0.1); overflow: hidden; transition: border-color 0.4s; display: flex; flex-direction: column; }
     .ess-card:hover { border-color: rgba(201,169,97,0.4); }
-    .ess-header { background: var(--bg-dark); padding: 40px 32px 32px; position: relative; overflow: hidden; height: 280px; display: flex; flex-direction: column; justify-content: flex-end; }
+    .ess-header { background: var(--bg-dark); padding: 36px 28px 28px; position: relative; overflow: hidden; height: 300px; display: flex; flex-direction: column; justify-content: flex-end; }
     .ess-num-bg {
       font-family: var(--serif); font-size: 110px; font-weight: 300;
       color: rgba(201,169,97,0.07); line-height: 1;
       position: absolute; top: 0; right: 8px; letter-spacing: -4px;
     }
-    .ess-en { font-size: 14px; letter-spacing: 0.35em; color: var(--gold); text-transform: uppercase; margin-bottom: 14px; position: relative; z-index: 1; }
-    .ess-name { font-family: var(--serif); font-size: 24px; font-weight: 300; color: var(--white); line-height: 1.55; position: relative; z-index: 1; }
-    .ess-name-jp { font-size: 14px; color: rgba(255,255,255,0.55); margin-top: 8px; position: relative; z-index: 1; letter-spacing: 0.05em; }
+    .ess-en {
+      font-family: var(--serif);
+      font-size: clamp(32px, 3.2vw, 44px);
+      font-weight: 300; letter-spacing: 0.04em; line-height: 1;
+      color: var(--gold); text-transform: uppercase;
+      margin-bottom: 10px; position: relative; z-index: 1;
+      text-shadow: 0 2px 16px rgba(0,0,0,0.5);
+    }
+    .ess-name { font-family: var(--sans); font-size: 10px; font-weight: 400; letter-spacing: 0.18em; color: rgba(255,255,255,0.55); line-height: 1.6; text-transform: uppercase; position: relative; z-index: 1; }
+    .ess-name-jp { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 4px; position: relative; z-index: 1; letter-spacing: 0.05em; }
     .ess-body { padding: 32px; flex: 1; display: flex; flex-direction: column; }
     .ess-concept { font-family: var(--serif); font-size: 17px; font-weight: 300; color: #8B6914; margin-bottom: 16px; line-height: 1.6; font-style: italic; }
     .ess-desc { font-size: 14px; color: var(--text-mid); line-height: 2.1; flex: 1; }
@@ -275,6 +353,20 @@
     .ess-raw-text { font-size: 13px; color: var(--text); line-height: 1.9; }
 
     /* ── MICRO COMPARE ── */
+    .penetration-flow {
+      margin-top: 56px;
+      display: flex; flex-direction: column; align-items: center; gap: 12px;
+    }
+    .penetration-flow img {
+      max-width: 720px; width: 100%;
+      border: 1px solid rgba(201,169,97,0.15);
+      border-radius: 8px;
+    }
+    .penetration-flow-note {
+      font-size: 11px; color: rgba(255,255,255,0.3);
+      letter-spacing: 0.05em; text-align: center;
+    }
+
     .micro-compare { margin-top: 80px; border-top: 1px solid rgba(201,169,97,0.12); padding-top: 64px; }
     .micro-compare-hd { text-align: center; margin-bottom: 40px; }
     .micro-compare-hd p { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.8; }
@@ -373,36 +465,10 @@
       .products-grid { grid-template-columns: repeat(3, 1fr); }
     }
     @media (max-width: 768px) {
-      /* Hero: モバイルは全幅表示（クロップなし） */
+      /* Hero: モバイルは非表示 */
       .hero {
-        height: auto;
-        background: #1A1712;
+        display: none;
       }
-      .hero-video {
-        position: relative;
-        height: auto;
-        overflow: hidden;
-      }
-      .hero-video video {
-        position: relative;
-        top: auto; left: auto;
-        transform: none;
-        width: 100%; height: auto;
-        min-width: unset; min-height: unset;
-        display: block;
-        object-fit: unset;
-      }
-      .hero-video::after { display: none; }
-      .hero-scroll {
-        position: relative;
-        bottom: auto; left: auto;
-        transform: none;
-        padding: 8px 0 10px;
-        background: #1A1712;
-        justify-content: center;
-      }
-      .scroll-line { height: 28px; }
-      .hero-scroll span { font-size: 9px; }
       header { padding: 16px 20px; }
       nav, .btn-header { display: none; }
       section { padding: 64px 20px; }
@@ -416,6 +482,8 @@
       .ess-desc { font-size: 13px; line-height: 1.9; }
       .ess-raw-text { font-size: 12px; line-height: 1.8; }
       .ess-concept { font-size: 15px; }
+      .ess-en { font-size: 36px; }
+      .ess-header { height: 260px; }
       /* Philosophy */
       .phil-text { font-size: 14px; line-height: 2.0; }
       .phil-pillar-jp { font-size: 13px; }
@@ -498,7 +566,8 @@
 <header>
   <div class="logo">DENBA <span>Skincare</span></div>
   <nav>
-    <a href="#essentials">Ingredients</a>
+    <a href="index.html" data-i18n="nav_top">Top</a>
+    <a href="#essentials" data-i18n="nav_ingredients">Ingredients</a>
     <a href="technology.html" data-i18n="nav_technology">Technology</a>
     <a href="products.html" data-i18n="nav_products">Products</a>
   </nav>
@@ -509,7 +578,7 @@
     <span class="lang-sep">|</span>
     <button class="lang-btn" data-lang="zh" onclick="applyLanguage('zh')">中文</button>
   </div>
-  <a href="products.html" class="btn-header" data-i18n="nav_shop">Shop Now</a>
+  <span class="btn-header-cs">COMING SOON</span>
   <button class="ham-btn" onclick="document.getElementById('mobMenu').classList.add('open')" aria-label="メニューを開く">
     <span></span><span></span><span></span>
   </button>
@@ -532,13 +601,13 @@
     <span class="lang-sep">|</span>
     <button class="lang-btn" data-lang="zh" onclick="applyLanguage('zh')">中文</button>
   </div>
-  <a href="products.html" class="mob-shop-btn" data-i18n="nav_shop">Shop Now</a>
+  <span class="mob-shop-btn" style="cursor:default;opacity:0.65;">COMING SOON</span>
 </div>
 
 <!-- HERO：動画のみ・テキストなし -->
 <section class="hero">
   <div class="hero-video">
-    <video id="heroVideo" autoplay muted loop playsinline webkit-playsinline preload="auto">
+    <video id="heroVideo" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="images/hero-bg.jpg">
       <source src="images/hero-bg.mp4" type="video/mp4">
     </video>
   </div>
@@ -568,18 +637,18 @@
       <!-- 01 PDRN -->
       <div class="ess-card">
         <div class="ess-header" style="background-image: url('images/ing-pdrn.jpg'); background-size: cover; background-position: center;">
-          <div style="position:absolute;inset:0;background:rgba(15,12,8,0.35);"></div>
+          <div style="position:absolute;inset:0;background:linear-gradient(to bottom, rgba(15,12,8,0.15) 0%, rgba(15,12,8,0.65) 100%);"></div>
           <div class="ess-num-bg">01</div>
           <p class="ess-en">PDRN</p>
           <h3 class="ess-name">Polydeoxyribonucleotide</h3>
-          <p class="ess-name-jp">ポリデオキシリボヌクレオチド</p>
+          <p class="ess-name-jp" data-i18n="ess_name_jp_pdrn">ポリデオキシリボヌクレオチド</p>
         </div>
         <div class="ess-body">
-          <p class="ess-concept">「肌が本来持つ力を、引き出すアプローチ」</p>
-          <p class="ess-desc">サーモン由来の核酸関連成分で、肌なじみの良い構造を持ちます。体に馴染みやすい特性を持つ素材として近年注目を集めるエイジングケア成分。熱・酸化により変性しやすいため、生に近い状態での取り扱いが品質の鍵。全製品に配合。</p>
+          <p class="ess-concept" data-i18n="ess_pdrn_concept">「肌が本来持つ力を、引き出すアプローチ」</p>
+          <p class="ess-desc" data-i18n="ess_pdrn_desc">サーモン由来の核酸関連成分で、肌なじみの良い構造を持ちます。体に馴染みやすい特性を持つ素材として近年注目を集めるエイジングケア成分。熱・酸化により変性しやすいため、生に近い状態での取り扱いが品質の鍵。全製品に配合。</p>
           <div class="ess-raw">
             <p class="ess-raw-label">Raw Quality Point</p>
-            <p class="ess-raw-text">熱・紫外線・酸化に敏感。DENBA電位環境での保管・管理が成分の状態を維持し、微粒子化で角層まで届ける。</p>
+            <p class="ess-raw-text" data-i18n="ess_pdrn_raw">熱・紫外線・酸化に敏感。DENBA電位環境での保管・管理が成分の状態を維持し、微粒子化で角層まで届ける。</p>
           </div>
         </div>
       </div>
@@ -587,18 +656,18 @@
       <!-- 02 黒松露 -->
       <div class="ess-card">
         <div class="ess-header" style="background-image: url('images/ing-truffle.jpg'); background-size: cover; background-position: center;">
-          <div style="position:absolute;inset:0;background:rgba(15,12,8,0.35);"></div>
+          <div style="position:absolute;inset:0;background:linear-gradient(to bottom, rgba(15,12,8,0.15) 0%, rgba(15,12,8,0.65) 100%);"></div>
           <div class="ess-num-bg">02</div>
           <p class="ess-en">Black Truffle EPS</p>
           <h3 class="ess-name">Tuber Melanosporum<br>Extracellular Products</h3>
-          <p class="ess-name-jp">黒松露（黒トリュフ）細胞外分泌産物</p>
+          <p class="ess-name-jp" data-i18n="ess_name_jp_truffle">黒松露（黒トリュフ）細胞外分泌産物</p>
         </div>
         <div class="ess-body">
-          <p class="ess-concept">「大地が育んだ命の分泌物を、そのままに」</p>
-          <p class="ess-desc">世界三大珍味として知られる黒トリュフが産み出す希少な細胞外産物。自然界で育まれた機能性物質であり、採取から製造までの鮮度管理が品質を左右します。自然界最高水準の希少素材。全製品に配合。</p>
+          <p class="ess-concept" data-i18n="ess_truffle_concept">「大地が育んだ命の分泌物を、そのままに」</p>
+          <p class="ess-desc" data-i18n="ess_truffle_desc">世界三大珍味として知られる黒トリュフが産み出す希少な細胞外産物。自然界で育まれた機能性物質であり、採取から製造までの鮮度管理が品質を左右します。自然界最高水準の希少素材。全製品に配合。</p>
           <div class="ess-raw">
             <p class="ess-raw-label">Raw Quality Point</p>
-            <p class="ess-raw-text">鮮度と品質が命。採取後の変性を最小化し、品質を保った状態でDENBA照射・微粒子化を行う。</p>
+            <p class="ess-raw-text" data-i18n="ess_truffle_raw">鮮度と品質が命。採取後の変性を最小化し、品質を保った状態でDENBA照射・微粒子化を行う。</p>
           </div>
         </div>
       </div>
@@ -606,18 +675,18 @@
       <!-- 03 NAD+ -->
       <div class="ess-card">
         <div class="ess-header" style="background-image: url('images/ing-nad.jpg'); background-size: cover; background-position: center;">
-          <div style="position:absolute;inset:0;background:rgba(15,12,8,0.35);"></div>
+          <div style="position:absolute;inset:0;background:linear-gradient(to bottom, rgba(15,12,8,0.15) 0%, rgba(15,12,8,0.65) 100%);"></div>
           <div class="ess-num-bg">03</div>
           <p class="ess-en">NAD+</p>
           <h3 class="ess-name">Nicotinamide Adenine<br>Dinucleotide</h3>
-          <p class="ess-name-jp">ニコチンアミドアデニンジヌクレオチド</p>
+          <p class="ess-name-jp" data-i18n="ess_name_jp_nad">ニコチンアミドアデニンジヌクレオチド</p>
         </div>
         <div class="ess-body">
-          <p class="ess-concept">「注目の補酵素を、そのままの形で配合する」</p>
-          <p class="ess-desc">近年注目を集めるエネルギー補酵素。前駆体（NMN等）ではなくNAD+を直接配合した、成分そのものの品質にこだわった処方です。全製品に配合。</p>
+          <p class="ess-concept" data-i18n="ess_nad_concept">「注目の補酵素を、そのままの形で配合する」</p>
+          <p class="ess-desc" data-i18n="ess_nad_desc">近年注目を集めるエネルギー補酵素。前駆体（NMN等）ではなくNAD+を直接配合した、成分そのものの品質にこだわった処方です。全製品に配合。</p>
           <div class="ess-raw">
             <p class="ess-raw-label">Raw Quality Point</p>
-            <p class="ess-raw-text">NAD+を直接配合。DENBA電位環境で安定性を保ちながら、微粒子化で角層への浸透をサポートする。</p>
+            <p class="ess-raw-text" data-i18n="ess_nad_raw">NAD+を直接配合。DENBA電位環境で安定性を保ちながら、微粒子化で角層への浸透をサポートする。</p>
           </div>
         </div>
       </div>
@@ -640,15 +709,15 @@
       <div class="phil-pillars">
         <div class="phil-pillar">
           <p class="phil-pillar-en">Raw Integrity</p>
-          <p class="phil-pillar-jp">加工による変性を最小化。成分を生に近い形で配合する。</p>
+          <p class="phil-pillar-jp" data-i18n="pillar_raw_integrity">加工による変性を最小化。成分を生に近い形で配合する。</p>
         </div>
         <div class="phil-pillar">
           <p class="phil-pillar-en">Freshness Control</p>
-          <p class="phil-pillar-jp">製造・保管空間もDENBA電位環境で管理。成分の鮮度を出荷まで守る。</p>
+          <p class="phil-pillar-jp" data-i18n="pillar_freshness_control">製造・保管空間もDENBA電位環境で管理。成分の鮮度を出荷まで守る。</p>
         </div>
         <div class="phil-pillar">
           <p class="phil-pillar-en">Deep Delivery</p>
-          <p class="phil-pillar-jp">特許技術の微粒子化（自社比較1.8倍）で、成分の力を角層まで届ける。</p>
+          <p class="phil-pillar-jp" data-i18n="pillar_deep_delivery">特許技術の微粒子化（自社比較1.8倍）で、成分の力を角層まで届ける。</p>
         </div>
       </div>
     </div>
@@ -663,11 +732,17 @@
     <div class="divider"></div>
     <p class="sec-desc" data-i18n="tech_desc">PDRN・黒松露・NAD+の力を最大限に活かすために。DENBA照射技術が全成分を微粒子化し、特許取得済みの製造プロセスで通常の1.8倍速で角層まで届けます（自社比較）。<br><span style="font-size:11px; color:rgba(255,255,255,0.28); letter-spacing:0.1em;">特許第7809311号</span></p>
 
+    <!-- 浸透の流れ -->
+    <div class="penetration-flow">
+      <img src="images/molecule-penetration.png" alt="DENBA技術による成分浸透フロー" data-i18n-alt="penetration_flow_alt">
+      <p class="penetration-flow-note" data-i18n="penetration_flow_note">※イメージ図</p>
+    </div>
+
     <!-- 顕微鏡比較エビデンス -->
     <div class="micro-compare">
       <div class="micro-compare-hd">
         <p class="eyebrow">Microscope Evidence</p>
-        <p>DENBA照射前後のクリーム粒子比較（顕微鏡撮影）<br>粒子の細かさが、浸透力の違いを示しています。</p>
+        <p data-i18n-html="micro_caption">DENBA照射前後のクリーム粒子比較（顕微鏡撮影）<br>粒子の細かさが、浸透力の違いを示しています。</p>
       </div>
       <div class="micro-grid">
 
@@ -680,7 +755,7 @@
           </div>
           <div class="micro-overlay">
             <p class="micro-overlay-en">Before — Standard Cream</p>
-            <p class="micro-overlay-jp">通常クリーム（粗い粒子）</p>
+            <p class="micro-overlay-jp" data-i18n="micro_overlay_before">通常クリーム（粗い粒子）</p>
           </div>
         </div>
 
@@ -699,12 +774,12 @@
           </div>
           <div class="micro-overlay is-denba">
             <p class="micro-overlay-en">After — DENBA Treated Cream</p>
-            <p class="micro-overlay-jp">DENBA照射（微細な均一粒子）</p>
+            <p class="micro-overlay-jp" data-i18n="micro_overlay_after">DENBA照射（微細な均一粒子）</p>
           </div>
         </div>
 
       </div>
-      <p class="micro-note">※自社撮影。粒子サイズの視覚的比較です。</p>
+      <p class="micro-note" data-i18n="micro_note">※自社撮影。粒子サイズの視覚的比較です。</p>
     </div>
 
   </div>
@@ -733,21 +808,24 @@
         </div>
         <div class="p-body">
           <p class="p-no">No.01</p>
-          <p class="p-jp">化粧水</p>
-          <h3 class="p-name">Water Revital Lotion</h3>
+          <p class="p-jp" data-i18n="p1_type">化粧水</p>
+          <h3 class="p-name" data-i18n="p1_name">Water Revital Lotion</h3>
           <p class="p-vol">120 ml</p>
-          <p class="p-feature">PDRN＋黒松露＋NAD+の核心3成分に、PENTAVITIN®の長時間保湿を組み合わせた、みずみずしく軽やかな化粧水。</p>
+          <p class="p-feature" data-i18n="p1_feature">PDRN＋黒松露＋NAD+の核心3成分に、PENTAVITIN®の長時間保湿・ナノリポソーム浸透設計・SOD＆CoQ10抗酸化ケアを組み合わせた、次世代の化粧水。</p>
           <div class="p-ingredients">
-            <button class="p-ing-toggle" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">成分を見る</button>
-            <ul class="p-ing-list">
+            <button class="p-ing-toggle" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');" data-i18n="btn_see_ingredients">成分を見る</button>
+            <ul class="p-ing-list" data-i18n-html="ing_lotion_list">
               <li><strong>PDRN（ポリデオキシリボヌクレオチド）</strong>サーモン由来の核酸関連成分。肌のコンディションを整えることをサポートする、近年注目度の高いエイジングケア成分。</li>
               <li><strong>黒松露（黒トリュフ）細胞外分泌産物</strong>高級食材・黒トリュフが産み出す希少成分。肌のうるおいをサポートする高機能素材。</li>
               <li><strong>NAD+（ニコチンアミドアデニンジヌクレオチド）</strong>近年注目の補酵素。NAD+を直接配合した次世代エイジングケア成分。</li>
-              <li><strong>PENTAVITIN®</strong>高い親和性で水分を長時間キープする安定型持続保湿成分。</li>
+              <li><strong>PENTAVITIN®</strong>皮膚の天然保湿因子（NMF）と同じ糖鎖構造を持つ高機能保湿成分。水分を長時間キープし、みずみずしいうるおいを持続。</li>
+              <li><strong>ナノリポソーム</strong>成分を極小のカプセルに閉じ込め、肌の深部まで届ける浸透設計技術。DENBAの微粒子化とのW浸透アプローチ。</li>
+              <li><strong>SOD（スーパーオキシドジスムターゼ）</strong>肌の酸化ストレスに働きかける酵素型抗酸化成分。エイジングの一因とされる酸化ダメージをケア。</li>
+              <li><strong>CoQ10（コエンザイムQ10）</strong>細胞のエネルギー産生に関わる補酵素。NAD+との相乗作用で、肌の活力をサポートする。</li>
             </ul>
           </div>
-          <p class="p-price">¥5,500 <small>（税込）</small></p>
-          <a href="#" class="btn-buy">Add to Cart</a>
+          <p class="p-price">¥5,500 <small data-i18n="index_price_tax">（税込）</small></p>
+          <span class="btn-buy btn-coming-soon">COMING SOON</span>
         </div>
       </div>
 
@@ -758,22 +836,22 @@
         </div>
         <div class="p-body">
           <p class="p-no">No.02</p>
-          <p class="p-jp">乳液</p>
-          <h3 class="p-name">Firm & Glow Emulsion</h3>
+          <p class="p-jp" data-i18n="p2_type">乳液</p>
+          <h3 class="p-name" data-i18n="p2_name">Firm & Glow Emulsion</h3>
           <p class="p-vol">100 ml</p>
-          <p class="p-feature">反重力サポートで、ぷるっとしたハリ感を与える乳液。べたつきの少ない軽い感触でも、使った後はもっちりとしたハリ感が続く。</p>
+          <p class="p-feature" data-i18n="p2_feature">Gravity®反重力コンプレックス×三重植物レチノールシステムで、ハリとツヤを引き出す乳液。軽やかなテクスチャーでも、使うたびに肌の弾力感が高まる。</p>
           <div class="p-ingredients">
-            <button class="p-ing-toggle" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">成分を見る</button>
-            <ul class="p-ing-list">
-              <li><strong>PDRN</strong>化粧水と同じ核心成分。重ね使いでうるおいを補う。</li>
-              <li><strong>黒松露細胞外分泌産物</strong>肌のうるおいケアをさらにサポート。</li>
+            <button class="p-ing-toggle" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');" data-i18n="btn_see_ingredients">成分を見る</button>
+            <ul class="p-ing-list" data-i18n-html="ing_emulsion_list">
+              <li><strong>PDRN</strong>化粧水と同じ核心成分。重ね使いでうるおいとコンディションをさらにサポート。</li>
+              <li><strong>黒松露細胞外分泌産物</strong>肌のうるおいとコンディションをさらにサポート。</li>
               <li><strong>NAD+</strong>注目の補酵素。ハリある肌のエイジングケアをサポートする。</li>
-              <li><strong>Gravity®複合成分</strong>乳液専用のリフティング成分。肌を引き締め上向きに整える独自アプローチ。</li>
-              <li><strong>植物型レチノール（三重複合・低刺激）</strong>刺激を最小限に抑えながらエイジングケアを行う植物由来レチノール。一般的なレチノールより穏やかに作用。</li>
+              <li><strong>Gravity®（反重力コンプレックス）</strong>肌の引き締まりとリフト感をサポートする乳液専用の機能性成分。ぷるんとしたハリ感へのアプローチ。</li>
+              <li><strong>三重植物レチノールシステム</strong>3種の植物由来エキス（水飛蓟エキス・トリフォリウム・アリスティナムエキス・海茴香エキス）を組み合わせた低刺激レチノール代替処方。一般的なレチノールより肌への負担を抑えながら、エイジングケアをサポート。</li>
             </ul>
           </div>
-          <p class="p-price">¥5,500 <small>（税込）</small></p>
-          <a href="#" class="btn-buy">Add to Cart</a>
+          <p class="p-price">¥5,500 <small data-i18n="index_price_tax">（税込）</small></p>
+          <span class="btn-buy btn-coming-soon">COMING SOON</span>
         </div>
       </div>
 
@@ -784,22 +862,23 @@
         </div>
         <div class="p-body">
           <p class="p-no">No.03</p>
-          <p class="p-jp">クリーム</p>
-          <h3 class="p-name">Firm & Care Cream</h3>
+          <p class="p-jp" data-i18n="p3_type">クリーム</p>
+          <h3 class="p-name" data-i18n="p3_name">Firm & Care Cream</h3>
           <p class="p-vol">50 g</p>
-          <p class="p-feature">昼夜使えるマルチケアクリーム。バリアを整えながら、紫外線を浴びた後の肌もケア。朝はメイク下地としてもご使用可能。</p>
+          <p class="p-feature" data-i18n="p3_feature">朝晩のコアリペアクリーム。ハリオギ花エキス×SAKADIKIUM×高山火绒草の三重バリア処方で、光環境ストレスから肌を守りながら、しっとりとしたハリのある肌へ導く。</p>
           <div class="p-ingredients">
-            <button class="p-ing-toggle" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">成分を見る</button>
-            <ul class="p-ing-list">
-              <li><strong>PDRN</strong>夜間集中ケアの核心成分。翌朝の肌コンディションを整える。</li>
+            <button class="p-ing-toggle" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');" data-i18n="btn_see_ingredients">成分を見る</button>
+            <ul class="p-ing-list" data-i18n-html="ing_cream_list">
+              <li><strong>PDRN</strong>核心成分。朝晩使いでコンディション維持をサポートする。</li>
               <li><strong>黒松露細胞外分泌産物</strong>うるおいと肌コンディションをサポート。</li>
-              <li><strong>NAD+</strong>夜間の集中ケアをサポートする注目の補酵素。</li>
-              <li><strong>毛蕊花エキス（ムレイン）</strong>紫外線を浴びた後の肌を落ち着かせ、うるおいを保つ植物エキス。</li>
-              <li><strong>SAKADIKIUM®</strong>肌の防御機能を高め、外的ストレスへの耐性をサポートする複合成分。</li>
+              <li><strong>NAD+</strong>細胞エネルギーケアをサポートする注目の補酵素。</li>
+              <li><strong>ハリオギ花エキス（ムレイン）</strong>光環境ストレスを受けた後の肌を落ち着かせ、うるおいを保つ希少植物エキス。肌のコンディションを整え、ハリ感をサポート。</li>
+              <li><strong>SAKADIKIUM®</strong>肌の防御機能を高め、外的ストレスへの耐性をサポートする複合成分。バリアをより強固に整える。</li>
+              <li><strong>高山火绒草エキス（高山ウスユキソウ）</strong>高山環境で育つ植物由来のエキス。紫外線・ブルーライトなど多様な光環境ストレスへの対応をサポートし、360°ケアを実現する。</li>
             </ul>
           </div>
-          <p class="p-price">¥5,500 <small>（税込）</small></p>
-          <a href="#" class="btn-buy">Add to Cart</a>
+          <p class="p-price">¥5,500 <small data-i18n="index_price_tax">（税込）</small></p>
+          <span class="btn-buy btn-coming-soon">COMING SOON</span>
         </div>
       </div>
 
@@ -810,21 +889,22 @@
         </div>
         <div class="p-body">
           <p class="p-no">No.04</p>
-          <p class="p-jp">シートマスク</p>
-          <h3 class="p-name">Bright Care Face Mask</h3>
-          <p class="p-vol">30g × 5枚</p>
-          <p class="p-feature">PDRN×三重ブライトニングケアで、即効うるおいと透明感を。使用後はべたつきがなく、もっちりとした透明感のある仕上がりへ。</p>
+          <p class="p-jp" data-i18n="p_mask_type">フェイスマスク</p>
+          <h3 class="p-name" data-i18n="p_mask_name">Brightening Repair Face Mask</h3>
+          <p class="p-vol" data-i18n="p_mask_vol">5枚入</p>
+          <p class="p-feature" data-i18n="p_mask_feature">週1〜2回の集中ケアマスク。ナイアシンアミド×AA2G®×カルノシンの三重ブライトニング処方が、くすみをケアし、使うたびに肌の透明感と輝きを引き出す。</p>
           <div class="p-ingredients">
-            <button class="p-ing-toggle" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">成分を見る</button>
-            <ul class="p-ing-list">
-              <li><strong>PDRN</strong>注目成分を高濃度配合。集中的な肌コンディションケアに。</li>
-              <li><strong>ナイアシンアミド</strong>肌トーンを整え、くすみをケアする定番透明感成分。</li>
-              <li><strong>AA2G®（安定型ビタミンC誘導体）</strong>酸化しにくく安定性が高いビタミンC誘導体。均一で明るい肌トーンへ。</li>
-              <li><strong>カルノシン</strong>肌の酸化ストレスを軽減する抗酸化サポート成分。</li>
+            <button class="p-ing-toggle" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');" data-i18n="btn_see_ingredients">成分を見る</button>
+            <ul class="p-ing-list" data-i18n-html="ing_mask_list">
+              <li><strong>PDRN</strong>DENBAシリーズ共通の核心成分。マスクに高濃度配合し、集中的な肌コンディションケアをサポート。</li>
+              <li><strong>ナイアシンアミド</strong>肌トーンを整え、くすみをケアする信頼の透明感成分。抗酸化・バリア補強・うるおいキープのマルチ効果。</li>
+              <li><strong>AA2G®（アスコルビルグルコシド・安定型ビタミンC誘導体）</strong>酸化しにくく高安定性のビタミンC誘導体。均一で明るい肌トーンをサポートし、糖化ケアにも貢献。</li>
+              <li><strong>カルノシン</strong>肌の糖化（タンパク質の劣化現象）に着目した抗糖化成分。成熟肌のくすみケアに注目されている次世代アンチエイジング成分。</li>
+              <li><strong>高機能シート素材</strong>高密着・高保液・柔らかな肌あたりのプレミアムシート。美容液をしっかり肌に密着させ、ケアの効果感と使用時の贅沢な体験を提供。</li>
             </ul>
           </div>
-          <p class="p-price">¥3,300 <small>（税込）</small></p>
-          <a href="#" class="btn-buy">Add to Cart</a>
+          <p class="p-price">¥3,300 <small data-i18n="index_price_tax">（税込）</small></p>
+          <span class="btn-buy btn-coming-soon">COMING SOON</span>
         </div>
       </div>
 
@@ -835,22 +915,24 @@
         </div>
         <div class="p-body">
           <p class="p-no">No.05</p>
-          <p class="p-jp">美容液</p>
-          <h3 class="p-name">Multi-Dimension Aging Care Serum</h3>
+          <p class="p-jp" data-i18n="p4_type">美容液</p>
+          <h3 class="p-name" data-i18n="p4_name">Multi-Dimension Aging Care Serum</h3>
           <p class="p-vol">30 ml</p>
-          <p class="p-feature">高濃度HPRを核心に据えた、総合的なエイジングケア美容液。とろみのあるセラムテクスチャーが肌になじむと軽くなり、翌朝もっちり感が続く。</p>
+          <p class="p-feature" data-i18n="p4_feature">PDRN × 黒松露 × NAD+ × 高濃度HPR——4つの最先端エイジングケア成分をDENBA特許浸透技術で凝縮した、高機能エイジングケアセラム。引き締め・肌質改善・ハリに本格アプローチ。</p>
           <div class="p-ingredients">
-            <button class="p-ing-toggle" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">成分を見る</button>
-            <ul class="p-ing-list">
-              <li><strong>HPR（ヒドロキシピナコロンレチノエート）高濃度配合</strong>次世代レチノール誘導体。一般的なレチノールより刺激が少なく安定性と浸透性が高い。ハリのある肌へのエイジングケアにアプローチする最先端成分。</li>
-              <li><strong>BisabolR®（ビサボロール）</strong>カモミール由来の鎮静成分。HPRの刺激を緩和しながらバリア機能を強化。</li>
-              <li><strong>SynCalmine®</strong>敏感な肌を落ち着かせる鎮静成分。HPR高濃度配合でも使いやすくする処方の工夫。</li>
-              <li><strong>Bodyflux® Olive</strong>オリーブ由来のバリアサポート成分。しっとりした潤いを与えながら肌を守る。</li>
+            <button class="p-ing-toggle" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');" data-i18n="btn_see_ingredients">成分を見る</button>
+            <ul class="p-ing-list" data-i18n-html="ing_serum_list">
+              <li><strong>HPR（ヒドロキシピナコロンレチノエート）高濃度配合</strong>次世代レチノール誘導体。一般的なレチノールより刺激が少なく安定性・浸透性が高い。ハリのある肌質へのエイジングケアにアプローチする最先端成分。</li>
+              <li><strong>Bisabolife（発酵由来ビサボロール）</strong>発酵プロセスで生まれた高純度ビサボロール。HPRを使用する肌を落ち着かせ、スキンカーム効果を高める。</li>
+              <li><strong>SymCalmin®</strong>敏感な肌状態を整える鎮静成分。HPR高濃度配合時の肌への負担を軽減し、快適な使用感を実現。</li>
+              <li><strong>グリチルリチン酸2K</strong>植物由来の鎮静・保湿成分。SymCalmin®・Bisabolifeとともにスキンカーム処方を構成し、HPRケアをよりマイルドにする。</li>
+              <li><strong>Bodyflux® Olive（ヒト同一型トリプルヘリックスセラミド）</strong>ヒトの肌と同じ三重らせん構造を持つオリーブ由来セラミド。バリア機能を補強し、しっとりとしたうるおいを長時間キープ。</li>
+              <li><strong>植物由来スクワラン</strong>皮脂と馴染みやすいエモリエント成分。肌の上に薄いベールを形成し、うるおいを逃さずバリアをサポート。</li>
             </ul>
           </div>
-          <p class="p-price">¥8,800 <small>（税込）</small></p>
-          <a href="#" class="btn-buy">Add to Cart</a>
-          <p class="p-alert">⚠️ 初回使用前にパッチテスト必須（HPR高濃度配合）。耳の後ろ等に24〜48時間テスト後、異常がなければご使用ください。</p>
+          <p class="p-price">¥6,600 <small data-i18n="index_price_tax">（税込）</small></p>
+          <span class="btn-buy btn-coming-soon">COMING SOON</span>
+          <p class="p-alert" data-i18n="serum_patch_alert">⚠️ 初回使用前にパッチテスト必須（HPR高濃度配合）。耳の後ろ等に24〜48時間テスト後、異常がなければご使用ください。</p>
         </div>
       </div>
 
@@ -864,46 +946,46 @@
     <p class="eyebrow">Key Ingredients</p>
     <h2 class="sec-title">1 + 3 + 1 Formula</h2>
     <div class="divider"></div>
-    <p class="sec-desc">DENBA分子浸透理念を底層に、3つの核心成分と各製品特色成分が融合した独自処方。</p>
+    <p class="sec-desc" data-i18n="ing_sec_desc">DENBA分子浸透理念を底層に、3つの核心成分と各製品特色成分が融合した独自処方。</p>
     <div class="ing-layout">
       <div>
         <ul class="ing-list">
           <li class="ing-item">
             <span class="ing-num">01</span>
             <div>
-              <p class="ing-name">PDRN（ポリデオキシリボヌクレオチド）</p>
-              <p class="ing-desc">サーモン由来の核酸関連成分。肌のコンディションを整えることをサポートする注目のエイジングケア成分。全製品に配合。</p>
+              <p class="ing-name" data-i18n="ing_item1_name">PDRN（ポリデオキシリボヌクレオチド）</p>
+              <p class="ing-desc" data-i18n="ing_item1_desc">サーモン由来の核酸関連成分。肌のコンディションを整えることをサポートする注目のエイジングケア成分。全製品に配合。</p>
             </div>
           </li>
           <li class="ing-item">
             <span class="ing-num">02</span>
             <div>
-              <p class="ing-name">黒松露（黒トリュフ）細胞外分泌産物</p>
-              <p class="ing-desc">高級食材・黒トリュフが産み出す希少成分。肌のうるおいをサポートする高機能素材。</p>
+              <p class="ing-name" data-i18n="ing_item2_name">黒松露（黒トリュフ）細胞外分泌産物</p>
+              <p class="ing-desc" data-i18n="ing_item2_desc">高級食材・黒トリュフが産み出す希少成分。肌のうるおいをサポートする高機能素材。</p>
             </div>
           </li>
           <li class="ing-item">
             <span class="ing-num">03</span>
             <div>
-              <p class="ing-name">NAD+（ニコチンアミドアデニンジヌクレオチド）</p>
-              <p class="ing-desc">近年注目の補酵素。NAD+を直接配合した次世代エイジングケア成分。</p>
+              <p class="ing-name" data-i18n="ing_item3_name">NAD+（ニコチンアミドアデニンジヌクレオチド）</p>
+              <p class="ing-desc" data-i18n="ing_item3_desc">近年注目の補酵素。NAD+を直接配合した次世代エイジングケア成分。</p>
             </div>
           </li>
           <li class="ing-item">
             <span class="ing-num">+</span>
             <div>
-              <p class="ing-name">HPR（ヒドロキシピナコロンレチノエート）</p>
-              <p class="ing-desc">次世代レチノール誘導体。一般的なレチノールより刺激が少なく安定性・浸透性が高い。セラムに高濃度配合したエイジングケアの最先端成分。</p>
+              <p class="ing-name" data-i18n="ing_item4_name">HPR（ヒドロキシピナコロンレチノエート）</p>
+              <p class="ing-desc" data-i18n="ing_item4_desc">次世代レチノール誘導体。一般的なレチノールより刺激が少なく安定性・浸透性が高い。セラムに高濃度配合したエイジングケアの最先端成分。</p>
             </div>
           </li>
         </ul>
         <div class="ing-badges">
-          <span class="ing-badge">ナイアシンアミド</span>
-          <span class="ing-badge">トラネキサム酸</span>
-          <span class="ing-badge">β-グルカン</span>
-          <span class="ing-badge">セラミドNP</span>
-          <span class="ing-badge">発酵エキス</span>
-          <span class="ing-badge">ヒアルロン酸</span>
+          <span class="ing-badge" data-i18n="ing_badge1">ナイアシンアミド</span>
+          <span class="ing-badge" data-i18n="ing_badge2">トラネキサム酸</span>
+          <span class="ing-badge" data-i18n="ing_badge3">β-グルカン</span>
+          <span class="ing-badge" data-i18n="ing_badge4">セラミドNP</span>
+          <span class="ing-badge" data-i18n="ing_badge5">発酵エキス</span>
+          <span class="ing-badge" data-i18n="ing_badge6">ヒアルロン酸</span>
         </div>
       </div>
 
@@ -911,26 +993,26 @@
         <div class="ing-highlight">
           <p class="hl-eye">DENBA Technology</p>
           <div class="hl-num">1.8×</div>
-          <p class="hl-unit">浸透速度（自社比較データ）</p>
-          <p class="hl-desc">DENBA照射により全成分を微粒子化。同じ成分でも、届き方が違います。製造工程そのものが特許取得済みの独自テクノロジーです。<br><span style="font-size:10px; color:rgba(255,255,255,0.3); letter-spacing:0.1em;">特許第7809311号</span></p>
+          <p class="hl-unit" data-i18n="ing_hl_unit">浸透速度（自社比較データ）</p>
+          <p class="hl-desc" data-i18n="ing_hl_desc">DENBA照射により全成分を微粒子化。同じ成分でも、届き方が違います。製造工程そのものが特許取得済みの独自テクノロジーです。</p>
         </div>
         <div class="ing-feature-box">
-          <p class="feat-title">各製品の特色成分</p>
-          <p>
-            <strong>化粧水：PENTAVITIN®</strong>
-            皮膚の天然保湿因子（NMF）と同じ糖鎖構造を持ち、水分を最大72時間キープする長時間保湿成分。べたつかずさらっとした感触が続く。加えて加水分解ヒアルロン酸・グリセリン・パンテノールなど多層保湿成分を複合配合し、使用後のすっきりしたうるおい感を実現。
+          <p class="feat-title" data-i18n="ing_feat_title">各製品の特色成分</p>
+          <p data-i18n-html="ing_feat_content">
+            <strong>化粧水：PENTAVITIN® ＋ ナノリポソーム ＋ SOD ＋ CoQ10</strong>
+            PENTAVITIN®は皮膚の天然保湿因子（NMF）と同じ糖鎖構造を持ち、水分を長時間キープする持続保湿成分。ナノリポソームが成分を極小カプセルに包み、DENBAの微粒子化とのW浸透アプローチを実現。SOD（スーパーオキシドジスムターゼ）とCoQ10が酸化ストレスをケアし、みずみずしく活力ある肌をサポートする。
 
-            <strong>乳液：Gravity®複合成分 ＋ 植物型レチノール（三重複合・低刺激）</strong>
-            Gravity®は肌の輪郭を引き締め上向きのハリ感をサポートするリフティング複合成分。植物型レチノール三重複合は3種の植物由来レチノール前駆体を組み合わせ、一般的なレチノールより穏やかにエイジングケアを行う。さらにセラミドNP・スクワランなどのバリア保護成分も複合配合し、軽い使用感ながらもっちりとしたハリ感が長時間続く。
+            <strong>乳液：Gravity® ＋ 三重植物レチノールシステム</strong>
+            Gravity®は肌の引き締まりとリフト感をサポートするリフティング複合成分。三重植物レチノールシステムは水飛蓟エキス・トリフォリウム・アリスティナムエキス・海茴香エキスの3種植物エキスを組み合わせた独自処方で、一般的なレチノールより穏やかにエイジングケアにアプローチ。使い続けるほどにハリ・ツヤ感が高まる。
 
-            <strong>クリーム：SAKADIKIUM® ＋ 毛蕊花エキス（ムレイン）</strong>
-            SAKADIKIUM®は肌のマイクロバイオームバランスを整え外的ストレスへの耐性を高める防御機能強化成分。毛蕊花エキス（ムレイン／Verbascum Thapsus）は紫外線や環境ダメージを受けた肌の回復をサポートする植物エキス。加えてシアバター・ホホバ油・コエンザイムQ10なども配合し、昼はメイク下地にも使えるマルチリペアクリームに仕上げた。
+            <strong>クリーム：ハリオギ花エキス ＋ SAKADIKIUM® ＋ 高山火绒草（高山ウスユキソウ）</strong>
+            ハリオギ花エキス（ムレイン）は光環境ストレスを受けた肌を落ち着かせ、うるおいとハリをサポートする希少植物エキス。SAKADIKIUM®は肌の防御機能を高め、外的ストレス耐性をサポート。高山火绒草（高山ウスユキソウ）は紫外線・ブルーライトなど多様な光ダメージへの対応をサポートし、360°光シールドを構成する。三重バリア処方で朝晩の集中リペアを実現。
 
-            <strong>マスク：ナイアシンアミド ＋ AA2G® ＋ カルノシン</strong>
-            ナイアシンアミド（ビタミンB3）は肌トーン均一化・毛穴ケア・バリア機能強化に働く多機能成分。AA2G®（2-グルコシル-L-アスコルビン酸）は皮膚内の酵素によってビタミンCに変換される高安定型誘導体で、酸化しにくく長時間作用する。カルノシン（β-アラニン＋L-ヒスチジンの天然ジペプチド）は抗酸化・抗糖化作用で肌の酸化ストレスを軽減。3成分の複合アプローチで透明感のある均一な肌へ。
+            <strong>フェイスマスク：ナイアシンアミド ＋ AA2G® ＋ カルノシン（三重ブライトニング）</strong>
+            ナイアシンアミド（ビタミンB3）は肌トーン均一化・バリア機能強化のマルチ透明感成分。AA2G®（安定型ビタミンC誘導体）は酸化しにくく安定性が高く、均一で明るい肌トーンをサポート。カルノシン（天然ジペプチド）は肌の糖化に着目した抗糖化・抗酸化成分。3成分の複合アプローチで、即時うるおいと使うたびに高まる透明感を提供する。
 
-            <strong>セラム：高濃度HPR ＋ BisabolR® ＋ SynCalmine® ＋ Bodyflux® Olive</strong>
-            HPR（ヒドロキシピナコロンレチノエート）はレチノイン酸受容体に直接作用する次世代レチノール誘導体。従来のレチノールより安定性・浸透性が高く肌刺激が少ないため高濃度配合が可能。BisabolR®（カモミール由来の高純度α-ビサボロール）がHPRによる刺激を鎮静・緩和。SynCalmine®が敏感な肌を落ち着かせ、Bodyflux® Olive（オリーブ由来の保護複合体）がバリアを保護しながらしっとりした潤いを与える。4成分が連携した最高峰エイジングケア処方。
+            <strong>セラム：高濃度HPR ＋ Bisabolife ＋ SymCalmin® ＋ Bodyflux® Olive</strong>
+            PDRN・黒松露・NAD+の核心3成分に加え、高濃度HPRをコア成分に据えた「高機能エイジングケアセラム」。百貨店プレミアムブランド（¥9,900〜）より手軽でありながら、単機能HPR美容液を超える複合処方を実現。HPR（ヒドロキシピナコロンレチノエート）は次世代レチノール誘導体で、ハリ・肌質改善に本格アプローチ。Bisabolife（発酵由来ビサボロール）・SymCalmin®・グリチルリチン酸2KのスキンカームトリオがHPRを優しく包み、Bodyflux® Olive（ヒト同一型トリプルヘリックスセラミド）と植物由来スクワランが深いうるおいとバリアをキープ。
           </p>
         </div>
       </div>
@@ -945,11 +1027,79 @@
     <h2 class="sec-title" style="color:var(--white); text-align:center;">Made in Japan</h2>
     <div class="divider" style="margin: 20px auto 32px;"></div>
     <div class="mij-badges">
-      <div class="mij-badge"><div class="mij-icon">🇯🇵</div><div class="mij-lbl"><strong>Made in Japan</strong>国内製造</div></div>
-      <div class="mij-badge"><div class="mij-icon">🔬</div><div class="mij-lbl"><strong>特許取得技術</strong>浸透力改善装置<br><span style="font-size:9px; color:rgba(255,255,255,0.4);">特許第7809311号</span></div></div>
-      <div class="mij-badge"><div class="mij-icon">✓</div><div class="mij-lbl"><strong>薬機法適合</strong>化粧品区分・国内基準準拠</div></div>
-      <div class="mij-badge"><div class="mij-icon">⚗️</div><div class="mij-lbl"><strong>自社エビデンス</strong>1.8倍浸透速度データ</div></div>
+      <div class="mij-badge"><div class="mij-icon">🇯🇵</div><div class="mij-lbl"><strong data-i18n="mij_badge1_strong">Made in Japan</strong><span data-i18n="mij_badge1_text">国内製造</span></div></div>
+      <div class="mij-badge"><div class="mij-icon">🔬</div><div class="mij-lbl"><strong data-i18n="mij_badge2_strong">特許取得技術</strong><span data-i18n="mij_badge2_text">浸透力改善装置</span><br><span style="font-size:9px; color:rgba(255,255,255,0.4);">特許第7809311号</span></div></div>
+      <div class="mij-badge"><div class="mij-icon">✓</div><div class="mij-lbl"><strong data-i18n="mij_badge3_strong">薬機法適合</strong><span data-i18n="mij_badge3_text">化粧品区分・国内基準準拠</span></div></div>
+      <div class="mij-badge"><div class="mij-icon">⚗️</div><div class="mij-lbl"><strong data-i18n="mij_badge4_strong">自社エビデンス</strong><span data-i18n="mij_badge4_text">1.8倍浸透速度データ</span></div></div>
     </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-sec" id="about">
+  <div class="inner">
+    <p class="eyebrow" data-i18n="about_eyebrow">ABOUT THE BRAND</p>
+    <h2 class="sec-title" data-i18n-html="about_title">電位技術で、<br>世界の環境を変える企業。</h2>
+    <div class="divider"></div>
+
+    <!-- 企業信頼性バッジ -->
+    <div class="about-badges-grid">
+      <div class="about-badge-card">
+        <div class="about-badge-icon">🏢</div>
+        <p class="about-badge-text" data-i18n="about_badge_itochu">伊藤忠商事 出資</p>
+      </div>
+      <div class="about-badge-card">
+        <div class="about-badge-icon">💹</div>
+        <p class="about-badge-text" data-i18n="about_badge_sbi">SBIホールディングス 連携</p>
+      </div>
+      <div class="about-badge-card">
+        <div class="about-badge-icon">🌍</div>
+        <p class="about-badge-text" data-i18n="about_badge_patent">世界49カ国 特許取得</p>
+      </div>
+    </div>
+
+    <!-- 企業紹介文 -->
+    <div class="about-desc" data-i18n-html="about_desc">
+      <p>DENBA JAPAN株式会社は2020年に設立。独自の電位技術を核に、食品の鮮度保持・医療機器・農業・スキンケアまで多分野にわたる課題を解決してきました。その技術力は国内外から高く評価され、伊藤忠商事・SBIホールディングスの出資を受けています。</p>
+      <p>ISO9001取得の品質管理体制のもと、医療機器認証を取得。世界49カ国での特許取得により、グローバルに保護された技術知財を有しています。電位技術が持つ可能性を、あらゆる生命体の「最高の環境」の実現に向け展開しています。</p>
+    </div>
+
+    <!-- SDGsカード -->
+    <div class="sdg-grid">
+      <div class="sdg-card">
+        <div class="sdg-num">12</div>
+        <p class="sdg-title" data-i18n="about_sdg1_title">食品ロス削減</p>
+        <p class="sdg-desc" data-i18n="about_sdg1_desc">DENBA+鮮度保持技術がサプライチェーン全体の食品廃棄を削減し、持続可能な食の流通を支える。</p>
+      </div>
+      <div class="sdg-card">
+        <div class="sdg-num">3</div>
+        <p class="sdg-title" data-i18n="about_sdg2_title">健康と福祉</p>
+        <p class="sdg-desc" data-i18n="about_sdg2_desc">DENBA Health医療機器が人々の健康回復と福祉の向上に貢献。認証を取得した医療グレードの技術を展開。</p>
+      </div>
+      <div class="sdg-card">
+        <div class="sdg-num">9</div>
+        <p class="sdg-title" data-i18n="about_sdg3_title">産業と技術革新</p>
+        <p class="sdg-desc" data-i18n="about_sdg3_desc">世界49カ国で取得した特許技術を基盤に、多産業への革新的ソリューションをグローバルに展開。</p>
+      </div>
+    </div>
+
+    <!-- 理念 -->
+    <div class="about-philosophy">
+      <div class="about-philosophy-line"></div>
+      <p class="about-philosophy-text" data-i18n="about_philosophy">すべての生命が、最高の環境で生きられる世界へ。</p>
+      <div class="about-philosophy-line"></div>
+    </div>
+
+    <!-- 受賞・実績 -->
+    <div class="about-awards">
+      <p class="eyebrow" style="margin-bottom:20px;">Awards & Recognition</p>
+      <ul class="about-awards-list" data-i18n-html="about_awards">
+        <li>ロジスティクス大賞 技術革新奨励賞</li>
+        <li>日本海事協会 Innovation Endorsement（世界初認証）</li>
+        <li>Gulfood 2024 Best Frozen Product 賞</li>
+      </ul>
+    </div>
+
   </div>
 </section>
 
@@ -959,8 +1109,8 @@
     <p class="eyebrow" style="text-align:center;" data-i18n="cta_eyebrow">Start Your Ritual</p>
     <h2 class="sec-title" style="text-align:center;" data-i18n-html="cta_title">あなたの肌に、<br>分子設計のケアを。</h2>
     <div class="divider" style="margin: 20px auto 32px;"></div>
-    <p class="sec-desc">全5種のラインナップから、あなたのスキンケアルーティンをはじめましょう。</p>
-    <a href="products.html" class="cta-primary" data-i18n="cta_btn1">製品を見る</a>
+    <p class="sec-desc" data-i18n="index_cta_desc">全5種のラインナップから、あなたのスキンケアルーティンをはじめましょう。</p>
+    <span class="cta-coming-soon">COMING SOON</span>
     <a href="technology.html" class="cta-secondary" data-i18n="cta_btn2">技術について</a>
   </div>
 </section>
@@ -981,7 +1131,7 @@
     </div>
     <div class="footer-bottom">
       <p class="copyright" data-i18n="footer_copyright">© 2026 DENBA JAPAN Co., Ltd. All rights reserved.</p>
-      <p class="footer-note">※本製品は化粧品です。医薬品・医薬部外品ではありません。※効能・効果には個人差があります。※セラムは初回使用前に必ずパッチテストを実施してください。</p>
+      <p class="footer-note" data-i18n="footer_note_index">※本製品は化粧品です。医薬品・医薬部外品ではありません。※効能・効果には個人差があります。※セラムは初回使用前に必ずパッチテストを実施してください。</p>
     </div>
   </div>
 </footer>
@@ -1002,15 +1152,21 @@
   const heroVideo = document.getElementById('heroVideo');
   if (heroVideo) {
     heroVideo.muted = true;
-    if (window.innerWidth <= 768) {
+    const isMobile = window.innerWidth <= 768;
+    if (isMobile) {
+      // モバイルは即座に表示（CSSで opacity:1 をセット済みだが念のため）
+      heroVideo.style.opacity = '1';
       const src = heroVideo.querySelector('source');
       if (src) src.src = 'images/hero-bg-mobile.mp4';
       heroVideo.load();
+    } else {
+      // デスクトップ：再生開始でフェードイン
+      heroVideo.addEventListener('playing', function() {
+        heroVideo.style.opacity = '1';
+      }, { once: true });
+      // 2秒後フォールバック（playingが発火しなかった場合）
+      setTimeout(() => { heroVideo.style.opacity = '1'; }, 2000);
     }
-    // 再生が実際に始まった瞬間だけフェードイン（最初のフレームが静止画に見えるのを防ぐ）
-    heroVideo.addEventListener('playing', function() {
-      heroVideo.style.opacity = '1';
-    }, { once: true });
     const tryPlay = () => {
       heroVideo.play().catch(() => {});
     };
