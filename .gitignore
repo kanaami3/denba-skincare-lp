@@ -3,3 +3,6 @@
 *.zip
 .claude/
 images/*.png
+
+# Local Netlify folder
+.netlify

@@ -27,13 +27,13 @@ window.DENBA_I18N = {
 
     /* ── index.html：PROMISEセクション ── */
     promise_eyebrow: 'OUR PROMISE',
-    promise_quote: '本物の力は、<em>本物の形</em>でしか届かない。',
+    promise_quote: '<em>届いて</em>、はじめて力になる。',
     promise_p: 'DENBAはもともと、電位技術で食品の鮮度を守り、空間の環境を整えてきた企業です。その技術をスキンケアに応用したとき確信したのは——自然が生み出した生命力あふれる成分を、できるだけ本来の形のまま届けること。',
 
     /* ── index.html：THE LINEセクション ── */
     line_eyebrow: 'THE LINE',
     line_title: '4つの製品で、<br>肌の環境を整える。',
-    line_desc: 'PDRN・黒松露・NAD+の核心3成分とDENBA分子浸透理念が融合した新世代スキンケア。',
+    line_desc: 'PDRN・黒松露・NAD+の核心3成分とDENBA分子浸透技術が融合した、4アイテムのスキンケアライン。',
     line_cta: 'すべての製品を見る',
 
     /* ── index.html：CTAバナー ── */
@@ -41,6 +41,31 @@ window.DENBA_I18N = {
     cta_title: '肌本来の力を、<br>取り戻す。',
     cta_btn1: '製品ラインを見る',
     cta_btn2: '今すぐ購入',
+    phil_eyebrow: 'OUR PHILOSOPHY',
+    phil_lead: '私たちはもともと、水分子を整える技術で、<br>食品の鮮度を守り、空間を健やかに保ってきた会社です。',
+    phil_body: 'やがて気づきました。<br>肌に必要なのは、強い成分でも、多い成分でもない。<br>——より自然に、生きたまま、届くこと。',
+    phil_quote: '<em>届いて</em>、はじめて力になる。',
+    idx_hero_title: '分子設計から、<br>究極の浸透へ。',
+    idx_hero_btn1: 'THE LINEを見る',
+    idx_hero_btn2: '技術の詳細',
+    idx_ess1_label: 'PDRN',
+    idx_ess1_name: 'ポリデオキシリボヌクレオチド',
+    idx_ess1_desc: 'サーモン由来の核酸関連成分。肌が本来持つ再生力を引き出すアプローチとして注目。熱・酸化に敏感なため、DENBA環境で品質を保ち、微粒子化で届ける。',
+    idx_ess2_label: '黒松露',
+    idx_ess2_name: 'TRUFFLE EXTRACT',
+    idx_ess2_desc: '世界三大珍味の黒トリュフから得られる希少な成分。大地が育んだ機能性物質を、採取から製造まで鮮度を極限まで守り、DENBA技術で浸透を高める。',
+    idx_ess3_label: 'NAD+',
+    idx_ess3_name: 'ニコチンアミドアデニンジヌクレオチド',
+    idx_ess3_desc: '細胞エネルギー代謝の鍵となる補酵素。前駆体ではなくNAD+を直接配合。加齢で減少する成分を、DENBAの微粒子化技術で効率的に届けます。',
+    idx_cta_desc: '4点セットでご購入いただくと、通常よりお得にDENBA Skincareのすべてをお試しいただけます。',
+    idx_cta_btn2: '4点セットをカートに追加（デモ）',
+    idx_cta_note: '※ 現在公式オンラインショップ準備中です。お問い合わせは下記より。',
+    idx_contact_title: 'お問い合わせ',
+    idx_contact_desc: '製品に関するご質問や取扱店のご相談はこちらから。',
+    idx_form_name: 'お名前',
+    idx_form_email: 'メールアドレス',
+    idx_form_msg: 'ご質問・ご相談内容',
+    idx_form_submit: '送信する',
 
     /* ── products.html ── */
     prod_eyebrow: 'DENBA SKINCARE — THE LINE',
@@ -503,7 +528,7 @@ window.DENBA_I18N = {
 
     /* ── index.html：PROMISEセクション ── */
     promise_eyebrow: 'OUR PROMISE',
-    promise_quote: 'True power can only be delivered<br>in its <em>true form</em>.',
+    promise_quote: 'Only when it <em>reaches</em><br>does it become power.',
     promise_p: "DENBA was originally a company that used electrostatic technology to preserve food freshness and optimize spatial environments. When we applied that technology to skincare, we became convinced: deliver nature's most vital ingredients as close to their original form as possible.",
 
     /* ── index.html：THE LINEセクション ── */
@@ -517,6 +542,31 @@ window.DENBA_I18N = {
     cta_title: "Restore Your Skin's<br>Natural Potential.",
     cta_btn1: 'View The Line',
     cta_btn2: 'Shop Now',
+    phil_eyebrow: 'OUR PHILOSOPHY',
+    phil_lead: 'We began as a company that refines water molecules —<br>preserving the freshness of food, keeping spaces in balance.',
+    phil_body: 'In time, we realized:<br>what skin needs is not stronger or more ingredients.<br>—It is to arrive, more naturally, still alive.',
+    phil_quote: 'Only when it <em>reaches</em> does it become power.',
+    idx_hero_title: 'From molecular design,<br>to ultimate penetration.',
+    idx_hero_btn1: 'View The Line',
+    idx_hero_btn2: 'The Technology',
+    idx_ess1_label: 'PDRN',
+    idx_ess1_name: 'Polydeoxyribonucleotide',
+    idx_ess1_desc: "A salmon-derived nucleic acid component, drawing attention as an approach to bringing out the skin's innate regenerative power. Sensitive to heat and oxidation, it is preserved in the DENBA environment and delivered through micronization.",
+    idx_ess2_label: 'Black Truffle',
+    idx_ess2_name: 'TRUFFLE EXTRACT',
+    idx_ess2_desc: "A rare ingredient from black truffle, one of the world's three great delicacies. This earth-born functional substance is kept at peak freshness from harvest to manufacture, its penetration enhanced by DENBA technology.",
+    idx_ess3_label: 'NAD+',
+    idx_ess3_name: 'Nicotinamide Adenine Dinucleotide',
+    idx_ess3_desc: 'A coenzyme central to cellular energy metabolism. Formulated with NAD+ directly rather than a precursor. This age-depleted ingredient is delivered efficiently through DENBA micronization.',
+    idx_cta_desc: 'Purchase the four-piece set to experience all of DENBA Skincare at a better value than usual.',
+    idx_cta_btn2: 'Add 4-Piece Set to Cart (Demo)',
+    idx_cta_note: '* The official online shop is currently in preparation. Please use the form below for inquiries.',
+    idx_contact_title: 'Contact',
+    idx_contact_desc: 'For product questions or retail inquiries, please reach out here.',
+    idx_form_name: 'Name',
+    idx_form_email: 'Email',
+    idx_form_msg: 'Your question or inquiry',
+    idx_form_submit: 'Send',
 
     /* ── products.html ── */
     prod_eyebrow: 'DENBA SKINCARE — THE LINE',
@@ -979,7 +1029,7 @@ window.DENBA_I18N = {
 
     /* ── index.html：PROMISEセクション ── */
     promise_eyebrow: '我们的承诺',
-    promise_quote: '真正的力量，<br>只能以<em>本真的形态</em>传递。',
+    promise_quote: '唯有<em>抵达</em>，<br>方成其力。',
     promise_p: 'DENBA最初是一家利用电位技术保鲜食品、优化空间环境的企业。当我们将这项技术应用于护肤时，我们确信：将自然孕育的富有生命力的成分，尽可能以其本真形态传递给肌肤。',
 
     /* ── index.html：THE LINEセクション ── */
@@ -993,6 +1043,31 @@ window.DENBA_I18N = {
     cta_title: '唤回肌肤<br>本来的活力。',
     cta_btn1: '查看产品系列',
     cta_btn2: '立即购买',
+    phil_eyebrow: 'OUR PHILOSOPHY',
+    phil_lead: '我们原本是一家以调控水分子的技术，<br>守护食品鲜度、调和空间环境的公司。',
+    phil_body: '后来我们领悟到：<br>肌肤所需的，并非更强或更多的成分，<br>——而是更自然、以鲜活之态，抵达肌底。',
+    phil_quote: '唯有<em>抵达</em>，方成其力。',
+    idx_hero_title: '从分子设计，<br>到极致渗透。',
+    idx_hero_btn1: '查看产品系列',
+    idx_hero_btn2: '技术详情',
+    idx_ess1_label: 'PDRN',
+    idx_ess1_name: '多聚脱氧核糖核苷酸',
+    idx_ess1_desc: '源自三文鱼的核酸关联成分，作为唤醒肌肤本来再生力的方案备受关注。因对热与氧化敏感，在DENBA环境中保持品质，并通过微粒化送达肌肤。',
+    idx_ess2_label: '黑松露',
+    idx_ess2_name: 'TRUFFLE EXTRACT',
+    idx_ess2_desc: '取自世界三大珍味之一黑松露的稀有成分。将大地孕育的功能性物质从采集到生产极致保鲜，并以DENBA技术提升渗透。',
+    idx_ess3_label: 'NAD+',
+    idx_ess3_name: '烟酰胺腺嘌呤二核苷酸',
+    idx_ess3_desc: '细胞能量代谢的关键辅酶。直接配合NAD+而非前体。将随年龄减少的成分，通过DENBA微粒化技术高效送达。',
+    idx_cta_desc: '购买四件套装，即可比平时更优惠地体验DENBA Skincare的全部产品。',
+    idx_cta_btn2: '将四件套加入购物车（演示）',
+    idx_cta_note: '※ 官方在线商店正在筹备中。如有咨询请通过下方表单联系。',
+    idx_contact_title: '联系我们',
+    idx_contact_desc: '关于产品的疑问或经销咨询，请通过此处联系。',
+    idx_form_name: '姓名',
+    idx_form_email: '电子邮箱',
+    idx_form_msg: '您的疑问或咨询内容',
+    idx_form_submit: '发送',
 
     /* ── products.html ── */
     prod_eyebrow: 'DENBA SKINCARE — 产品系列',

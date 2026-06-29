@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DENBA Skincare | 分子設計から、究極の浸透へ</title>
+  <title>DENBA Skincare | 分子設計から、究極の浸透へ。</title>
+  <meta name="description" content="DENBA独自の分子コントロール技術で核心成分を角層まで届ける新世代スキンケア。PDRN・黒松露・NAD+を1.8倍の浸透力で。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --gold: #C9A961;
+      --gold-dark: #8B6914;
       --gold-light: #E8D5A3;
-      --gold-pale: #F5EDD8;
       --bg: #FDFBF8;
       --bg-dark: #1A1712;
       --text: #1A1A1A;
@@ -22,541 +23,115 @@
       --sans: 'Noto Sans JP', sans-serif;
     }
     html { scroll-behavior: smooth; }
-    body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.8; overflow-x: hidden; }
+    body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.75; overflow-x: hidden; }
 
-    /* ── HEADER ── */
+    /* HEADER */
     header {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
-      padding: 20px 48px;
-      background: rgba(253,251,248,0.92); backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(201,169,97,0.2);
+      padding: 18px 48px;
+      background: rgba(253,251,248,0.96); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,169,97,0.12);
     }
-    .logo { font-family: var(--serif); font-size: 22px; font-weight: 300; letter-spacing: 0.25em; color: var(--text); }
+    .logo { font-family: var(--serif); font-size: 21px; font-weight: 300; letter-spacing: 0.3em; color: var(--text); text-decoration: none; }
     .logo span { color: var(--gold); }
-    nav { display: flex; gap: 36px; list-style: none; }
-    nav a { font-size: 12px; letter-spacing: 0.15em; color: var(--text-mid); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
-    nav a:hover { color: var(--gold); }
-    .btn-header { font-size: 11px; letter-spacing: 0.2em; padding: 10px 24px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; text-transform: uppercase; transition: all 0.3s; }
+    nav { display: flex; align-items: center; gap: 32px; }
+    nav a { font-size: 11px; letter-spacing: 0.18em; color: var(--text-mid); text-decoration: none; text-transform: uppercase; transition: color .2s; }
+    nav a:hover, nav a.active { color: var(--gold); }
+    .btn-header { font-size: 10px; letter-spacing: 0.25em; padding: 9px 22px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; text-transform: uppercase; transition: all .25s; }
     .btn-header:hover { background: var(--gold); color: var(--white); }
-    .lang-switcher { display: flex; align-items: center; gap: 6px; margin-left: 24px; }
-    .lang-btn { background: none; border: none; cursor: pointer; font-size: 11px; letter-spacing: 0.15em; color: var(--text-mid, #5A5550); padding: 4px 2px; transition: color 0.2s; font-family: inherit; }
-    .lang-btn.active, .lang-btn:hover { color: var(--gold, #C9A961); }
-    .lang-sep { font-size: 10px; color: rgba(150,140,130,0.4); }
-    @media(max-width:768px){ .lang-switcher { margin-left: 12px; } }
+    .lang-switcher { display: flex; align-items: center; gap: 4px; margin-left: 20px; }
+    .lang-btn { background: none; border: none; cursor: pointer; font-size: 10px; letter-spacing: 0.15em; color: var(--text-mid); padding: 2px 4px; transition: color .2s; font-family: inherit; }
+    .lang-btn.active, .lang-btn:hover { color: var(--gold); }
+    .lang-sep { font-size: 9px; color: rgba(150,140,130,0.35); }
 
-    /* ── HERO (動画・テキストなし) ── */
+    /* HERO */
     .hero {
-      position: relative; height: 100vh; overflow: hidden;
-      background: #1A1712;
+      min-height: 100vh; padding: 140px 60px 80px; background: var(--bg-dark); color: var(--white);
+      display: flex; align-items: center; position: relative; overflow: hidden;
     }
-    .hero-video {
-      position: absolute; inset: 0; overflow: hidden;
-    }
-    .hero-video video {
-      position: absolute; top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      min-width: 100%; min-height: 100%;
-      opacity: 0; transition: opacity 0.6s ease;
-      width: auto; height: auto; object-fit: cover;
-    }
+    .hero-content { max-width: 680px; z-index: 2; }
+    .hero-eyebrow { font-size: 11px; letter-spacing: 0.5em; color: var(--gold); text-transform: uppercase; margin-bottom: 18px; }
+    .hero-title { font-family: var(--serif); font-size: clamp(46px, 7vw, 92px); font-weight: 300; letter-spacing: 0.05em; line-height: 1.05; margin-bottom: 24px; }
+    .hero-subtitle { font-size: 15px; color: rgba(255,255,255,0.6); max-width: 460px; margin-bottom: 42px; line-height: 1.7; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary { padding: 15px 38px; background: var(--gold); color: var(--bg-dark); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; font-weight: 500; transition: all .3s; }
+    .btn-primary:hover { background: var(--gold-dark); color: var(--white); }
+    .btn-secondary { padding: 15px 38px; border: 1px solid rgba(255,255,255,0.35); color: var(--white); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; transition: all .3s; }
+    .btn-secondary:hover { background: rgba(255,255,255,0.1); border-color: var(--white); }
+
+    /* SECTIONS */
+    section { padding: 90px 60px; }
+    .section-header { margin-bottom: 52px; }
+    .section-eyebrow { font-size: 10px; letter-spacing: 0.45em; color: var(--gold); text-transform: uppercase; margin-bottom: 10px; }
+    .section-title { font-family: var(--serif); font-size: clamp(34px, 4vw, 56px); font-weight: 300; line-height: 1.1; }
+
+    /* PHILOSOPHY */
+    .philosophy { background: var(--bg); text-align: center; padding: 120px 60px; }
+    .philosophy-inner { max-width: 720px; margin: 0 auto; }
+    .philosophy-lead { font-family: var(--serif); font-size: clamp(21px, 2.5vw, 30px); font-weight: 300; line-height: 1.85; color: var(--text); margin: 30px 0 0; }
+    .philosophy-body { font-size: 15px; line-height: 2.3; color: var(--text-mid); margin: 38px 0 0; }
+    .philosophy-quote { font-family: var(--serif); font-size: clamp(28px, 3.6vw, 44px); font-weight: 300; color: var(--gold-dark); margin-top: 50px; letter-spacing: 0.05em; line-height: 1.4; }
+    .philosophy-quote em { font-style: normal; color: var(--gold); }
+    .philosophy-rule { width: 1px; height: 56px; background: linear-gradient(to bottom, transparent, var(--gold), transparent); margin: 44px auto 0; }
+
+    /* TECH TEASER */
+    .tech-teaser { background: var(--bg-dark); color: var(--white); display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+    .tech-text { max-width: 520px; }
+    .tech-quote { font-family: var(--serif); font-size: 26px; line-height: 1.35; margin: 28px 0; color: var(--gold-light); }
+    .tech-link { color: var(--gold); text-decoration: none; font-size: 12px; letter-spacing: 0.1em; display: inline-flex; align-items: center; gap: 6px; }
+
+    /* ESSENTIALS */
+    .essentials-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
+    .essential-card { background: #fff; border: 1px solid rgba(201,169,97,0.12); overflow: hidden; transition: transform .3s, box-shadow .3s; }
+    .essential-card:hover { transform: translateY(-3px); box-shadow: 0 18px 40px rgba(0,0,0,0.06); }
+    .essential-img { height: 190px; overflow: hidden; }
+    .essential-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s; }
+    .essential-card:hover .essential-img img { transform: scale(1.04); }
+    .essential-body { padding: 28px 32px 34px; }
+    .essential-name { font-family: var(--serif); font-size: 20px; margin: 10px 0 8px; }
+    .essential-desc { font-size: 13px; color: var(--text-mid); line-height: 1.7; }
+
+    /* THE LINE */
+    .line-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+    .product-card { background: #fff; text-decoration: none; color: inherit; border: 1px solid rgba(201,169,97,0.1); overflow: hidden; transition: all .3s; }
+    .product-card:hover { box-shadow: 0 12px 30px rgba(0,0,0,0.07); transform: translateY(-2px); }
+    .product-img { height: 220px; background: linear-gradient(150deg,#f8f5ef 0%,#efe7d6 100%); display: flex; align-items: center; justify-content: center; overflow: hidden; border-bottom: 1px solid rgba(201,169,97,0.12); }
+    .product-img img { max-height: 100%; max-width: 100%; object-fit: cover; }
+    .ph-mark { text-align: center; line-height: 1.5; }
+    .ph-mark .ph-logo { font-family: var(--serif); font-size: 17px; letter-spacing: 0.3em; color: var(--gold); display: block; }
+    .ph-mark .ph-sub { font-size: 9px; letter-spacing: 0.28em; color: var(--text-light); text-transform: uppercase; margin-top: 8px; display: block; }
+    .product-info { padding: 22px 24px; }
+    .product-name { font-family: var(--serif); font-size: 18px; margin-bottom: 2px; }
+    .product-type { font-size: 11px; color: var(--text-light); margin-bottom: 12px; }
+    .product-price { font-family: var(--serif); color: var(--gold); font-size: 17px; }
+
+    /* PROMISE */
+    .promise { background: var(--bg-dark); color: var(--white); text-align: center; }
+    .promise .section-title { color: var(--white); }
+    .promise-quote { font-family: var(--serif); font-size: 28px; line-height: 1.5; margin: 32px auto; max-width: 620px; color: var(--gold-light); }
+    .promise-p { max-width: 580px; margin: 0 auto; color: rgba(255,255,255,0.6); }
+
+    /* CTA */
+    .cta { text-align: center; background: var(--bg); }
+    .cta h2 { font-family: var(--serif); font-size: 40px; margin-bottom: 14px; }
+    .cta-actions { display: flex; gap: 12px; justify-content: center; margin-top: 32px; flex-wrap: wrap; }
+
+    /* FOOTER */
+    footer { padding: 48px 60px; background: var(--bg-dark); color: rgba(255,255,255,0.45); font-size: 11px; letter-spacing: .5px; }
+    .footer-grid { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px; }
+
+    /* CART DEMO */
+    .cart { position: fixed; bottom: 24px; right: 24px; background: var(--bg-dark); color: white; padding: 12px 20px; border-radius: 6px; font-size: 12px; display: none; align-items: center; gap: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 200; }
+    .cart.show { display: flex; }
+    .cart-count { background: var(--gold); color: var(--bg-dark); padding: 1px 7px; border-radius: 99px; font-size: 10px; }
+
     @media (max-width: 768px) {
-      .hero-video video {
-        opacity: 1 !important;
-        width: 100%; height: 100%;
-        min-width: unset; min-height: unset;
-        object-fit: cover;
-        transform: translate(-50%, -50%);
-      }
-    }
-    .hero-video::after {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(15,12,8,0.5) 0%, transparent 35%);
-      z-index: 1;
-    }
-    .hero-scroll {
-      position: absolute; bottom: 40px; left: 50%;
-      transform: translateX(-50%); z-index: 10;
-      display: flex; flex-direction: column; align-items: center; gap: 8px;
-    }
-    .hero-scroll span { font-size: 10px; letter-spacing: 0.3em; color: rgba(255,255,255,0.5); text-transform: uppercase; }
-    .scroll-line { width: 1px; height: 48px; background: linear-gradient(to bottom, var(--gold), transparent); animation: scrollAnim 2s ease-in-out infinite; }
-    @keyframes scrollAnim { 0%,100%{opacity:.4;} 50%{opacity:1;} }
-
-    /* ── BRAND STATEMENT ── */
-    .brand-statement {
-      padding: 100px 48px;
-      background: var(--bg-dark); color: var(--white);
-      text-align: center;
-    }
-    .brand-statement .eyebrow { font-size: 11px; letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase; margin-bottom: 28px; }
-    .brand-statement h2 { font-family: var(--serif); font-size: clamp(28px, 4vw, 52px); font-weight: 300; line-height: 1.5; letter-spacing: 0.05em; margin-bottom: 32px; }
-    .brand-statement h2 em { font-style: italic; color: var(--gold); }
-    .brand-statement p { font-size: 18px; color: rgba(255,255,255,0.82); max-width: 700px; margin: 0 auto; line-height: 2.2; letter-spacing: 0.06em; font-family: var(--serif); font-weight: 300; }
-    .gold-line { width: 40px; height: 1px; background: var(--gold); margin: 28px auto; }
-
-    /* ── SECTION BASE ── */
-    section { padding: 100px 48px; }
-    .inner { max-width: 1100px; margin: 0 auto; }
-    .eyebrow { font-size: 11px; letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase; margin-bottom: 16px; }
-    .sec-title { font-family: var(--serif); font-size: clamp(26px, 3vw, 42px); font-weight: 300; letter-spacing: 0.05em; line-height: 1.4; margin-bottom: 16px; }
-    .divider { width: 40px; height: 1px; background: var(--gold); margin: 20px 0 36px; }
-    .sec-desc { font-size: 16px; color: var(--text-mid); line-height: 2.1; max-width: 620px; }
-
-    /* ── TECHNOLOGY ── */
-    .tech { background: var(--bg-dark); color: var(--white); }
-    .tech .sec-title, .tech .eyebrow { color: var(--gold); }
-    .tech .sec-title { color: var(--white); }
-    .tech .sec-desc { color: rgba(255,255,255,0.7); }
-    .tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-top: 64px; }
-    .tech-circle { width: 300px; height: 300px; border: 1px solid rgba(201,169,97,0.25); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; }
-    .tech-circle-inner { width: 190px; height: 190px; border: 1px solid rgba(201,169,97,0.45); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(201,169,97,0.04); gap: 4px; }
-    .tech-circle-inner .lbl { font-size: 10px; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; }
-    .tech-circle-inner .val { font-family: var(--serif); font-size: 52px; font-weight: 300; color: var(--white); line-height: 1; }
-    .tech-circle-inner .unit { font-size: 11px; color: rgba(255,255,255,0.6); }
-    .tech-cards { display: flex; flex-direction: column; gap: 20px; }
-    .tech-card { padding: 24px 28px; border: 1px solid rgba(201,169,97,0.15); background: rgba(201,169,97,0.03); transition: border-color 0.3s; }
-    .tech-card:hover { border-color: rgba(201,169,97,0.4); }
-    .tech-card-hd { display: flex; align-items: center; gap: 16px; margin-bottom: 10px; }
-    .tech-letter { font-family: var(--serif); font-size: 30px; font-weight: 300; color: var(--gold); min-width: 30px; line-height: 1; }
-    .tech-name { font-size: 10px; letter-spacing: 0.25em; color: rgba(255,255,255,0.65); text-transform: uppercase; }
-    .tech-subtitle { font-family: var(--serif); font-size: 17px; color: var(--white); font-weight: 300; }
-    .tech-card p { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.9; }
-
-    /* ── PRODUCTS ── */
-    .products { background: var(--bg); }
-    .products-hd { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 60px; flex-wrap: wrap; gap: 24px; }
-    .products-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
-    .p-card { background: var(--white); border: 1px solid rgba(201,169,97,0.15); transition: all 0.4s; }
-    .p-card:hover { border-color: var(--gold); transform: translateY(-4px); box-shadow: 0 20px 48px rgba(201,169,97,0.1); }
-    .p-img {
-      aspect-ratio: 2/3;
-      display: flex; align-items: center; justify-content: center;
-      position: relative; overflow: hidden;
-    }
-    .p-img.lotion  { background: linear-gradient(160deg,#F0E8D4,#E2D5B8); }
-    .p-img.emulsion{ background: linear-gradient(160deg,#EDE6D4,#DDD3B8); }
-    .p-img.cream   { background: linear-gradient(160deg,#EAE0CC,#D8C9A8); }
-    .p-img.mask    { background: linear-gradient(160deg,#E8E4DA,#D4CDBB); }
-    .p-img.serum   { background: linear-gradient(160deg,#1E1A12,#2A2418); }
-    .p-bottle {
-      border-radius: 50px 50px 8px 8px;
-      background: linear-gradient(135deg,#E8D5A3,#C9A961,#9A7830);
-      box-shadow: 3px 8px 20px rgba(0,0,0,0.18);
-      position: relative;
-    }
-    .p-bottle::before {
-      content: ''; position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
-      background: linear-gradient(135deg,#E8D5A3,#C9A961);
-      border-radius: 4px 4px 0 0;
-    }
-    .bottle-lotion  { width: 48px; height: 110px; }
-    .bottle-lotion::before { width: 22px; height: 18px; }
-    .bottle-emulsion{ width: 36px; height: 130px; }
-    .bottle-emulsion::before { width: 16px; height: 16px; }
-    .bottle-cream   { width: 72px; height: 72px; border-radius: 50%; }
-    .bottle-cream::before { display: none; }
-    .bottle-mask    { width: 90px; height: 60px; border-radius: 4px; }
-    .bottle-mask::before { display: none; }
-    .bottle-serum   { width: 32px; height: 140px; background: linear-gradient(135deg,#D4B86A,#A07830,#6B4F1A); }
-    .bottle-serum::before { width: 14px; height: 18px; background: linear-gradient(135deg,#D4B86A,#A07830); }
-    .p-body { padding: 20px 16px 24px; }
-    .p-no { font-size: 10px; letter-spacing: 0.3em; color: var(--gold); margin-bottom: 6px; }
-    .p-jp { font-size: 11px; color: var(--text-light); margin-bottom: 4px; }
-    .p-name { font-family: var(--serif); font-size: 14px; font-weight: 400; line-height: 1.4; margin-bottom: 4px; }
-    .p-vol { font-size: 11px; color: var(--text-light); letter-spacing: 0.08em; margin-bottom: 14px; }
-    .p-feature { font-size: 13px; color: var(--text-mid); line-height: 1.8; border-top: 1px solid rgba(201,169,97,0.15); padding-top: 14px; margin-bottom: 12px; }
-    .p-price { font-family: var(--serif); font-size: 20px; }
-    .p-price small { font-size: 10px; color: var(--text-light); font-family: var(--sans); }
-    .btn-buy { display: block; width: 100%; padding: 11px; margin-top: 12px; background: var(--gold); color: var(--white); border: none; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; transition: background 0.3s; text-align: center; text-decoration: none; }
-    .btn-buy:hover { background: #B8943A; }
-    .btn-coming-soon { background: transparent; border: 1px solid var(--gold); color: var(--gold); cursor: default; pointer-events: none; }
-    .btn-coming-soon:hover { background: transparent; }
-    .btn-header-cs { font-size: 11px; letter-spacing: 0.2em; padding: 10px 24px; border: 1px solid var(--gold); color: var(--gold); text-transform: uppercase; cursor: default; opacity: 0.75; }
-    .cta-coming-soon { display: inline-block; padding: 18px 60px; border: 1px solid var(--bg-dark); color: var(--bg-dark); font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; cursor: default; opacity: 0.6; margin-right: 16px; }
-    .p-alert { font-size: 10px; color: #c0392b; line-height: 1.6; margin-top: 10px; padding: 8px; background: rgba(192,57,43,0.05); border-left: 2px solid rgba(192,57,43,0.3); }
-
-    /* ── PRODUCT DETAIL (折りたたみ対応) ── */
-    .p-ingredients { margin-top: 8px; }
-    .p-ing-toggle { font-size: 10px; letter-spacing: 0.15em; color: var(--gold); cursor: pointer; border: none; background: none; padding: 0; display: flex; align-items: center; gap: 4px; }
-    .p-ing-toggle::after { content: '＋'; }
-    .p-ing-toggle.open::after { content: '－'; }
-    .p-ing-list { display: none; margin-top: 10px; }
-    .p-ing-list.open { display: block; }
-    .p-ing-list li { font-size: 12px; color: var(--text-mid); line-height: 1.9; padding: 6px 0; border-bottom: 1px solid rgba(201,169,97,0.1); list-style: none; }
-    .p-ing-list li strong { color: var(--text); display: block; }
-
-    /* ── INGREDIENTS ── */
-    .ingredients { background: var(--gold-pale); }
-    .ing-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-top: 60px; align-items: start; }
-    .ing-list { list-style: none; }
-    .ing-item { display: flex; gap: 20px; padding: 20px 0; border-bottom: 1px solid rgba(201,169,97,0.25); }
-    .ing-item:first-child { border-top: 1px solid rgba(201,169,97,0.25); }
-    .ing-num { font-family: var(--serif); font-size: 26px; font-weight: 300; color: var(--gold); opacity: .5; min-width: 40px; line-height: 1; }
-    .ing-name { font-size: 13px; font-weight: 500; margin-bottom: 3px; }
-    .ing-desc { font-size: 13px; color: var(--text-mid); line-height: 1.8; }
-    .ing-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
-    .ing-badge { padding: 12px 22px; border: 1px solid var(--gold); font-size: 14px; font-weight: 500; color: var(--text); background: rgba(255,255,255,0.8); letter-spacing: 0.08em; }
-    .ing-right { display: flex; flex-direction: column; gap: 28px; }
-    .ing-highlight { padding: 36px; background: var(--bg-dark); color: var(--white); }
-    .ing-highlight .hl-eye { font-size: 10px; letter-spacing: 0.35em; color: var(--gold); text-transform: uppercase; margin-bottom: 16px; }
-    .ing-highlight .hl-num { font-family: var(--serif); font-size: 68px; font-weight: 300; color: var(--gold); line-height: 1; }
-    .ing-highlight .hl-unit { font-size: 13px; color: rgba(255,255,255,0.7); margin-top: 6px; }
-    .ing-highlight .hl-desc { font-size: 12px; color: rgba(255,255,255,0.68); line-height: 1.9; margin-top: 16px; border-top: 1px solid rgba(201,169,97,0.2); padding-top: 16px; }
-    .ing-feature-box { padding: 28px; border: 1px solid rgba(201,169,97,0.25); background: var(--white); }
-    .ing-feature-box .feat-title { font-size: 11px; letter-spacing: 0.25em; color: var(--gold); text-transform: uppercase; margin-bottom: 16px; }
-    .ing-feature-box p { font-size: 14px; color: var(--text-mid); line-height: 2.0; }
-    .ing-feature-box p strong { color: var(--text); display: block; margin-bottom: 4px; margin-top: 14px; }
-    .ing-feature-box p strong:first-child { margin-top: 0; }
-
-    /* ── MADE IN JAPAN ── */
-    .mij { background: var(--bg-dark); color: var(--white); text-align: center; }
-    .mij .sec-title { color: var(--white); }
-    .mij .sec-desc { color: rgba(255,255,255,0.7); margin: 0 auto; text-align: center; }
-    .mij-badges { display: flex; justify-content: center; gap: 48px; margin-top: 60px; flex-wrap: wrap; }
-    .mij-badge { display: flex; flex-direction: column; align-items: center; gap: 12px; }
-    .mij-icon { width: 60px; height: 60px; border: 1px solid rgba(201,169,97,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 22px; }
-    .mij-lbl { font-size: 11px; letter-spacing: 0.15em; color: rgba(255,255,255,0.65); text-align: center; line-height: 1.7; }
-    .mij-lbl strong { display: block; color: var(--gold); font-weight: 400; margin-bottom: 2px; }
-
-    /* ── ABOUT ── */
-    .about-sec { background: var(--bg-dark); color: var(--white); }
-    .about-sec .eyebrow { color: var(--gold); }
-    .about-sec .sec-title { color: var(--white); }
-    .about-badges-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 48px 0;
-    }
-    .about-badge-card {
-      border: 1px solid rgba(201,169,97,0.4);
-      padding: 24px 16px; text-align: center;
-      background: rgba(201,169,97,0.04);
-      transition: border-color 0.3s, background 0.3s;
-    }
-    .about-badge-card:hover { border-color: var(--gold); background: rgba(201,169,97,0.08); }
-    .about-badge-icon { font-size: 28px; margin-bottom: 12px; }
-    .about-badge-text { font-size: 13px; color: rgba(255,255,255,0.85); line-height: 1.7; letter-spacing: 0.05em; }
-    .about-desc { font-size: 15px; color: rgba(255,255,255,0.75); line-height: 2.3; max-width: 800px; margin: 0 auto 48px; text-align: center; }
-    .about-desc p + p { margin-top: 20px; }
-    .sdg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 48px 0; }
-    .sdg-card {
-      padding: 32px 24px; border: 1px solid rgba(201,169,97,0.15);
-      background: rgba(201,169,97,0.03); transition: border-color 0.3s;
-    }
-    .sdg-card:hover { border-color: rgba(201,169,97,0.45); }
-    .sdg-num {
-      font-family: var(--serif); font-size: 48px; font-weight: 300;
-      color: var(--gold); opacity: 0.4; line-height: 1; margin-bottom: 16px;
-    }
-    .sdg-title { font-size: 13px; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 10px; }
-    .sdg-desc { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.9; }
-    .about-philosophy {
-      text-align: center; padding: 48px 0 32px;
-      border-top: 1px solid rgba(201,169,97,0.15);
-      border-bottom: 1px solid rgba(201,169,97,0.15);
-      margin: 48px 0;
-    }
-    .about-philosophy-line {
-      width: 40px; height: 1px; background: var(--gold); margin: 16px auto;
-    }
-    .about-philosophy-text {
-      font-family: var(--serif); font-size: clamp(18px, 2.5vw, 28px);
-      font-weight: 300; color: var(--white); letter-spacing: 0.06em; line-height: 1.7;
-    }
-    .about-awards { margin-top: 40px; text-align: center; }
-    .about-awards-list { list-style: none; display: flex; flex-direction: column; gap: 10px; align-items: center; }
-    .about-awards-list li {
-      font-size: 12px; letter-spacing: 0.1em; color: rgba(255,255,255,0.5);
-      padding: 6px 20px; border: 1px solid rgba(201,169,97,0.15);
-      display: inline-block;
-    }
-    @media (max-width: 768px) {
-      .about-badges-grid { grid-template-columns: repeat(2, 1fr); }
-      .sdg-grid { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 480px) {
-      .about-badges-grid { grid-template-columns: 1fr; }
-    }
-
-    /* ── CTA ── */
-    .cta-sec { background: var(--gold-pale); text-align: center; }
-    .cta-sec .sec-title { margin-bottom: 12px; }
-    .cta-sec .sec-desc { margin: 0 auto 48px; text-align: center; }
-    .cta-primary { display: inline-block; padding: 18px 60px; background: var(--bg-dark); color: var(--white); font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; text-decoration: none; transition: background 0.3s; margin-right: 16px; }
-    .cta-primary:hover { background: #2A2520; }
-    .cta-secondary { display: inline-block; padding: 18px 60px; border: 1px solid var(--bg-dark); color: var(--bg-dark); font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; text-decoration: none; transition: all 0.3s; }
-    .cta-secondary:hover { background: var(--bg-dark); color: var(--white); }
-
-    /* ── FOOTER ── */
-    footer { background: var(--bg-dark); padding: 60px 48px 40px; }
-    .footer-inner { max-width: 1100px; margin: 0 auto; }
-    .footer-top { display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 32px; flex-wrap: wrap; gap: 24px; }
-    .footer-logo { font-family: var(--serif); font-size: 20px; font-weight: 300; letter-spacing: 0.25em; color: rgba(255,255,255,0.7); }
-    .footer-logo span { color: var(--gold); }
-    .footer-links { display: flex; gap: 28px; list-style: none; flex-wrap: wrap; }
-    .footer-links a { font-size: 11px; letter-spacing: 0.15em; color: rgba(255,255,255,0.55); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
-    .footer-links a:hover { color: var(--gold); }
-    .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
-    .copyright { font-size: 11px; letter-spacing: 0.1em; color: rgba(255,255,255,0.55); }
-    .footer-note { font-size: 10px; color: rgba(255,255,255,0.5); line-height: 1.7; max-width: 520px; text-align: right; }
-
-    /* ── PHILOSOPHY ── */
-    .philosophy { background: var(--bg-dark); padding: 100px 48px; }
-    .phil-quote {
-      font-family: var(--serif); font-size: clamp(24px, 3vw, 40px);
-      font-weight: 300; line-height: 1.7; letter-spacing: 0.04em;
-      color: var(--white); max-width: 680px;
-      border-left: 2px solid var(--gold); padding-left: 36px;
-      margin-bottom: 64px;
-    }
-    .phil-quote em { color: var(--gold); font-style: italic; }
-    .phil-body { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
-    .phil-text { font-size: 15px; color: rgba(255,255,255,0.72); line-height: 2.4; }
-    .phil-text strong { color: rgba(255,255,255,0.8); }
-    .phil-pillars { display: flex; flex-direction: column; border: 1px solid rgba(201,169,97,0.15); }
-    .phil-pillar {
-      padding: 22px 28px;
-      border-bottom: 1px solid rgba(201,169,97,0.1);
-      transition: background 0.3s;
-    }
-    .phil-pillar:last-child { border-bottom: none; }
-    .phil-pillar:hover { background: rgba(201,169,97,0.04); }
-    .phil-pillar-en { font-size: 9px; letter-spacing: 0.45em; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; }
-    .phil-pillar-jp { font-size: 14px; color: rgba(255,255,255,0.68); line-height: 1.9; }
-
-    /* ── THREE ESSENTIALS ── */
-    .three-essentials { background: var(--bg); padding: 100px 48px; }
-    .three-essentials .sec-desc { font-size: 18px; line-height: 2.2; max-width: 680px; }
-    .ess-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 64px; }
-    .ess-card { background: var(--white); border: 1px solid rgba(201,169,97,0.1); overflow: hidden; transition: border-color 0.4s; display: flex; flex-direction: column; }
-    .ess-card:hover { border-color: rgba(201,169,97,0.4); }
-    .ess-header { background: var(--bg-dark); padding: 36px 28px 28px; position: relative; overflow: hidden; height: 300px; display: flex; flex-direction: column; justify-content: flex-end; }
-    .ess-num-bg {
-      font-family: var(--serif); font-size: 110px; font-weight: 300;
-      color: rgba(201,169,97,0.07); line-height: 1;
-      position: absolute; top: 0; right: 8px; letter-spacing: -4px;
-    }
-    .ess-en {
-      font-family: var(--serif);
-      font-size: clamp(32px, 3.2vw, 44px);
-      font-weight: 300; letter-spacing: 0.04em; line-height: 1;
-      color: var(--gold); text-transform: uppercase;
-      margin-bottom: 10px; position: relative; z-index: 1;
-      text-shadow: 0 2px 16px rgba(0,0,0,0.5);
-    }
-    .ess-name { font-family: var(--sans); font-size: 10px; font-weight: 400; letter-spacing: 0.18em; color: rgba(255,255,255,0.55); line-height: 1.6; text-transform: uppercase; position: relative; z-index: 1; }
-    .ess-name-jp { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 4px; position: relative; z-index: 1; letter-spacing: 0.05em; }
-    .ess-body { padding: 32px; flex: 1; display: flex; flex-direction: column; }
-    .ess-concept { font-family: var(--serif); font-size: 17px; font-weight: 300; color: #8B6914; margin-bottom: 16px; line-height: 1.6; font-style: italic; }
-    .ess-desc { font-size: 14px; color: var(--text-mid); line-height: 2.1; flex: 1; }
-    .ess-raw { margin-top: 24px; padding: 16px 18px; background: rgba(201,169,97,0.05); border-left: 2px solid var(--gold); }
-    .ess-raw-label { font-size: 9px; letter-spacing: 0.35em; color: var(--gold); text-transform: uppercase; margin-bottom: 6px; }
-    .ess-raw-text { font-size: 13px; color: var(--text); line-height: 1.9; }
-
-    /* ── MICRO COMPARE ── */
-    .penetration-flow {
-      margin-top: 56px;
-      display: flex; flex-direction: column; align-items: center; gap: 12px;
-    }
-    .penetration-flow img {
-      max-width: 720px; width: 100%;
-      border: 1px solid rgba(201,169,97,0.15);
-      border-radius: 8px;
-    }
-    .penetration-flow-note {
-      font-size: 11px; color: rgba(255,255,255,0.3);
-      letter-spacing: 0.05em; text-align: center;
-    }
-
-    .micro-compare { margin-top: 80px; border-top: 1px solid rgba(201,169,97,0.12); padding-top: 64px; }
-    .micro-compare-hd { text-align: center; margin-bottom: 40px; }
-    .micro-compare-hd p { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.8; }
-    .micro-grid { display: grid; grid-template-columns: 1fr 56px 1fr; align-items: center; }
-    .micro-panel { position: relative; overflow: hidden; }
-    .micro-panel img { width: 100%; height: 300px; object-fit: cover; display: block; }
-    .micro-fallback {
-      width: 100%; height: 300px;
-      background: #1a1614;
-      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
-    }
-    .micro-fallback span { font-size: 11px; letter-spacing: 0.3em; color: rgba(255,255,255,0.2); }
-    .micro-overlay {
-      position: absolute; bottom: 0; left: 0; right: 0;
-      padding: 20px 24px;
-      background: linear-gradient(to top, rgba(0,0,0,0.78) 0%, transparent 100%);
-    }
-    .micro-overlay-en { font-size: 9px; letter-spacing: 0.4em; color: rgba(255,255,255,0.7); text-transform: uppercase; }
-    .micro-overlay-jp { font-size: 14px; color: var(--white); margin-top: 4px; }
-    .micro-overlay.is-denba .micro-overlay-jp { color: var(--gold); }
-    .micro-vs {
-      display: flex; flex-direction: column; align-items: center; gap: 8px;
-      padding: 0 10px;
-    }
-    .micro-vs-line { flex: 1; width: 1px; background: rgba(201,169,97,0.2); min-height: 80px; }
-    .micro-vs-text { font-family: var(--serif); font-size: 12px; color: var(--gold); letter-spacing: 0.1em; }
-    .micro-note { text-align: center; margin-top: 20px; font-size: 10px; color: rgba(255,255,255,0.2); letter-spacing: 0.1em; }
-
-    /* ── FRESHNESS ── */
-    .freshness { background: var(--bg); padding: 100px 48px; }
-    .freshness .sec-desc { max-width: 640px; }
-    .fresh-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 64px; }
-    .fresh-step {
-      padding: 48px 36px;
-      background: var(--white);
-      border: 1px solid rgba(201,169,97,0.12);
-      position: relative;
-      transition: border-color 0.4s;
-    }
-    .fresh-step:hover { border-color: rgba(201,169,97,0.45); }
-    .fresh-step::after {
-      content: '';
-      position: absolute; top: 50%; right: -2px;
-      width: 2px; height: 40px;
-      background: var(--gold);
-      transform: translateY(-50%);
-      opacity: 0.3;
-    }
-    .fresh-step:last-child::after { display: none; }
-    .fresh-num {
-      font-family: var(--serif); font-size: 64px; font-weight: 300;
-      color: var(--gold); opacity: 0.18; line-height: 1;
-      margin-bottom: 24px;
-    }
-    .fresh-icon {
-      width: 48px; height: 48px;
-      border: 1px solid rgba(201,169,97,0.3);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 20px;
-      margin-bottom: 20px;
-      background: rgba(201,169,97,0.04);
-    }
-    .fresh-label {
-      font-size: 10px; letter-spacing: 0.35em; color: var(--gold);
-      text-transform: uppercase; margin-bottom: 12px;
-    }
-    .fresh-title {
-      font-family: var(--serif); font-size: 18px; font-weight: 400;
-      line-height: 1.5; margin-bottom: 16px; color: var(--text);
-    }
-    .fresh-desc {
-      font-size: 14px; color: var(--text-mid); line-height: 2.0;
-    }
-    .fresh-connector {
-      display: flex; align-items: center; justify-content: center;
-      gap: 32px; margin-top: 56px; padding: 36px 48px;
-      background: var(--bg-dark);
-    }
-    .fresh-connector-text {
-      font-family: var(--serif); font-size: clamp(17px, 2vw, 24px);
-      font-weight: 300; color: var(--white); line-height: 1.6;
-      letter-spacing: 0.04em;
-    }
-    .fresh-connector-text em { color: var(--gold); font-style: italic; }
-    .fresh-connector-tag {
-      flex-shrink: 0;
-      padding: 12px 24px;
-      border: 1px solid rgba(201,169,97,0.4);
-      font-size: 10px; letter-spacing: 0.3em; color: var(--gold);
-      text-transform: uppercase; text-align: center; line-height: 1.8;
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 1024px) {
-      .products-grid { grid-template-columns: repeat(3, 1fr); }
-    }
-    @media (max-width: 768px) {
-      /* Hero: モバイルは非表示 */
-      .hero {
-        display: none;
-      }
       header { padding: 16px 20px; }
-      nav, .btn-header { display: none; }
-      section { padding: 64px 20px; }
-      /* Brand Statement */
-      .brand-statement { padding: 40px 20px 56px; }
-      .brand-statement h2 { font-size: clamp(22px, 6vw, 34px); }
-      .brand-statement p { font-size: 15px; line-height: 1.9; letter-spacing: 0.03em; }
-      /* Section texts */
-      .sec-desc { font-size: 14px; line-height: 1.9; }
-      /* Essentials */
-      .ess-desc { font-size: 13px; line-height: 1.9; }
-      .ess-raw-text { font-size: 12px; line-height: 1.8; }
-      .ess-concept { font-size: 15px; }
-      .ess-en { font-size: 36px; }
-      .ess-header { height: 260px; }
-      /* Philosophy */
-      .phil-text { font-size: 14px; line-height: 2.0; }
-      .phil-pillar-jp { font-size: 13px; }
-      .phil-quote { font-size: clamp(20px, 5vw, 30px); padding-left: 20px; margin-bottom: 40px; }
-      /* Technology */
-      .tech-card p { font-size: 13px; line-height: 1.8; }
-      .tech-grid { gap: 40px; margin-top: 40px; }
-      /* Freshness */
-      .fresh-desc { font-size: 13px; line-height: 1.9; }
-      .fresh-step { padding: 36px 24px; }
-      /* Ingredients */
-      .ing-feature-box p { font-size: 13px; line-height: 1.9; }
-      .ing-desc { font-size: 13px; }
-      /* Micro compare */
-      .micro-compare-hd p { font-size: 13px; line-height: 1.8; }
-      /* Layout fixes */
-      .tech-grid, .ing-layout { grid-template-columns: 1fr; gap: 48px; }
-      .products-grid { grid-template-columns: repeat(2, 1fr); }
-      .mij-badges { gap: 24px; }
-      .products-hd { flex-direction: column; align-items: flex-start; }
-      .footer-top { flex-direction: column; }
-      .footer-bottom { flex-direction: column; }
-      .footer-note { text-align: left; }
-      .fresh-steps { grid-template-columns: 1fr; }
-      .fresh-step::after { display: none; }
-      .fresh-connector { flex-direction: column; padding: 32px 20px; gap: 20px; }
-      .phil-body { grid-template-columns: 1fr; }
-      .ess-grid { grid-template-columns: 1fr; }
-      .micro-grid { grid-template-columns: 1fr; }
-      .micro-vs { flex-direction: row; min-height: 40px; padding: 10px 0; }
-      .micro-vs-line { flex: 1; min-height: auto; height: 1px; }
-    }
-    @media (max-width: 480px) {
-      .products-grid { grid-template-columns: 1fr; }
-      .cta-primary, .cta-secondary { display: block; margin: 8px 0; }
-    }
-
-    /* ── HAMBURGER / MOBILE MENU ── */
-    .ham-btn {
-      display: none; background: none; border: none; cursor: pointer;
-      padding: 6px; flex-direction: column; justify-content: center; gap: 5px; z-index: 110;
-    }
-    .ham-btn span { display: block; width: 22px; height: 1.5px; background: var(--text); transition: all 0.3s; }
-    .mob-menu {
-      display: none; position: fixed; inset: 0; z-index: 300;
-      background: rgba(26,23,18,0.97); backdrop-filter: blur(10px);
-      flex-direction: column; align-items: center; justify-content: center; gap: 36px;
-    }
-    .mob-menu.open { display: flex; }
-    .mob-close {
-      position: absolute; top: 22px; right: 24px; background: none; border: none;
-      cursor: pointer; font-size: 26px; color: rgba(255,255,255,0.5); line-height: 1; transition: color 0.2s;
-    }
-    .mob-close:hover { color: var(--white); }
-    .mob-menu-nav { display: flex; flex-direction: column; align-items: center; gap: 32px; }
-    .mob-menu-nav a {
-      font-family: var(--serif); font-size: 28px; font-weight: 300;
-      letter-spacing: 0.12em; color: rgba(255,255,255,0.85); text-decoration: none; transition: color 0.3s;
-    }
-    .mob-menu-nav a:hover { color: var(--gold); }
-    .mob-lang { display: flex; align-items: center; gap: 12px; }
-    .mob-lang .lang-btn { color: rgba(255,255,255,0.4); font-size: 13px; letter-spacing: 0.2em; }
-    .mob-lang .lang-btn.active, .mob-lang .lang-btn:hover { color: var(--gold); }
-    .mob-lang .lang-sep { color: rgba(255,255,255,0.15); font-size: 11px; }
-    .mob-shop-btn {
-      font-size: 11px; letter-spacing: 0.25em; padding: 14px 48px;
-      border: 1px solid var(--gold); color: var(--gold);
-      text-decoration: none; text-transform: uppercase; transition: all 0.3s;
-    }
-    .mob-shop-btn:hover { background: var(--gold); color: var(--bg-dark); }
-    @media (max-width: 768px) {
-      .ham-btn { display: flex; }
-      .lang-switcher { display: none !important; }
+      .hero { padding: 120px 20px 60px; }
+      section { padding: 70px 20px; }
+      .essentials-grid, .line-grid { grid-template-columns: 1fr; }
+      .tech-teaser { grid-template-columns: 1fr; gap: 40px; }
     }
   </style>
 </head>
@@ -564,616 +139,234 @@
 
 <!-- HEADER -->
 <header>
-  <div class="logo">DENBA <span>Skincare</span></div>
+  <a href="index.html" class="logo">DENBA <span>Skincare</span></a>
   <nav>
-    <a href="index.html" data-i18n="nav_top">Top</a>
-    <a href="#essentials" data-i18n="nav_ingredients">Ingredients</a>
-    <a href="technology.html" data-i18n="nav_technology">Technology</a>
-    <a href="products.html" data-i18n="nav_products">Products</a>
+    <a href="index.html" data-i18n="nav_top">TOP</a>
+    <a href="#essentials" data-i18n="nav_ingredients">INGREDIENTS</a>
+    <a href="technology.html" data-i18n="nav_technology">TECHNOLOGY</a>
+    <a href="products.html" data-i18n="nav_products">PRODUCTS</a>
+    <a href="#shop" class="btn-header" data-i18n="nav_shop">SHOP NOW</a>
   </nav>
   <div class="lang-switcher">
-    <button class="lang-btn active" data-lang="ja" onclick="applyLanguage('ja')">JA</button>
-    <span class="lang-sep">|</span>
-    <button class="lang-btn" data-lang="en" onclick="applyLanguage('en')">EN</button>
-    <span class="lang-sep">|</span>
-    <button class="lang-btn" data-lang="zh" onclick="applyLanguage('zh')">中文</button>
+    <button class="lang-btn active" onclick="switchLang('ja')">JP</button>
+    <span class="lang-sep">/</span>
+    <button class="lang-btn" onclick="switchLang('en')">EN</button>
+    <span class="lang-sep">/</span>
+    <button class="lang-btn" onclick="switchLang('zh')">中文</button>
   </div>
-  <span class="btn-header-cs">COMING SOON</span>
-  <button class="ham-btn" onclick="document.getElementById('mobMenu').classList.add('open')" aria-label="メニューを開く">
-    <span></span><span></span><span></span>
-  </button>
 </header>
 
-<!-- モバイルメニュー -->
-<div class="mob-menu" id="mobMenu">
-  <button class="mob-close" onclick="document.getElementById('mobMenu').classList.remove('open')">✕</button>
-  <div style="font-family:var(--serif);font-size:18px;font-weight:300;letter-spacing:0.25em;color:var(--white);">DENBA <span style="color:var(--gold)">Skincare</span></div>
-  <nav class="mob-menu-nav">
-    <a href="index.html" data-i18n="nav_top">TOP</a>
-    <a href="#essentials" onclick="document.getElementById('mobMenu').classList.remove('open')" data-i18n="nav_ingredients">Ingredients</a>
-    <a href="technology.html" data-i18n="nav_technology">Technology</a>
-    <a href="products.html" data-i18n="nav_products">Products</a>
-  </nav>
-  <div class="mob-lang">
-    <button class="lang-btn active" data-lang="ja" onclick="applyLanguage('ja')">JA</button>
-    <span class="lang-sep">|</span>
-    <button class="lang-btn" data-lang="en" onclick="applyLanguage('en')">EN</button>
-    <span class="lang-sep">|</span>
-    <button class="lang-btn" data-lang="zh" onclick="applyLanguage('zh')">中文</button>
-  </div>
-  <span class="mob-shop-btn" style="cursor:default;opacity:0.65;">COMING SOON</span>
-</div>
-
-<!-- HERO：動画のみ・テキストなし -->
+<!-- HERO -->
 <section class="hero">
-  <div class="hero-video">
-    <video id="heroVideo" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="images/hero-bg.jpg">
-      <source src="images/hero-bg.mp4" type="video/mp4">
-    </video>
-  </div>
-  <div class="hero-scroll">
-    <div class="scroll-line"></div>
-    <span>Scroll</span>
-  </div>
-</section>
-
-<!-- BRAND STATEMENT -->
-<section class="brand-statement">
-  <p class="eyebrow" data-i18n="brand_eyebrow">Three Premium Ingredients × DENBA Technology</p>
-  <h2 data-i18n-html="brand_h2">世界最高水準の成分を、<br><em>生に近い形</em>で届ける。</h2>
-  <div class="gold-line"></div>
-  <p data-i18n="brand_p">PDRN・黒松露（黒トリュフ）・NAD+。自然界で注目される3つの核心成分を厳選し、DENBA独自の技術で最高の状態のまま角層まで届けます。成分の力を最大限に引き出すために、製造・保管・浸透のすべてにこだわりました。</p>
-</section>
-
-<!-- THREE ESSENTIALS：核心3成分 -->
-<section class="three-essentials" id="essentials">
-  <div class="inner">
-    <p class="eyebrow" data-i18n="ess_eyebrow">Three Core Ingredients</p>
-    <h2 class="sec-title" data-i18n-html="ess_title">生に近い形で、<br>最高品質を届ける。</h2>
-    <div class="divider"></div>
-    <p class="sec-desc" data-i18n="ess_desc">DENBA Skincareが選んだ3つの核心成分。いずれも自然界で注目される高機能素材であり、その品質を最大限に保ったまま配合することにこだわっています。</p>
-    <div class="ess-grid">
-
-      <!-- 01 PDRN -->
-      <div class="ess-card">
-        <div class="ess-header" style="background-image: url('images/ing-pdrn.jpg'); background-size: cover; background-position: center;">
-          <div style="position:absolute;inset:0;background:linear-gradient(to bottom, rgba(15,12,8,0.15) 0%, rgba(15,12,8,0.65) 100%);"></div>
-          <div class="ess-num-bg">01</div>
-          <p class="ess-en">PDRN</p>
-          <h3 class="ess-name">Polydeoxyribonucleotide</h3>
-          <p class="ess-name-jp" data-i18n="ess_name_jp_pdrn">ポリデオキシリボヌクレオチド</p>
-        </div>
-        <div class="ess-body">
-          <p class="ess-concept" data-i18n="ess_pdrn_concept">「肌が本来持つ力を、引き出すアプローチ」</p>
-          <p class="ess-desc" data-i18n="ess_pdrn_desc">サーモン由来の核酸関連成分で、肌なじみの良い構造を持ちます。体に馴染みやすい特性を持つ素材として近年注目を集めるエイジングケア成分。熱・酸化により変性しやすいため、生に近い状態での取り扱いが品質の鍵。全製品に配合。</p>
-          <div class="ess-raw">
-            <p class="ess-raw-label">Raw Quality Point</p>
-            <p class="ess-raw-text" data-i18n="ess_pdrn_raw">熱・紫外線・酸化に敏感。DENBA電位環境での保管・管理が成分の状態を維持し、微粒子化で角層まで届ける。</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 02 黒松露 -->
-      <div class="ess-card">
-        <div class="ess-header" style="background-image: url('images/ing-truffle.jpg'); background-size: cover; background-position: center;">
-          <div style="position:absolute;inset:0;background:linear-gradient(to bottom, rgba(15,12,8,0.15) 0%, rgba(15,12,8,0.65) 100%);"></div>
-          <div class="ess-num-bg">02</div>
-          <p class="ess-en">Black Truffle EPS</p>
-          <h3 class="ess-name">Tuber Melanosporum<br>Extracellular Products</h3>
-          <p class="ess-name-jp" data-i18n="ess_name_jp_truffle">黒松露（黒トリュフ）細胞外分泌産物</p>
-        </div>
-        <div class="ess-body">
-          <p class="ess-concept" data-i18n="ess_truffle_concept">「大地が育んだ命の分泌物を、そのままに」</p>
-          <p class="ess-desc" data-i18n="ess_truffle_desc">世界三大珍味として知られる黒トリュフが産み出す希少な細胞外産物。自然界で育まれた機能性物質であり、採取から製造までの鮮度管理が品質を左右します。自然界最高水準の希少素材。全製品に配合。</p>
-          <div class="ess-raw">
-            <p class="ess-raw-label">Raw Quality Point</p>
-            <p class="ess-raw-text" data-i18n="ess_truffle_raw">鮮度と品質が命。採取後の変性を最小化し、品質を保った状態でDENBA照射・微粒子化を行う。</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 03 NAD+ -->
-      <div class="ess-card">
-        <div class="ess-header" style="background-image: url('images/ing-nad.jpg'); background-size: cover; background-position: center;">
-          <div style="position:absolute;inset:0;background:linear-gradient(to bottom, rgba(15,12,8,0.15) 0%, rgba(15,12,8,0.65) 100%);"></div>
-          <div class="ess-num-bg">03</div>
-          <p class="ess-en">NAD+</p>
-          <h3 class="ess-name">Nicotinamide Adenine<br>Dinucleotide</h3>
-          <p class="ess-name-jp" data-i18n="ess_name_jp_nad">ニコチンアミドアデニンジヌクレオチド</p>
-        </div>
-        <div class="ess-body">
-          <p class="ess-concept" data-i18n="ess_nad_concept">「注目の補酵素を、そのままの形で配合する」</p>
-          <p class="ess-desc" data-i18n="ess_nad_desc">近年注目を集めるエネルギー補酵素。前駆体（NMN等）ではなくNAD+を直接配合した、成分そのものの品質にこだわった処方です。全製品に配合。</p>
-          <div class="ess-raw">
-            <p class="ess-raw-label">Raw Quality Point</p>
-            <p class="ess-raw-text" data-i18n="ess_nad_raw">NAD+を直接配合。DENBA電位環境で安定性を保ちながら、微粒子化で角層への浸透をサポートする。</p>
-          </div>
-        </div>
-      </div>
-
+  <div class="hero-content">
+    <span class="hero-eyebrow" data-i18n="brand_eyebrow">AEB TECHNOLOGY</span>
+    <h1 class="hero-title" data-i18n="idx_hero_title">分子設計から、<br>究極の浸透へ。</h1>
+    <p class="hero-subtitle" data-i18n="brand_p">DENBAが独自開発した分子コントロール技術により、全成分をナノレベルまで微粒子化。通常の1.8倍速で角層まで届けます。</p>
+    <div class="hero-actions">
+      <a href="#line" class="btn-primary" data-i18n="idx_hero_btn1">THE LINEを見る</a>
+      <a href="technology.html" class="btn-secondary" data-i18n="idx_hero_btn2">技術の詳細</a>
     </div>
   </div>
 </section>
 
-<!-- PROMISE：開発の約束（コンパクト統合版） -->
+<!-- PHILOSOPHY / 理念 -->
 <section class="philosophy">
-  <div class="inner">
-    <p class="eyebrow" style="color:var(--gold);" data-i18n="promise_eyebrow">Our Promise</p>
-    <div class="phil-quote" data-i18n-html="promise_quote">
-      本物の力は、<em>本物の形</em>でしか届かない。
+  <div class="philosophy-inner">
+    <span class="section-eyebrow" data-i18n="phil_eyebrow">OUR PHILOSOPHY</span>
+    <p class="philosophy-lead" data-i18n-html="phil_lead">私たちはもともと、水分子を整える技術で、<br>食品の鮮度を守り、空間を健やかに保ってきた会社です。</p>
+    <p class="philosophy-body" data-i18n-html="phil_body">やがて気づきました。<br>肌に必要なのは、強い成分でも、多い成分でもない。<br>——より自然に、生きたまま、届くこと。</p>
+    <div class="philosophy-rule"></div>
+    <p class="philosophy-quote" data-i18n-html="phil_quote"><em>届いて</em>、はじめて力になる。</p>
+  </div>
+</section>
+
+<!-- TECHNOLOGY TEASER -->
+<section class="tech-teaser">
+  <div class="tech-text">
+    <span class="section-eyebrow" data-i18n="tech_eyebrow">DENBA MOLECULAR CONTROL TECHNOLOGY</span>
+    <h2 class="section-title" style="color:#fff;" data-i18n="tech_title">細胞環境を、<br>分子レベルで整える。</h2>
+    <p style="color:rgba(255,255,255,0.65); max-width:440px;" data-i18n="tech_desc">DENBA独自の電位制御技術が水分子クラスターを3〜5個まで細分化。全成分の浸透力を通常の1.8倍に高め、有効成分を角層まで届けます。</p>
+    <a href="technology.html" class="tech-link" style="margin-top:28px;" data-i18n="tech_link">技術の詳細を見る →</a>
+  </div>
+  <div>
+    <img src="images/molecule-penetration.png" alt="分子浸透イメージ" style="max-width:100%; height:auto; border-radius:4px;">
+  </div>
+</section>
+
+<!-- ESSENTIALS -->
+<section id="essentials">
+  <div class="section-header">
+    <span class="section-eyebrow" data-i18n="ess_eyebrow">THREE ESSENTIALS</span>
+    <h2 class="section-title" data-i18n="ess_title">核心3成分の、<br>品質哲学。</h2>
+    <p style="max-width:620px; color:var(--text-mid); margin-top:12px;" data-i18n="ess_desc">DENBA Skincareが選んだ3つの核心成分。自然界で注目される高機能素材を、生に近い状態で最大限に活かすことにこだわっています。</p>
+  </div>
+
+  <div class="essentials-grid">
+    <div class="essential-card">
+      <div class="essential-img"><img src="images/ing-pdrn.jpg" alt="PDRN ポリデオキシリボヌクレオチド"></div>
+      <div class="essential-body">
+        <div style="font-size:15px;letter-spacing:2px;font-weight:600;color:var(--gold);margin-bottom:2px;" data-i18n="idx_ess1_label">PDRN</div>
+        <div class="essential-name" data-i18n="idx_ess1_name">ポリデオキシリボヌクレオチド</div>
+        <div class="essential-desc" data-i18n="idx_ess1_desc">サーモン由来の核酸関連成分。肌が本来持つ再生力を引き出すアプローチとして注目。熱・酸化に敏感なため、DENBA環境で品質を保ち、微粒子化で届ける。</div>
+      </div>
     </div>
-    <div class="phil-body">
-      <p class="phil-text" data-i18n="promise_p">
-        DENBAはもともと、電位技術で食品の鮮度を守り、空間の環境を整えてきた企業です。その技術をスキンケアに応用したとき確信したのは——自然が生み出した生命力あふれる成分を、できるだけ本来の形のまま届けること。PDRN・黒松露・NAD+の品質を守るために、製造・保管・浸透のすべてにDENBAの技術が宿っています。
-      </p>
-      <div class="phil-pillars">
-        <div class="phil-pillar">
-          <p class="phil-pillar-en">Raw Integrity</p>
-          <p class="phil-pillar-jp" data-i18n="pillar_raw_integrity">加工による変性を最小化。成分を生に近い形で配合する。</p>
-        </div>
-        <div class="phil-pillar">
-          <p class="phil-pillar-en">Freshness Control</p>
-          <p class="phil-pillar-jp" data-i18n="pillar_freshness_control">製造・保管空間もDENBA電位環境で管理。成分の鮮度を出荷まで守る。</p>
-        </div>
-        <div class="phil-pillar">
-          <p class="phil-pillar-en">Deep Delivery</p>
-          <p class="phil-pillar-jp" data-i18n="pillar_deep_delivery">特許技術の微粒子化（自社比較1.8倍）で、成分の力を角層まで届ける。</p>
-        </div>
+    <div class="essential-card">
+      <div class="essential-img"><img src="images/ing-truffle.jpg" alt="黒松露 トリュフエキス"></div>
+      <div class="essential-body">
+        <div style="font-size:15px;letter-spacing:2px;font-weight:600;color:var(--gold);margin-bottom:2px;" data-i18n="idx_ess2_label">黒松露</div>
+        <div class="essential-name" data-i18n="idx_ess2_name">TRUFFLE EXTRACT</div>
+        <div class="essential-desc" data-i18n="idx_ess2_desc">世界三大珍味の黒トリュフから得られる希少な成分。大地が育んだ機能性物質を、採取から製造まで鮮度を極限まで守り、DENBA技術で浸透を高める。</div>
+      </div>
+    </div>
+    <div class="essential-card">
+      <div class="essential-img"><img src="images/ing-nad.jpg" alt="NAD+ ニコチンアミドアデニンジヌクレオチド"></div>
+      <div class="essential-body">
+        <div style="font-size:15px;letter-spacing:2px;font-weight:600;color:var(--gold);margin-bottom:2px;" data-i18n="idx_ess3_label">NAD+</div>
+        <div class="essential-name" data-i18n="idx_ess3_name">ニコチンアミドアデニンジヌクレオチド</div>
+        <div class="essential-desc" data-i18n="idx_ess3_desc">細胞エネルギー代謝の鍵となる補酵素。前駆体ではなくNAD+を直接配合。加齢で減少する成分を、DENBAの微粒子化技術で効率的に届けます。</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TECHNOLOGY -->
-<section class="tech" id="technology">
-  <div class="inner">
-    <p class="eyebrow" data-i18n="tech_eyebrow">DENBA Molecular Technology</p>
-    <h2 class="sec-title" data-i18n-html="tech_title">成分を、<br>届けるための技術</h2>
-    <div class="divider"></div>
-    <p class="sec-desc" data-i18n="tech_desc">PDRN・黒松露・NAD+の力を最大限に活かすために。DENBA照射技術が全成分を微粒子化し、特許取得済みの製造プロセスで通常の1.8倍速で角層まで届けます（自社比較）。<br><span style="font-size:11px; color:rgba(255,255,255,0.28); letter-spacing:0.1em;">特許第7809311号</span></p>
+<!-- THE LINE -->
+<section id="line" style="background:#fff;">
+  <div class="section-header">
+    <span class="section-eyebrow" data-i18n="line_eyebrow">THE LINE</span>
+    <h2 class="section-title" data-i18n="line_title">4つの製品で、<br>肌の環境を整える。</h2>
+    <p style="max-width:560px; color:var(--text-mid);" data-i18n="line_desc">PDRN・黒松露・NAD+の核心3成分とDENBA分子浸透技術が融合した、4アイテムのスキンケアライン。</p>
+  </div>
 
-    <!-- 浸透の流れ -->
-    <div class="penetration-flow">
-      <img src="images/molecule-penetration.png" alt="DENBA技術による成分浸透フロー" data-i18n-alt="penetration_flow_alt">
-      <p class="penetration-flow-note" data-i18n="penetration_flow_note">※イメージ図</p>
-    </div>
-
-    <!-- 顕微鏡比較エビデンス -->
-    <div class="micro-compare">
-      <div class="micro-compare-hd">
-        <p class="eyebrow">Microscope Evidence</p>
-        <p data-i18n-html="micro_caption">DENBA照射前後のクリーム粒子比較（顕微鏡撮影）<br>粒子の細かさが、浸透力の違いを示しています。</p>
+  <div class="line-grid">
+    <a href="products.html" class="product-card">
+      <div class="product-img"><span class="ph-mark"><span class="ph-logo">DENBA</span><span class="ph-sub">Skincare</span></span></div>
+      <div class="product-info">
+        <div class="product-name" data-i18n="p1_name">ウォーターリバイタル ローション</div>
+        <div class="product-type" data-i18n="p1_type">化粧水</div>
+        <div class="product-price" data-i18n="p1_price">¥5,500</div>
       </div>
-      <div class="micro-grid">
-
-        <div class="micro-panel">
-          <img src="images/micro-before.jpg" alt="通常クリーム顕微鏡"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-          <div class="micro-fallback" style="display:none">
-            <span style="font-size:28px; opacity:0.15;">🔬</span>
-            <span>STANDARD CREAM</span>
-          </div>
-          <div class="micro-overlay">
-            <p class="micro-overlay-en">Before — Standard Cream</p>
-            <p class="micro-overlay-jp" data-i18n="micro_overlay_before">通常クリーム（粗い粒子）</p>
-          </div>
-        </div>
-
-        <div class="micro-vs">
-          <div class="micro-vs-line"></div>
-          <span class="micro-vs-text">VS</span>
-          <div class="micro-vs-line"></div>
-        </div>
-
-        <div class="micro-panel">
-          <img src="images/micro-after.jpg" alt="DENBA照射クリーム顕微鏡"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-          <div class="micro-fallback" style="display:none">
-            <span style="font-size:28px; opacity:0.15;">🔬</span>
-            <span style="color:rgba(201,169,97,0.5);">DENBA TREATED</span>
-          </div>
-          <div class="micro-overlay is-denba">
-            <p class="micro-overlay-en">After — DENBA Treated Cream</p>
-            <p class="micro-overlay-jp" data-i18n="micro_overlay_after">DENBA照射（微細な均一粒子）</p>
-          </div>
-        </div>
-
+    </a>
+    <a href="products.html" class="product-card">
+      <div class="product-img"><span class="ph-mark"><span class="ph-logo">DENBA</span><span class="ph-sub">Skincare</span></span></div>
+      <div class="product-info">
+        <div class="product-name" data-i18n="p2_name">ハリ弾力ケア エマルジョン</div>
+        <div class="product-type" data-i18n="p2_type">乳液</div>
+        <div class="product-price" data-i18n="p2_price">¥5,500</div>
       </div>
-      <p class="micro-note" data-i18n="micro_note">※自社撮影。粒子サイズの視覚的比較です。</p>
-    </div>
+    </a>
+    <a href="products.html" class="product-card">
+      <div class="product-img"><span class="ph-mark"><span class="ph-logo">DENBA</span><span class="ph-sub">Skincare</span></span></div>
+      <div class="product-info">
+        <div class="product-name" data-i18n="p3_name">ハリ弾力ケア クリーム</div>
+        <div class="product-type" data-i18n="p3_type">クリーム</div>
+        <div class="product-price" data-i18n="p3_price">¥5,500</div>
+      </div>
+    </a>
+    <a href="products.html" class="product-card">
+      <div class="product-img"><span class="ph-mark"><span class="ph-logo">DENBA</span><span class="ph-sub">Skincare</span></span></div>
+      <div class="product-info">
+        <div class="product-name" data-i18n="p4_name">マルチディメンション エイジングケア セラム</div>
+        <div class="product-type" data-i18n="p4_type">美容液</div>
+        <div class="product-price" data-i18n="p4_price">¥8,800</div>
+      </div>
+    </a>
+  </div>
 
+  <div style="text-align:center;margin-top:40px;">
+    <a href="products.html" class="btn-primary" data-i18n="line_cta">すべての製品を見る</a>
   </div>
 </section>
 
-<!-- PRODUCTS -->
-<section class="products" id="products">
-  <div class="inner">
-    <div class="products-hd">
-      <div>
-        <p class="eyebrow" data-i18n="line_eyebrow">Phase 1 Collection</p>
-        <h2 class="sec-title">The Line</h2>
-        <div class="divider"></div>
-      </div>
-      <p class="sec-desc" style="max-width:320px; font-size:13px; margin-bottom:0;" data-i18n="line_desc">
-        PDRN・黒松露・NAD+の核心3成分とDENBA分子浸透理念が融合した新世代スキンケア。
-      </p>
-    </div>
-
-    <div class="products-grid">
-
-      <!-- 01 化粧水 -->
-      <div class="p-card">
-        <div class="p-img lotion">
-          <div class="p-bottle bottle-lotion"></div>
-        </div>
-        <div class="p-body">
-          <p class="p-no">No.01</p>
-          <p class="p-jp" data-i18n="p1_type">化粧水</p>
-          <h3 class="p-name" data-i18n="p1_name">Water Revital Lotion</h3>
-          <p class="p-vol">120 ml</p>
-          <p class="p-feature" data-i18n="p1_feature">PDRN＋黒松露＋NAD+の核心3成分に、PENTAVITIN®の長時間保湿・ナノリポソーム浸透設計・SOD＆CoQ10抗酸化ケアを組み合わせた、次世代の化粧水。</p>
-          <div class="p-ingredients">
-            <button class="p-ing-toggle" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');" data-i18n="btn_see_ingredients">成分を見る</button>
-            <ul class="p-ing-list" data-i18n-html="ing_lotion_list">
-              <li><strong>PDRN（ポリデオキシリボヌクレオチド）</strong>サーモン由来の核酸関連成分。肌のコンディションを整えることをサポートする、近年注目度の高いエイジングケア成分。</li>
-              <li><strong>黒松露（黒トリュフ）細胞外分泌産物</strong>高級食材・黒トリュフが産み出す希少成分。肌のうるおいをサポートする高機能素材。</li>
-              <li><strong>NAD+（ニコチンアミドアデニンジヌクレオチド）</strong>近年注目の補酵素。NAD+を直接配合した次世代エイジングケア成分。</li>
-              <li><strong>PENTAVITIN®</strong>皮膚の天然保湿因子（NMF）と同じ糖鎖構造を持つ高機能保湿成分。水分を長時間キープし、みずみずしいうるおいを持続。</li>
-              <li><strong>ナノリポソーム</strong>成分を極小のカプセルに閉じ込め、肌の深部まで届ける浸透設計技術。DENBAの微粒子化とのW浸透アプローチ。</li>
-              <li><strong>SOD（スーパーオキシドジスムターゼ）</strong>肌の酸化ストレスに働きかける酵素型抗酸化成分。エイジングの一因とされる酸化ダメージをケア。</li>
-              <li><strong>CoQ10（コエンザイムQ10）</strong>細胞のエネルギー産生に関わる補酵素。NAD+との相乗作用で、肌の活力をサポートする。</li>
-            </ul>
-          </div>
-          <p class="p-price">¥5,500 <small data-i18n="index_price_tax">（税込）</small></p>
-          <span class="btn-buy btn-coming-soon">COMING SOON</span>
-        </div>
-      </div>
-
-      <!-- 02 乳液 -->
-      <div class="p-card">
-        <div class="p-img emulsion">
-          <div class="p-bottle bottle-emulsion"></div>
-        </div>
-        <div class="p-body">
-          <p class="p-no">No.02</p>
-          <p class="p-jp" data-i18n="p2_type">乳液</p>
-          <h3 class="p-name" data-i18n="p2_name">Firm & Glow Emulsion</h3>
-          <p class="p-vol">100 ml</p>
-          <p class="p-feature" data-i18n="p2_feature">Gravity®反重力コンプレックス×三重植物レチノールシステムで、ハリとツヤを引き出す乳液。軽やかなテクスチャーでも、使うたびに肌の弾力感が高まる。</p>
-          <div class="p-ingredients">
-            <button class="p-ing-toggle" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');" data-i18n="btn_see_ingredients">成分を見る</button>
-            <ul class="p-ing-list" data-i18n-html="ing_emulsion_list">
-              <li><strong>PDRN</strong>化粧水と同じ核心成分。重ね使いでうるおいとコンディションをさらにサポート。</li>
-              <li><strong>黒松露細胞外分泌産物</strong>肌のうるおいとコンディションをさらにサポート。</li>
-              <li><strong>NAD+</strong>注目の補酵素。ハリある肌のエイジングケアをサポートする。</li>
-              <li><strong>Gravity®（反重力コンプレックス）</strong>肌の引き締まりとリフト感をサポートする乳液専用の機能性成分。ぷるんとしたハリ感へのアプローチ。</li>
-              <li><strong>三重植物レチノールシステム</strong>3種の植物由来エキス（水飛蓟エキス・トリフォリウム・アリスティナムエキス・海茴香エキス）を組み合わせた低刺激レチノール代替処方。一般的なレチノールより肌への負担を抑えながら、エイジングケアをサポート。</li>
-            </ul>
-          </div>
-          <p class="p-price">¥5,500 <small data-i18n="index_price_tax">（税込）</small></p>
-          <span class="btn-buy btn-coming-soon">COMING SOON</span>
-        </div>
-      </div>
-
-      <!-- 03 クリーム -->
-      <div class="p-card">
-        <div class="p-img cream">
-          <div class="p-bottle bottle-cream"></div>
-        </div>
-        <div class="p-body">
-          <p class="p-no">No.03</p>
-          <p class="p-jp" data-i18n="p3_type">クリーム</p>
-          <h3 class="p-name" data-i18n="p3_name">Firm & Care Cream</h3>
-          <p class="p-vol">50 g</p>
-          <p class="p-feature" data-i18n="p3_feature">朝晩のコアリペアクリーム。ハリオギ花エキス×SAKADIKIUM×高山火绒草の三重バリア処方で、光環境ストレスから肌を守りながら、しっとりとしたハリのある肌へ導く。</p>
-          <div class="p-ingredients">
-            <button class="p-ing-toggle" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');" data-i18n="btn_see_ingredients">成分を見る</button>
-            <ul class="p-ing-list" data-i18n-html="ing_cream_list">
-              <li><strong>PDRN</strong>核心成分。朝晩使いでコンディション維持をサポートする。</li>
-              <li><strong>黒松露細胞外分泌産物</strong>うるおいと肌コンディションをサポート。</li>
-              <li><strong>NAD+</strong>細胞エネルギーケアをサポートする注目の補酵素。</li>
-              <li><strong>ハリオギ花エキス（ムレイン）</strong>光環境ストレスを受けた後の肌を落ち着かせ、うるおいを保つ希少植物エキス。肌のコンディションを整え、ハリ感をサポート。</li>
-              <li><strong>SAKADIKIUM®</strong>肌の防御機能を高め、外的ストレスへの耐性をサポートする複合成分。バリアをより強固に整える。</li>
-              <li><strong>高山火绒草エキス（高山ウスユキソウ）</strong>高山環境で育つ植物由来のエキス。紫外線・ブルーライトなど多様な光環境ストレスへの対応をサポートし、360°ケアを実現する。</li>
-            </ul>
-          </div>
-          <p class="p-price">¥5,500 <small data-i18n="index_price_tax">（税込）</small></p>
-          <span class="btn-buy btn-coming-soon">COMING SOON</span>
-        </div>
-      </div>
-
-      <!-- 04 シートマスク -->
-      <div class="p-card">
-        <div class="p-img mask">
-          <div class="p-bottle bottle-mask"></div>
-        </div>
-        <div class="p-body">
-          <p class="p-no">No.04</p>
-          <p class="p-jp" data-i18n="p_mask_type">フェイスマスク</p>
-          <h3 class="p-name" data-i18n="p_mask_name">Brightening Repair Face Mask</h3>
-          <p class="p-vol" data-i18n="p_mask_vol">5枚入</p>
-          <p class="p-feature" data-i18n="p_mask_feature">週1〜2回の集中ケアマスク。ナイアシンアミド×AA2G®×カルノシンの三重ブライトニング処方が、くすみをケアし、使うたびに肌の透明感と輝きを引き出す。</p>
-          <div class="p-ingredients">
-            <button class="p-ing-toggle" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');" data-i18n="btn_see_ingredients">成分を見る</button>
-            <ul class="p-ing-list" data-i18n-html="ing_mask_list">
-              <li><strong>PDRN</strong>DENBAシリーズ共通の核心成分。マスクに高濃度配合し、集中的な肌コンディションケアをサポート。</li>
-              <li><strong>ナイアシンアミド</strong>肌トーンを整え、くすみをケアする信頼の透明感成分。抗酸化・バリア補強・うるおいキープのマルチ効果。</li>
-              <li><strong>AA2G®（アスコルビルグルコシド・安定型ビタミンC誘導体）</strong>酸化しにくく高安定性のビタミンC誘導体。均一で明るい肌トーンをサポートし、糖化ケアにも貢献。</li>
-              <li><strong>カルノシン</strong>肌の糖化（タンパク質の劣化現象）に着目した抗糖化成分。成熟肌のくすみケアに注目されている次世代アンチエイジング成分。</li>
-              <li><strong>高機能シート素材</strong>高密着・高保液・柔らかな肌あたりのプレミアムシート。美容液をしっかり肌に密着させ、ケアの効果感と使用時の贅沢な体験を提供。</li>
-            </ul>
-          </div>
-          <p class="p-price">¥3,300 <small data-i18n="index_price_tax">（税込）</small></p>
-          <span class="btn-buy btn-coming-soon">COMING SOON</span>
-        </div>
-      </div>
-
-      <!-- 05 セラム -->
-      <div class="p-card">
-        <div class="p-img serum">
-          <div class="p-bottle bottle-serum"></div>
-        </div>
-        <div class="p-body">
-          <p class="p-no">No.05</p>
-          <p class="p-jp" data-i18n="p4_type">美容液</p>
-          <h3 class="p-name" data-i18n="p4_name">Multi-Dimension Aging Care Serum</h3>
-          <p class="p-vol">30 ml</p>
-          <p class="p-feature" data-i18n="p4_feature">PDRN × 黒松露 × NAD+ × 高濃度HPR——4つの最先端エイジングケア成分をDENBA特許浸透技術で凝縮した、高機能エイジングケアセラム。引き締め・肌質改善・ハリに本格アプローチ。</p>
-          <div class="p-ingredients">
-            <button class="p-ing-toggle" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');" data-i18n="btn_see_ingredients">成分を見る</button>
-            <ul class="p-ing-list" data-i18n-html="ing_serum_list">
-              <li><strong>HPR（ヒドロキシピナコロンレチノエート）高濃度配合</strong>次世代レチノール誘導体。一般的なレチノールより刺激が少なく安定性・浸透性が高い。ハリのある肌質へのエイジングケアにアプローチする最先端成分。</li>
-              <li><strong>Bisabolife（発酵由来ビサボロール）</strong>発酵プロセスで生まれた高純度ビサボロール。HPRを使用する肌を落ち着かせ、スキンカーム効果を高める。</li>
-              <li><strong>SymCalmin®</strong>敏感な肌状態を整える鎮静成分。HPR高濃度配合時の肌への負担を軽減し、快適な使用感を実現。</li>
-              <li><strong>グリチルリチン酸2K</strong>植物由来の鎮静・保湿成分。SymCalmin®・Bisabolifeとともにスキンカーム処方を構成し、HPRケアをよりマイルドにする。</li>
-              <li><strong>Bodyflux® Olive（ヒト同一型トリプルヘリックスセラミド）</strong>ヒトの肌と同じ三重らせん構造を持つオリーブ由来セラミド。バリア機能を補強し、しっとりとしたうるおいを長時間キープ。</li>
-              <li><strong>植物由来スクワラン</strong>皮脂と馴染みやすいエモリエント成分。肌の上に薄いベールを形成し、うるおいを逃さずバリアをサポート。</li>
-            </ul>
-          </div>
-          <p class="p-price">¥6,600 <small data-i18n="index_price_tax">（税込）</small></p>
-          <span class="btn-buy btn-coming-soon">COMING SOON</span>
-          <p class="p-alert" data-i18n="serum_patch_alert">⚠️ 初回使用前にパッチテスト必須（HPR高濃度配合）。耳の後ろ等に24〜48時間テスト後、異常がなければご使用ください。</p>
-        </div>
-      </div>
-
-    </div>
+<!-- PROMISE -->
+<section class="promise">
+  <div style="max-width:680px;margin:0 auto;">
+    <span class="section-eyebrow" style="color:#C9A961;" data-i18n="promise_eyebrow">OUR PROMISE</span>
+    <div class="promise-quote" data-i18n="promise_quote"><em style="color:#E8D5A3;">届いて</em>、はじめて力になる。</div>
+    <p style="color:rgba(255,255,255,0.65);" data-i18n="promise_p">DENBAはもともと、電位技術で食品の鮮度を守り、空間の環境を整えてきた企業です。その技術をスキンケアに応用したとき確信したのは——自然が生み出した生命力あふれる成分を、できるだけ本来の形のまま届けること。</p>
   </div>
 </section>
 
-<!-- INGREDIENTS -->
-<section class="ingredients" id="ingredients">
-  <div class="inner">
-    <p class="eyebrow">Key Ingredients</p>
-    <h2 class="sec-title">1 + 3 + 1 Formula</h2>
-    <div class="divider"></div>
-    <p class="sec-desc" data-i18n="ing_sec_desc">DENBA分子浸透理念を底層に、3つの核心成分と各製品特色成分が融合した独自処方。</p>
-    <div class="ing-layout">
-      <div>
-        <ul class="ing-list">
-          <li class="ing-item">
-            <span class="ing-num">01</span>
-            <div>
-              <p class="ing-name" data-i18n="ing_item1_name">PDRN（ポリデオキシリボヌクレオチド）</p>
-              <p class="ing-desc" data-i18n="ing_item1_desc">サーモン由来の核酸関連成分。肌のコンディションを整えることをサポートする注目のエイジングケア成分。全製品に配合。</p>
-            </div>
-          </li>
-          <li class="ing-item">
-            <span class="ing-num">02</span>
-            <div>
-              <p class="ing-name" data-i18n="ing_item2_name">黒松露（黒トリュフ）細胞外分泌産物</p>
-              <p class="ing-desc" data-i18n="ing_item2_desc">高級食材・黒トリュフが産み出す希少成分。肌のうるおいをサポートする高機能素材。</p>
-            </div>
-          </li>
-          <li class="ing-item">
-            <span class="ing-num">03</span>
-            <div>
-              <p class="ing-name" data-i18n="ing_item3_name">NAD+（ニコチンアミドアデニンジヌクレオチド）</p>
-              <p class="ing-desc" data-i18n="ing_item3_desc">近年注目の補酵素。NAD+を直接配合した次世代エイジングケア成分。</p>
-            </div>
-          </li>
-          <li class="ing-item">
-            <span class="ing-num">+</span>
-            <div>
-              <p class="ing-name" data-i18n="ing_item4_name">HPR（ヒドロキシピナコロンレチノエート）</p>
-              <p class="ing-desc" data-i18n="ing_item4_desc">次世代レチノール誘導体。一般的なレチノールより刺激が少なく安定性・浸透性が高い。セラムに高濃度配合したエイジングケアの最先端成分。</p>
-            </div>
-          </li>
-        </ul>
-        <div class="ing-badges">
-          <span class="ing-badge" data-i18n="ing_badge1">ナイアシンアミド</span>
-          <span class="ing-badge" data-i18n="ing_badge2">トラネキサム酸</span>
-          <span class="ing-badge" data-i18n="ing_badge3">β-グルカン</span>
-          <span class="ing-badge" data-i18n="ing_badge4">セラミドNP</span>
-          <span class="ing-badge" data-i18n="ing_badge5">発酵エキス</span>
-          <span class="ing-badge" data-i18n="ing_badge6">ヒアルロン酸</span>
-        </div>
+<!-- CTA / SHOP -->
+<section class="cta" id="shop">
+  <span class="section-eyebrow" data-i18n="cta_eyebrow">BEGIN YOUR JOURNEY</span>
+  <h2 style="font-size:38px;" data-i18n="cta_title">肌本来の力を、<br>取り戻す。</h2>
+  <p style="max-width:420px;margin:12px auto 32px;color:var(--text-mid);" data-i18n="idx_cta_desc">4点セットでご購入いただくと、通常よりお得にDENBA Skincareのすべてをお試しいただけます。</p>
+  <div class="cta-actions">
+    <a href="products.html" class="btn-primary" data-i18n="cta_btn1">製品ラインを見る</a>
+    <a href="#" onclick="showCartDemo()" class="btn-secondary" data-i18n="idx_cta_btn2">4点セットをカートに追加（デモ）</a>
+  </div>
+  <p style="margin-top:40px;font-size:12px;color:#9A9490;" data-i18n="idx_cta_note">※ 現在公式オンラインショップ準備中です。お問い合わせは下記より。</p>
+</section>
+
+<!-- CONTACT / INQUIRY -->
+<section style="background:#f8f5f0;padding-top:40px;padding-bottom:80px;">
+  <div style="max-width:620px;margin:0 auto;text-align:center;">
+    <span class="section-eyebrow">CONTACT</span>
+    <h2 class="section-title" style="font-size:32px;" data-i18n="idx_contact_title">お問い合わせ</h2>
+    <p style="color:var(--text-mid);margin:12px 0 32px;" data-i18n="idx_contact_desc">製品に関するご質問や取扱店のご相談はこちらから。</p>
+
+    <form name="contact" method="POST" data-netlify="true" style="text-align:left;max-width:460px;margin:0 auto;">
+      <input type="hidden" name="form-name" value="contact">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
+        <input type="text" name="name" placeholder="お名前" data-i18n-ph="idx_form_name" required style="padding:12px;border:1px solid #d4c9b3;background:white;">
+        <input type="email" name="email" placeholder="メールアドレス" data-i18n-ph="idx_form_email" required style="padding:12px;border:1px solid #d4c9b3;background:white;">
       </div>
-
-      <div class="ing-right">
-        <div class="ing-highlight">
-          <p class="hl-eye">DENBA Technology</p>
-          <div class="hl-num">1.8×</div>
-          <p class="hl-unit" data-i18n="ing_hl_unit">浸透速度（自社比較データ）</p>
-          <p class="hl-desc" data-i18n="ing_hl_desc">DENBA照射により全成分を微粒子化。同じ成分でも、届き方が違います。製造工程そのものが特許取得済みの独自テクノロジーです。</p>
-        </div>
-        <div class="ing-feature-box">
-          <p class="feat-title" data-i18n="ing_feat_title">各製品の特色成分</p>
-          <p data-i18n-html="ing_feat_content">
-            <strong>化粧水：PENTAVITIN® ＋ ナノリポソーム ＋ SOD ＋ CoQ10</strong>
-            PENTAVITIN®は皮膚の天然保湿因子（NMF）と同じ糖鎖構造を持ち、水分を長時間キープする持続保湿成分。ナノリポソームが成分を極小カプセルに包み、DENBAの微粒子化とのW浸透アプローチを実現。SOD（スーパーオキシドジスムターゼ）とCoQ10が酸化ストレスをケアし、みずみずしく活力ある肌をサポートする。
-
-            <strong>乳液：Gravity® ＋ 三重植物レチノールシステム</strong>
-            Gravity®は肌の引き締まりとリフト感をサポートするリフティング複合成分。三重植物レチノールシステムは水飛蓟エキス・トリフォリウム・アリスティナムエキス・海茴香エキスの3種植物エキスを組み合わせた独自処方で、一般的なレチノールより穏やかにエイジングケアにアプローチ。使い続けるほどにハリ・ツヤ感が高まる。
-
-            <strong>クリーム：ハリオギ花エキス ＋ SAKADIKIUM® ＋ 高山火绒草（高山ウスユキソウ）</strong>
-            ハリオギ花エキス（ムレイン）は光環境ストレスを受けた肌を落ち着かせ、うるおいとハリをサポートする希少植物エキス。SAKADIKIUM®は肌の防御機能を高め、外的ストレス耐性をサポート。高山火绒草（高山ウスユキソウ）は紫外線・ブルーライトなど多様な光ダメージへの対応をサポートし、360°光シールドを構成する。三重バリア処方で朝晩の集中リペアを実現。
-
-            <strong>フェイスマスク：ナイアシンアミド ＋ AA2G® ＋ カルノシン（三重ブライトニング）</strong>
-            ナイアシンアミド（ビタミンB3）は肌トーン均一化・バリア機能強化のマルチ透明感成分。AA2G®（安定型ビタミンC誘導体）は酸化しにくく安定性が高く、均一で明るい肌トーンをサポート。カルノシン（天然ジペプチド）は肌の糖化に着目した抗糖化・抗酸化成分。3成分の複合アプローチで、即時うるおいと使うたびに高まる透明感を提供する。
-
-            <strong>セラム：高濃度HPR ＋ Bisabolife ＋ SymCalmin® ＋ Bodyflux® Olive</strong>
-            PDRN・黒松露・NAD+の核心3成分に加え、高濃度HPRをコア成分に据えた「高機能エイジングケアセラム」。百貨店プレミアムブランド（¥9,900〜）より手軽でありながら、単機能HPR美容液を超える複合処方を実現。HPR（ヒドロキシピナコロンレチノエート）は次世代レチノール誘導体で、ハリ・肌質改善に本格アプローチ。Bisabolife（発酵由来ビサボロール）・SymCalmin®・グリチルリチン酸2KのスキンカームトリオがHPRを優しく包み、Bodyflux® Olive（ヒト同一型トリプルヘリックスセラミド）と植物由来スクワランが深いうるおいとバリアをキープ。
-          </p>
-        </div>
-      </div>
-    </div>
+      <textarea name="message" placeholder="ご質問・ご相談内容" data-i18n-ph="idx_form_msg" rows="4" required style="width:100%;padding:12px;border:1px solid #d4c9b3;background:white;margin-bottom:16px;"></textarea>
+      <button type="submit" class="btn-primary" style="width:100%;" data-i18n="idx_form_submit">送信する</button>
+      <p style="font-size:10px;color:#9A9490;margin-top:12px;text-align:center;">Netlify Formsで送信されます（デモ）</p>
+    </form>
   </div>
 </section>
 
-<!-- MADE IN JAPAN -->
-<section class="mij">
-  <div class="inner" style="text-align:center;">
-    <p class="eyebrow" style="color:var(--gold);">Quality Promise</p>
-    <h2 class="sec-title" style="color:var(--white); text-align:center;">Made in Japan</h2>
-    <div class="divider" style="margin: 20px auto 32px;"></div>
-    <div class="mij-badges">
-      <div class="mij-badge"><div class="mij-icon">🇯🇵</div><div class="mij-lbl"><strong data-i18n="mij_badge1_strong">Made in Japan</strong><span data-i18n="mij_badge1_text">国内製造</span></div></div>
-      <div class="mij-badge"><div class="mij-icon">🔬</div><div class="mij-lbl"><strong data-i18n="mij_badge2_strong">特許取得技術</strong><span data-i18n="mij_badge2_text">浸透力改善装置</span><br><span style="font-size:9px; color:rgba(255,255,255,0.4);">特許第7809311号</span></div></div>
-      <div class="mij-badge"><div class="mij-icon">✓</div><div class="mij-lbl"><strong data-i18n="mij_badge3_strong">薬機法適合</strong><span data-i18n="mij_badge3_text">化粧品区分・国内基準準拠</span></div></div>
-      <div class="mij-badge"><div class="mij-icon">⚗️</div><div class="mij-lbl"><strong data-i18n="mij_badge4_strong">自社エビデンス</strong><span data-i18n="mij_badge4_text">1.8倍浸透速度データ</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section class="about-sec" id="about">
-  <div class="inner">
-    <p class="eyebrow" data-i18n="about_eyebrow">ABOUT THE BRAND</p>
-    <h2 class="sec-title" data-i18n-html="about_title">電位技術で、<br>世界の環境を変える企業。</h2>
-    <div class="divider"></div>
-
-    <!-- 企業信頼性バッジ -->
-    <div class="about-badges-grid">
-      <div class="about-badge-card">
-        <div class="about-badge-icon">🏢</div>
-        <p class="about-badge-text" data-i18n="about_badge_itochu">伊藤忠商事 出資</p>
-      </div>
-      <div class="about-badge-card">
-        <div class="about-badge-icon">💹</div>
-        <p class="about-badge-text" data-i18n="about_badge_sbi">SBIホールディングス 連携</p>
-      </div>
-      <div class="about-badge-card">
-        <div class="about-badge-icon">🌍</div>
-        <p class="about-badge-text" data-i18n="about_badge_patent">世界49カ国 特許取得</p>
-      </div>
-    </div>
-
-    <!-- 企業紹介文 -->
-    <div class="about-desc" data-i18n-html="about_desc">
-      <p>DENBA JAPAN株式会社は2020年に設立。独自の電位技術を核に、食品の鮮度保持・医療機器・農業・スキンケアまで多分野にわたる課題を解決してきました。その技術力は国内外から高く評価され、伊藤忠商事・SBIホールディングスの出資を受けています。</p>
-      <p>ISO9001取得の品質管理体制のもと、医療機器認証を取得。世界49カ国での特許取得により、グローバルに保護された技術知財を有しています。電位技術が持つ可能性を、あらゆる生命体の「最高の環境」の実現に向け展開しています。</p>
-    </div>
-
-    <!-- SDGsカード -->
-    <div class="sdg-grid">
-      <div class="sdg-card">
-        <div class="sdg-num">12</div>
-        <p class="sdg-title" data-i18n="about_sdg1_title">食品ロス削減</p>
-        <p class="sdg-desc" data-i18n="about_sdg1_desc">DENBA+鮮度保持技術がサプライチェーン全体の食品廃棄を削減し、持続可能な食の流通を支える。</p>
-      </div>
-      <div class="sdg-card">
-        <div class="sdg-num">3</div>
-        <p class="sdg-title" data-i18n="about_sdg2_title">健康と福祉</p>
-        <p class="sdg-desc" data-i18n="about_sdg2_desc">DENBA Health医療機器が人々の健康回復と福祉の向上に貢献。認証を取得した医療グレードの技術を展開。</p>
-      </div>
-      <div class="sdg-card">
-        <div class="sdg-num">9</div>
-        <p class="sdg-title" data-i18n="about_sdg3_title">産業と技術革新</p>
-        <p class="sdg-desc" data-i18n="about_sdg3_desc">世界49カ国で取得した特許技術を基盤に、多産業への革新的ソリューションをグローバルに展開。</p>
-      </div>
-    </div>
-
-    <!-- 理念 -->
-    <div class="about-philosophy">
-      <div class="about-philosophy-line"></div>
-      <p class="about-philosophy-text" data-i18n="about_philosophy">すべての生命が、最高の環境で生きられる世界へ。</p>
-      <div class="about-philosophy-line"></div>
-    </div>
-
-    <!-- 受賞・実績 -->
-    <div class="about-awards">
-      <p class="eyebrow" style="margin-bottom:20px;">Awards & Recognition</p>
-      <ul class="about-awards-list" data-i18n-html="about_awards">
-        <li>ロジスティクス大賞 技術革新奨励賞</li>
-        <li>日本海事協会 Innovation Endorsement（世界初認証）</li>
-        <li>Gulfood 2024 Best Frozen Product 賞</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-sec">
-  <div class="inner">
-    <p class="eyebrow" style="text-align:center;" data-i18n="cta_eyebrow">Start Your Ritual</p>
-    <h2 class="sec-title" style="text-align:center;" data-i18n-html="cta_title">あなたの肌に、<br>分子設計のケアを。</h2>
-    <div class="divider" style="margin: 20px auto 32px;"></div>
-    <p class="sec-desc" data-i18n="index_cta_desc">全5種のラインナップから、あなたのスキンケアルーティンをはじめましょう。</p>
-    <span class="cta-coming-soon">COMING SOON</span>
-    <a href="technology.html" class="cta-secondary" data-i18n="cta_btn2">技術について</a>
-  </div>
-</section>
-
-<!-- FOOTER -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div class="footer-logo">DENBA <span>Skincare</span></div>
-      <ul class="footer-links">
-        <li><a href="#freshness">Story</a></li>
-        <li><a href="technology.html" data-i18n="nav_technology">Technology</a></li>
-        <li><a href="products.html" data-i18n="nav_products">Products</a></li>
-        <li><a href="#ingredients">Ingredients</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
+  <div class="footer-grid">
+    <div>
+      <div style="font-family:var(--serif);font-size:17px;letter-spacing:0.25em;color:#C9A961;margin-bottom:4px;">DENBA Skincare</div>
+      <div>© 2026 DENBA JAPAN Co., Ltd. All rights reserved.</div>
     </div>
-    <div class="footer-bottom">
-      <p class="copyright" data-i18n="footer_copyright">© 2026 DENBA JAPAN Co., Ltd. All rights reserved.</p>
-      <p class="footer-note" data-i18n="footer_note_index">※本製品は化粧品です。医薬品・医薬部外品ではありません。※効能・効果には個人差があります。※セラムは初回使用前に必ずパッチテストを実施してください。</p>
+    <div style="text-align:right;line-height:1.5;">
+      <span data-i18n="footer_tagline">分子設計から、究極の浸透へ</span><br>
+      <span style="font-size:10px;">AEB TECHNOLOGY</span>
     </div>
   </div>
 </footer>
 
-<script src="translations.js"></script>
-<script>
-  // ヘッダーの透過制御
-  const header = document.querySelector('header');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 80) {
-      header.style.background = 'rgba(253,251,248,0.97)';
-    } else {
-      header.style.background = 'rgba(253,251,248,0.92)';
-    }
-  });
+<!-- Demo Cart -->
+<div id="cart" class="cart">
+  <span>カートに <span id="cart-count">4</span> 点追加しました</span>
+  <button onclick="this.parentElement.classList.remove('show'); alert('デモのため実際の購入には進みません。');" style="background:var(--gold);color:#1A1712;border:none;padding:4px 12px;font-size:10px;cursor:pointer;">購入手続きへ</button>
+</div>
 
-  // モバイル：動画切り替え＆強制再生
-  const heroVideo = document.getElementById('heroVideo');
-  if (heroVideo) {
-    heroVideo.muted = true;
-    const isMobile = window.innerWidth <= 768;
-    if (isMobile) {
-      // モバイルは即座に表示（CSSで opacity:1 をセット済みだが念のため）
-      heroVideo.style.opacity = '1';
-      const src = heroVideo.querySelector('source');
-      if (src) src.src = 'images/hero-bg-mobile.mp4';
-      heroVideo.load();
-    } else {
-      // デスクトップ：再生開始でフェードイン
-      heroVideo.addEventListener('playing', function() {
-        heroVideo.style.opacity = '1';
-      }, { once: true });
-      // 2秒後フォールバック（playingが発火しなかった場合）
-      setTimeout(() => { heroVideo.style.opacity = '1'; }, 2000);
-    }
-    const tryPlay = () => {
-      heroVideo.play().catch(() => {});
-    };
-    heroVideo.addEventListener('loadeddata', tryPlay, { once: true });
-    document.addEventListener('touchstart', tryPlay, { once: true });
-    window.addEventListener('load', tryPlay);
+<script src="translations.js"></script>
+<script src="js/main.js"></script>
+<script>
+// Enhanced demo cart for homepage
+function showCartDemo() {
+  const cart = document.getElementById('cart');
+  if (window.addToCart) {
+    // Add the set
+    addToCart('4点セット', 25300);
   }
+  if (cart) {
+    cart.classList.add('show');
+    setTimeout(() => {
+      const msg = document.createElement('div');
+      msg.style.cssText = 'font-size:10px;margin-top:4px;opacity:0.7;';
+      msg.textContent = '（これはデモです。実際の決済には進みません）';
+      cart.appendChild(msg);
+    }, 1200);
+  }
+}
+
+// Keyboard shortcut hint
+document.addEventListener('keydown', e => {
+  if (e.key === '/' && document.activeElement.tagName === 'BODY') {
+    e.preventDefault();
+    window.location.href = 'products.html';
+  }
+});
+
+console.log('%c[DENBA Skincare] Complete website ready — index + products + technology + i18n + demo cart', 'color:#C9A961');
 </script>
 
 </body>

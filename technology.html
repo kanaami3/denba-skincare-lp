@@ -177,6 +177,31 @@
     .what-is .sec-label { color: var(--gold); }
     .what-is .gold-line { background: var(--gold); }
 
+    .cluster-diagram-wrap {
+      margin: 48px 0 64px;
+      text-align: center;
+    }
+    .cluster-diagram-img {
+      max-width: 760px; width: 100%;
+      border: 1px solid rgba(201,169,97,0.15);
+      border-radius: 8px;
+    }
+    .cluster-diagram-note {
+      margin-top: 12px; font-size: 11px;
+      color: rgba(255,255,255,0.3); letter-spacing: 0.05em;
+    }
+
+    /* ── PATENT CERTIFICATES ── */
+    .patent-cert-wrap {
+      margin-top: 48px;
+      text-align: center;
+    }
+    .patent-cert-img {
+      max-width: 900px; width: 100%;
+      border: 1px solid rgba(201,169,97,0.15);
+      border-radius: 8px;
+    }
+
     .aeb-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -459,6 +484,9 @@
       line-height: 1.7; margin-bottom: 24px;
     }
     .freshness-desc { font-size: 15px; color: var(--text-mid); line-height: 2.2; }
+    .apple-comparison { margin: 56px 0 64px; text-align: center; }
+    .apple-img { max-width: 720px; width: 100%; border-radius: 12px; box-shadow: 0 12px 48px rgba(0,0,0,0.08); }
+    .apple-note { margin-top: 14px; font-size: 11px; color: var(--text-light); letter-spacing: 0.05em; }
 
     .domain-grid {
       display: grid;
@@ -671,21 +699,17 @@
 <header>
   <a href="index.html" class="logo">DENBA <span>Skincare</span></a>
   <nav>
-    <a href="index.html#essentials">Ingredients</a>
-    <a href="technology.html" class="active" data-i18n="nav_technology">Technology</a>
-    <a href="products.html" data-i18n="nav_products">Products</a>
+    <a href="index.html">TOP</a>
+    <a href="index.html#essentials">INGREDIENTS</a>
+    <a href="technology.html" class="active">TECHNOLOGY</a>
+    <a href="products.html">PRODUCTS</a>
+    <a href="index.html#shop" class="btn-header">SHOP NOW</a>
   </nav>
   <div class="lang-switcher">
-    <button class="lang-btn active" data-lang="ja" onclick="applyLanguage('ja')">JA</button>
-    <span class="lang-sep">|</span>
-    <button class="lang-btn" data-lang="en" onclick="applyLanguage('en')">EN</button>
-    <span class="lang-sep">|</span>
-    <button class="lang-btn" data-lang="zh" onclick="applyLanguage('zh')">中文</button>
+    <button class="lang-btn active" onclick="switchLang && switchLang('ja') || applyLanguage('ja')">JP</button>
+    <span class="lang-sep">/</span>
+    <button class="lang-btn" onclick="switchLang && switchLang('en') || applyLanguage('en')">EN</button>
   </div>
-  <a href="products.html" class="btn-header" data-i18n="nav_shop">Shop Now</a>
-  <button class="ham-btn" onclick="document.getElementById('mobMenu').classList.add('open')" aria-label="メニューを開く">
-    <span></span><span></span><span></span>
-  </button>
 </header>
 
 <!-- モバイルメニュー -->
@@ -729,16 +753,16 @@
   <p class="hero-proverb-sub" data-i18n="tech_hero_proverb_sub">Japanese Proverb — The Origin of DENBA Philosophy</p>
   <h1 data-i18n="tech_hero_h1">水分子を動かし、<br><span>生命の環境</span>を整える。</h1>
   <div class="hero-divider"></div>
-  <p class="hero-sub" data-i18n="tech_hero_desc">
+  <p class="hero-sub" data-i18n-html="tech_hero_sub">
     電気エネルギーで電場空間を作り出し、大気中の水分子を低周波で振動させる。<br>
     その振動がクラスターを細かくし、鮮度を保ち、浸透力を高める。<br>
     水を含むすべての生体に作用する、汎用性の高い技術。
   </p>
   <div class="hero-badges">
-    <span class="hero-badge">特許取得済</span>
-    <span class="hero-badge">世界49カ国 商標登録</span>
-    <span class="hero-badge">1.8倍浸透 自社エビデンス</span>
-    <span class="hero-badge">国内製造</span>
+    <span class="hero-badge" data-i18n="tech_hero_badge1">特許取得済</span>
+    <span class="hero-badge" data-i18n="tech_hero_badge2">世界49カ国 商標登録</span>
+    <span class="hero-badge" data-i18n="tech_hero_badge3">1.8倍浸透 自社エビデンス</span>
+    <span class="hero-badge" data-i18n="tech_hero_badge4">国内製造</span>
   </div>
 </section>
 
@@ -750,7 +774,7 @@
     <span class="sec-label" data-i18n="s01_eyebrow">01 — What is DENBA Technology</span>
     <h2 class="sec-title" data-i18n="s01_title">DENBA独自の<br>空間水分子活性技術</h2>
     <div class="gold-line"></div>
-    <p class="sec-lead" data-i18n="tech_hero_desc">
+    <p class="sec-lead" data-i18n="s01_lead">
       DENBAの技術は、電気エネルギーによって低電位の空間（電場空間）を作り出し、
       その空間中にある生体や大気に含まれる水分子を低周波で振動させるものです。
       振動によって水分子クラスターを細かくし、食品の鮮度を保持、
@@ -759,6 +783,12 @@
       今後「人類の未来をより良いものに変える」テクノロジーです。
     </p>
 
+    <!-- 水クラスター図解 -->
+    <div class="cluster-diagram-wrap">
+      <img src="images/water-cluster-diagram.png" alt="電位照射前 → 水分子が微細振動 → 小さなクラスター" class="cluster-diagram-img">
+      <p class="cluster-diagram-note" data-i18n="cluster_diagram_note">※イメージ図</p>
+    </div>
+
     <div class="aeb-grid">
       <div class="aeb-card">
         <span class="aeb-letter">1</span>
@@ -766,7 +796,7 @@
         <span class="aeb-tag">Step 01</span>
         <p class="aeb-name" data-i18n="s01_step1_title">電場空間の生成</p>
         <p class="aeb-jp">Electric Field Space</p>
-        <p class="aeb-desc" data-i18n="s01_step1_desc">電気エネルギーによって低電位の空間（電場空間）を作り出します。この特殊な空間環境が、DENBAのすべての作用の起点となります。特許で守られた独自のユニットが、製造ラインに設置されます。</p>
+        <p class="aeb-desc" data-i18n="s01_step1_detail">電気エネルギーによって低電位の空間（電場空間）を作り出します。この特殊な空間環境が、DENBAのすべての作用の起点となります。特許で守られた独自のユニットが、製造ラインに設置されます。</p>
       </div>
       <div class="aeb-card">
         <span class="aeb-letter">2</span>
@@ -774,7 +804,7 @@
         <span class="aeb-tag">Step 02</span>
         <p class="aeb-name" data-i18n="s01_step2_title">低周波による水分子の振動</p>
         <p class="aeb-jp">Low-frequency Vibration</p>
-        <p class="aeb-desc" data-i18n="s01_step2_desc">電場空間の中にある水分子を、低周波で振動させます。生体や大気に含まれる水分子に作用するため、対象物を直接触れることなく、空間ごとアプローチできることが特徴です。</p>
+        <p class="aeb-desc" data-i18n="s01_step2_detail">電場空間の中にある水分子を、低周波で振動させます。生体や大気に含まれる水分子に作用するため、対象物を直接触れることなく、空間ごとアプローチできることが特徴です。</p>
       </div>
       <div class="aeb-card">
         <span class="aeb-letter">3</span>
@@ -782,7 +812,7 @@
         <span class="aeb-tag">Step 03</span>
         <p class="aeb-name" data-i18n="s01_step3_title">クラスター細分化と多面的な効果</p>
         <p class="aeb-jp">Cluster Refinement</p>
-        <p class="aeb-desc" data-i18n="s01_step3_desc">振動によって水分子クラスターが細かくなります。その結果として、食品の鮮度保持・菌の発生抑制、そしてスキンケアにおける有効成分の浸透力向上が実現します。水を含むすべての生体に作用する汎用性の高さが、DENBAの最大の強みです。</p>
+        <p class="aeb-desc" data-i18n="s01_step3_detail">振動によって水分子クラスターが細かくなります。その結果として、食品の鮮度保持・菌の発生抑制、そしてスキンケアにおける有効成分の浸透力向上が実現します。水を含むすべての生体に作用する汎用性の高さが、DENBAの最大の強みです。</p>
       </div>
     </div>
   </div>
@@ -800,44 +830,31 @@
     <div class="mol-layout">
       <div class="mol-visual">
         <div class="mol-diagram">
-          <div class="mol-diagram-grid"></div>
-          <p class="chart-title">Water Molecule Cluster — Before & After DENBA</p>
-          <div class="cluster-compare">
-            <div class="cluster-box">
-              <span class="cluster-label">通常の水</span>
-              <div class="cluster-visual cluster-before">13〜17</div>
-              <p class="cluster-num">分子クラスター数</p>
-            </div>
-            <span class="cluster-arrow">→</span>
-            <div class="cluster-box">
-              <span class="cluster-label">DENBA電場空間内</span>
-              <div class="cluster-visual cluster-after">3〜5</div>
-              <p class="cluster-num">分子クラスター数</p>
-            </div>
-          </div>
+          <img src="images/molecule-penetration.png" alt="分子浸透メカニズム図" style="width:100%; border-radius:8px; display:block;">
+          <p class="apple-note" style="margin-top:10px;" data-i18n="mechanism_note">※イメージ図</p>
         </div>
         <div class="mol-stats">
           <div class="mol-stat">
             <span class="mol-stat-num">1.8×</span>
-            <span class="mol-stat-label">浸透速度（自社比較）</span>
+            <span class="mol-stat-label" data-i18n="tech_mol_stat1_label">浸透速度（自社比較）</span>
           </div>
           <div class="mol-stat">
             <span class="mol-stat-num">49</span>
-            <span class="mol-stat-label">カ国で特許・商標</span>
+            <span class="mol-stat-label" data-i18n="tech_mol_stat2_label">カ国で特許・商標</span>
           </div>
           <div class="mol-stat">
             <span class="mol-stat-num">100%</span>
-            <span class="mol-stat-label">全成分に作用</span>
+            <span class="mol-stat-label" data-i18n="tech_mol_stat3_label">全成分に作用</span>
           </div>
           <div class="mol-stat">
-            <span class="mol-stat-num">国内</span>
-            <span class="mol-stat-label">製造・充填・品質管理</span>
+            <span class="mol-stat-num" data-i18n="tech_mol_stat4_num">国内</span>
+            <span class="mol-stat-label" data-i18n="tech_mol_stat4_label">製造・充填・品質管理</span>
           </div>
         </div>
       </div>
 
       <div class="mol-content">
-        <p class="sec-lead" style="margin-bottom: 0;">
+        <p class="sec-lead" style="margin-bottom: 0;" data-i18n="s02_lead">
           電場空間の中で、水分子が低周波によって振動する——
           その物理的な作用が、クラスターを細かくし、
           食品の鮮度保持から化粧品成分の浸透まで、
@@ -847,29 +864,29 @@
           <div class="process-item">
             <span class="process-num">1</span>
             <div class="process-text">
-              <h4>電場空間の生成</h4>
-              <p>DENBAユニットが電気エネルギーを使い、周囲に低電位の電場空間を作り出します。直接触れることなく、空間ごと作用するのが特徴です。</p>
+              <h4 data-i18n="s02_process1_title">電場空間の生成</h4>
+              <p data-i18n="s02_process1_desc">DENBAユニットが電気エネルギーを使い、周囲に低電位の電場空間を作り出します。直接触れることなく、空間ごと作用するのが特徴です。</p>
             </div>
           </div>
           <div class="process-item">
             <span class="process-num">2</span>
             <div class="process-text">
-              <h4>水分子の低周波振動</h4>
-              <p>電場空間内にある水分子が、低周波によって振動を始めます。この振動が、クラスターの分解と水分子の流動化を促します。</p>
+              <h4 data-i18n="s02_process2_title">水分子の低周波振動</h4>
+              <p data-i18n="s02_process2_desc">電場空間内にある水分子が、低周波によって振動を始めます。この振動が、クラスターの分解と水分子の流動化を促します。</p>
             </div>
           </div>
           <div class="process-item">
             <span class="process-num">3</span>
             <div class="process-text">
-              <h4>クラスターの細分化</h4>
-              <p>振動により水分子クラスターが細かく分かれます。通常13〜17個のクラスターが、DENBA電場空間では3〜5個に縮小。これが鮮度保持・菌抑制・浸透力向上の基盤となります。</p>
+              <h4 data-i18n="s02_process3_title">クラスターの細分化</h4>
+              <p data-i18n="s02_process3_desc">振動により水分子クラスターが細かく分かれます。通常13〜17個のクラスターが、DENBA電場空間では3〜5個に縮小。これが鮮度保持・菌抑制・浸透力向上の基盤となります。</p>
             </div>
           </div>
           <div class="process-item">
             <span class="process-num">4</span>
             <div class="process-text">
-              <h4>スキンケアへの応用 — 有効成分の角層への浸透</h4>
-              <p>DENBA電場空間内で製造されたスキンケア製品は、全成分がクラスター細分化の恩恵を受けた状態に。自社比較で1.8倍の浸透速度を確認しています。</p>
+              <h4 data-i18n="s02_process4_title">スキンケアへの応用 — 有効成分の角層への浸透</h4>
+              <p data-i18n="s02_process4_desc">DENBA電場空間内で製造されたスキンケア製品は、全成分がクラスター細分化の恩恵を受けた状態に。自社比較で1.8倍の浸透速度を確認しています。</p>
             </div>
           </div>
         </div>
@@ -897,16 +914,16 @@
               <div class="bar bar-normal">
                 <span class="bar-pct" style="color:rgba(255,255,255,0.5);">1×</span>
               </div>
-              <span class="bar-label">一般化粧品</span>
+              <span class="bar-label" data-i18n="tech_bar_label_normal">一般化粧品</span>
             </div>
             <div class="bar-item">
               <div class="bar bar-denba">
                 <span class="bar-pct" style="color:var(--gold);">1.8×</span>
               </div>
-              <span class="bar-label">DENBA技術</span>
+              <span class="bar-label" data-i18n="tech_bar_label_denba">DENBA技術</span>
             </div>
           </div>
-          <div class="evidence-note">
+          <div class="evidence-note" data-i18n="s03_evidence_note">
             ※自社による比較試験データ。DENBA照射あり・なしの浸透速度を比較。個人差があります。
           </div>
         </div>
@@ -915,23 +932,23 @@
       <div class="evidence-items">
         <div class="evi-item">
           <span class="evi-tag">Penetration</span>
-          <p class="evi-title">浸透速度 1.8倍（自社比較）</p>
-          <p class="evi-desc">DENBA照射あり・なしのサンプルを用いた自社比較試験にて、照射品が約1.8倍速く有効成分が浸透することを確認。微粒子化による浸透経路の拡大が要因です。</p>
+          <p class="evi-title" data-i18n="tech_evi1_title">浸透速度 1.8倍（自社比較）</p>
+          <p class="evi-desc" data-i18n="tech_evi1_desc">DENBA照射あり・なしのサンプルを用いた自社比較試験にて、照射品が約1.8倍速く有効成分が浸透することを確認。微粒子化による浸透経路の拡大が要因です。</p>
         </div>
         <div class="evi-item">
           <span class="evi-tag">Molecular</span>
-          <p class="evi-title">水分子クラスターの小型化を確認</p>
-          <p class="evi-desc">核磁気共鳴（NMR）分析により、DENBA照射後の水分子クラスターが通常の約1/3〜1/4に小型化することを確認。物理的な変化として計測可能です。</p>
+          <p class="evi-title" data-i18n="tech_evi2_title">水分子クラスターの小型化を確認</p>
+          <p class="evi-desc" data-i18n="tech_evi2_desc">核磁気共鳴（NMR）分析により、DENBA照射後の水分子クラスターが通常の約1/3〜1/4に小型化することを確認。物理的な変化として計測可能です。</p>
         </div>
         <div class="evi-item">
           <span class="evi-tag">Stability</span>
-          <p class="evi-title">成分の安定性・鮮度保持への寄与</p>
-          <p class="evi-desc">微粒子化された成分は、通常状態に比べて酸化・変性が起こりにくく、製品の安定性と成分の長期保全に貢献。DENBA技術を活かした保管・輸送の最適化も実現しています。</p>
+          <p class="evi-title" data-i18n="tech_evi3_title">成分の安定性・鮮度保持への寄与</p>
+          <p class="evi-desc" data-i18n="tech_evi3_desc">微粒子化された成分は、通常状態に比べて酸化・変性が起こりにくく、製品の安定性と成分の長期保全に貢献。DENBA技術を活かした保管・輸送の最適化も実現しています。</p>
         </div>
         <div class="evi-item">
           <span class="evi-tag">Multi-domain</span>
-          <p class="evi-title">食品・医療分野での実績</p>
-          <p class="evi-desc">同じ技術原理が、食品の鮮度保持・医療機器の分野で先行して実用化。多領域での実績がDENBA技術の信頼性を裏付けています。スキンケアはその応用展開です。</p>
+          <p class="evi-title" data-i18n="tech_evi4_title">食品・医療分野での実績</p>
+          <p class="evi-desc" data-i18n="tech_evi4_desc">同じ技術原理が、食品の鮮度保持・医療機器の分野で先行して実用化。多領域での実績がDENBA技術の信頼性を裏付けています。スキンケアはその応用展開です。</p>
         </div>
       </div>
     </div>
@@ -946,7 +963,7 @@
     <span class="sec-label" data-i18n="s04_eyebrow">04 — Patents & Intellectual Property</span>
     <h2 class="sec-title" style="color:var(--white);" data-i18n="s04_title">特許・知財</h2>
     <div class="gold-line"></div>
-    <p class="sec-lead" style="color:rgba(255,255,255,0.55);" data-i18n="s04_desc">
+    <p class="sec-lead" style="color:rgba(255,255,255,0.55);" data-i18n="s04_lead">
       DENBA技術の独自性は、特許という形で法的に保護されています。
       世界49カ国での商標登録・特許取得が、この技術の国際的な信頼性を証明しています。
     </p>
@@ -954,43 +971,34 @@
     <div class="patent-main">
       <div class="patent-watermark">P</div>
       <span class="patent-eyebrow">Core Patent — Japan</span>
-      <p class="patent-num">特許第7809311号</p>
-      <p class="patent-name">
+      <p class="patent-num" data-i18n="tech_patent_num">特許第7809311号</p>
+      <p class="patent-name" data-i18n-html="s04_patent_name">
         液状・クリーム状・ジェル状・エマルジョン状物質の<br>
         浸透力改善装置
       </p>
-      <div class="patent-meta">
-        <div class="patent-meta-item">
-          <p class="patent-meta-label">発明者</p>
-          <p class="patent-meta-value">後藤錦隆 / 近藤加奈子</p>
-        </div>
-        <div class="patent-meta-item">
-          <p class="patent-meta-label">権利者</p>
-          <p class="patent-meta-value">DENBAホールディングス株式会社</p>
-        </div>
-        <div class="patent-meta-item">
-          <p class="patent-meta-label">対象</p>
-          <p class="patent-meta-value">液状・クリーム・ジェル・エマルジョン全般</p>
-        </div>
-      </div>
     </div>
 
     <div class="patent-grid">
       <div class="patent-card">
         <span class="patent-card-icon">49</span>
-        <p class="patent-card-title">カ国での商標登録・特許取得</p>
-        <p class="patent-card-desc">北米・欧州・アジア・中東を含む世界49カ国にて、DENBA技術の商標登録および特許取得が完了。グローバルに保護された技術知財です。</p>
+        <p class="patent-card-title" data-i18n="s04_card1_title">カ国での商標登録・特許取得</p>
+        <p class="patent-card-desc" data-i18n="s04_card1_desc">北米・欧州・アジア・中東を含む世界49カ国にて、DENBA技術の商標登録および特許取得が完了。グローバルに保護された技術知財です。</p>
       </div>
       <div class="patent-card">
         <span class="patent-card-icon">ISO</span>
-        <p class="patent-card-title">国際品質基準への対応</p>
-        <p class="patent-card-desc">ISO9001、CE、FCCなど国際的な安全基準をクリアした品質管理体制のもとで開発。スキンケアへの応用においても、同水準の品質管理を適用しています。</p>
+        <p class="patent-card-title" data-i18n="s04_card2_title">国際品質基準への対応</p>
+        <p class="patent-card-desc" data-i18n="s04_card2_desc">ISO9001、CE、FCCなど国際的な安全基準をクリアした品質管理体制のもとで開発。スキンケアへの応用においても、同水準の品質管理を適用しています。</p>
       </div>
       <div class="patent-card">
         <span class="patent-card-icon">🇯🇵</span>
-        <p class="patent-card-title">国内製造による品質の一貫管理</p>
-        <p class="patent-card-desc">原液の充填から最終製品まで、すべて日本国内で製造。知財で守られた製造プロセスが、DENBA Skincareの品質を担保します。</p>
+        <p class="patent-card-title" data-i18n="s04_card3_title">国内製造による品質の一貫管理</p>
+        <p class="patent-card-desc" data-i18n="s04_card3_desc">原液の充填から最終製品まで、すべて日本国内で製造。知財で守られた製造プロセスが、DENBA Skincareの品質を担保します。</p>
       </div>
+    </div>
+
+    <!-- 特許取得状況 証書画像 -->
+    <div class="patent-cert-wrap">
+      <img src="images/patent-certificates.png" alt="特許取得状況 — 日本・米国・中国・韓国・台湾・欧州など" class="patent-cert-img">
     </div>
   </div>
 </section>
@@ -1005,11 +1013,11 @@
     <div class="gold-line"></div>
 
     <div class="freshness-intro">
-      <p class="freshness-quote">
+      <p class="freshness-quote" data-i18n-html="s05_freshness_quote">
         「流れる水は腐らない」——<br>
         動かし続けることが、鮮度を保つ。
       </p>
-      <p class="freshness-desc">
+      <p class="freshness-desc" data-i18n="s05_freshness_desc">
         水分子を低周波で「振動＝流動」させるDENBA技術は、
         この古来の智慧を科学で体現したものです。
         振動によって細かくなった水分子クラスターは、
@@ -1020,26 +1028,32 @@
       </p>
     </div>
 
+    <!-- リンゴ比較 -->
+    <div class="apple-comparison">
+      <img src="images/apple-comparison.jpg" alt="DENBAあり vs DENBAなし リンゴ鮮度比較" class="apple-img">
+      <p class="apple-note" data-i18n="apple_note">※対象物・環境条件・運用方法によって変わる場合があります。</p>
+    </div>
+
     <div class="domain-grid">
       <div class="domain-card">
         <span class="domain-num">01</span>
         <div class="domain-icon-wrap">🥩</div>
-        <p class="domain-title">食品・鮮度保持</p>
-        <p class="domain-desc">電場空間内で水分子を振動・活性化させることで、食材の細胞を傷めずに鮮度を長期保持。同時に菌の発生も抑制します。食肉・鮮魚・農産物で先行して実績を持つ、DENBAの中核応用領域です。</p>
-        <span class="domain-tag">先行実績あり</span>
+        <p class="domain-title" data-i18n="s05_domain1_title">食品・鮮度保持</p>
+        <p class="domain-desc" data-i18n="s05_domain1_desc">電場空間内で水分子を振動・活性化させることで、食材の細胞を傷めずに鮮度を長期保持。同時に菌の発生も抑制します。食肉・鮮魚・農産物で先行して実績を持つ、DENBAの中核応用領域です。</p>
+        <span class="domain-tag" data-i18n="tech_domain_tag1">先行実績あり</span>
       </div>
       <div class="domain-card">
         <span class="domain-num">02</span>
         <div class="domain-icon-wrap">🏥</div>
-        <p class="domain-title">医療・健康機器</p>
-        <p class="domain-desc">電場空間が生体内の水分子に作用し、細胞の環境を整える。その原理を応用した健康・医療機器を展開。北米での認証プロセスも進行中で、国際的な安全性基準のもと開発が続きます。</p>
-        <span class="domain-tag">国際展開中</span>
+        <p class="domain-title" data-i18n="s05_domain2_title">医療・健康機器</p>
+        <p class="domain-desc" data-i18n="s05_domain2_desc">電場空間が生体内の水分子に作用し、細胞の環境を整える。その原理を応用した健康・医療機器を展開。北米での認証プロセスも進行中で、国際的な安全性基準のもと開発が続きます。</p>
+        <span class="domain-tag" data-i18n="tech_domain_tag2">国際展開中</span>
       </div>
       <div class="domain-card">
         <span class="domain-num">03</span>
         <div class="domain-icon-wrap">✨</div>
-        <p class="domain-title">スキンケア — 成分浸透への応用</p>
-        <p class="domain-desc">食品・医療で証明された「電場空間内での水分子活性化」を、スキンケア製造工程に応用。全成分がクラスター細分化の状態で製品化され、1.8倍速（自社比較）の浸透力を実現します。</p>
+        <p class="domain-title" data-i18n="s05_domain3_title">スキンケア — 成分浸透への応用</p>
+        <p class="domain-desc" data-i18n="s05_domain3_desc">食品・医療で証明された「電場空間内での水分子活性化」を、スキンケア製造工程に応用。全成分がクラスター細分化の状態で製品化され、1.8倍速（自社比較）の浸透力を実現します。</p>
         <span class="domain-tag">DENBA Skincare</span>
       </div>
     </div>
@@ -1062,39 +1076,39 @@
           <div class="flow-step">
             <div class="flow-icon">💧</div>
             <div class="flow-content">
-              <p class="flow-title">電位水の生成</p>
-              <p class="flow-desc">DENBA照射で水分子クラスターを縮小</p>
+              <p class="flow-title" data-i18n="s06_flow1_title">電位水の生成</p>
+              <p class="flow-desc" data-i18n="s06_flow1_desc">DENBA照射で水分子クラスターを縮小</p>
             </div>
           </div>
           <div class="flow-arrow">↓</div>
           <div class="flow-step">
             <div class="flow-icon">🔬</div>
             <div class="flow-content">
-              <p class="flow-title">全成分の微粒子化</p>
-              <p class="flow-desc">PDRN・黒松露・NAD+など全原料に作用</p>
+              <p class="flow-title" data-i18n="s06_flow2_title">全成分の微粒子化</p>
+              <p class="flow-desc" data-i18n="s06_flow2_desc">PDRN・黒松露・NAD+など全原料に作用</p>
             </div>
           </div>
           <div class="flow-arrow">↓</div>
           <div class="flow-step">
             <div class="flow-icon">🏭</div>
             <div class="flow-content">
-              <p class="flow-title">国内製造</p>
-              <p class="flow-desc">成分の状態を保ったまま日本国内で製品化</p>
+              <p class="flow-title" data-i18n="s06_flow3_title">国内製造</p>
+              <p class="flow-desc" data-i18n="s06_flow3_desc">成分の状態を保ったまま日本国内で製品化</p>
             </div>
           </div>
           <div class="flow-arrow">↓</div>
           <div class="flow-step">
             <div class="flow-icon">✨</div>
             <div class="flow-content">
-              <p class="flow-title">角層への浸透</p>
-              <p class="flow-desc">通常の1.8倍速で有効成分が浸透（自社比較）</p>
+              <p class="flow-title" data-i18n="s06_flow4_title">角層への浸透</p>
+              <p class="flow-desc" data-i18n="s06_flow4_desc">通常の1.8倍速で有効成分が浸透（自社比較）</p>
             </div>
           </div>
         </div>
       </div>
 
       <div class="app-content">
-        <p class="sec-lead" style="margin-bottom: 8px;">
+        <p class="sec-lead" style="margin-bottom: 8px;" data-i18n="s06_lead">
           DENBA Skincareの4製品はすべて、この技術プロセスを経て製造されます。
           成分の良さだけでなく、「届ける力」が他にはない価値です。
         </p>
@@ -1102,29 +1116,29 @@
           <div class="benefit-item">
             <div class="benefit-check">✓</div>
             <div class="benefit-text">
-              <h4>成分の分子量に関わらず微粒子化</h4>
-              <p>PDRNのような高分子量の成分も、DENBA技術により微粒子化。分子量が大きいがゆえに届きにくかった成分を、効率よく肌へ届けます。</p>
+              <h4 data-i18n="s06_benefit1_title">成分の分子量に関わらず微粒子化</h4>
+              <p data-i18n="s06_benefit1_desc">PDRNのような高分子量の成分も、DENBA技術により微粒子化。分子量が大きいがゆえに届きにくかった成分を、効率よく肌へ届けます。</p>
             </div>
           </div>
           <div class="benefit-item">
             <div class="benefit-check">✓</div>
             <div class="benefit-text">
-              <h4>製造工程に組み込まれた独自性</h4>
-              <p>原料を後から混ぜるのではなく、製造プロセスの最初からDENBAが作用。同じ成分リストでも、製造プロセスが異なる「別物」です。</p>
+              <h4 data-i18n="s06_benefit2_title">製造工程に組み込まれた独自性</h4>
+              <p data-i18n="s06_benefit2_desc">原料を後から混ぜるのではなく、製造プロセスの最初からDENBAが作用。同じ成分リストでも、製造プロセスが異なる「別物」です。</p>
             </div>
           </div>
           <div class="benefit-item">
             <div class="benefit-check">✓</div>
             <div class="benefit-text">
-              <h4>特許で守られた再現不可能な技術</h4>
-              <p>特許第7809311号により法的に保護。同様の製造アプローチは他社が容易に模倣できない、DENBA独自の技術資産です。</p>
+              <h4 data-i18n="s06_benefit3_title">特許で守られた再現不可能な技術</h4>
+              <p data-i18n="s06_benefit3_desc">特許第7809311号により法的に保護。同様の製造アプローチは他社が容易に模倣できない、DENBA独自の技術資産です。</p>
             </div>
           </div>
           <div class="benefit-item">
             <div class="benefit-check">✓</div>
             <div class="benefit-text">
-              <h4>食品・医療での実績が裏付ける安全性</h4>
-              <p>食品の鮮度保持・医療機器という、安全基準の厳しい領域で先行実績を持つDENBA技術。スキンケアへの応用においても、その安全性の基盤は同じです。</p>
+              <h4 data-i18n="s06_benefit4_title">食品・医療での実績が裏付ける安全性</h4>
+              <p data-i18n="s06_benefit4_desc">食品の鮮度保持・医療機器という、安全基準の厳しい領域で先行実績を持つDENBA技術。スキンケアへの応用においても、その安全性の基盤は同じです。</p>
             </div>
           </div>
         </div>
@@ -1137,15 +1151,15 @@
   CTA
 ══════════════════════════════════════ -->
 <section class="tech-cta">
-  <p class="eyebrow">Experience the Technology</p>
-  <h2>技術を、肌で感じてください。</h2>
-  <p>
+  <p class="eyebrow" data-i18n="tech_cta_eyebrow">Experience the Technology</p>
+  <h2 data-i18n="tech_cta_title">技術を、肌で感じてください。</h2>
+  <p data-i18n-html="tech_cta_desc">
     DENBA分子浸透技術が生きた4製品。<br>
     まずはThe Lineから、その違いを。
   </p>
   <div class="cta-btns">
-    <a href="products.html" class="btn-primary">製品を見る</a>
-    <a href="index.html" class="btn-secondary">ブランドストーリー</a>
+    <a href="products.html" class="btn-primary" data-i18n="tech_cta_btn1">製品を見る</a>
+    <a href="index.html" class="btn-secondary" data-i18n="tech_cta_btn2">ブランドストーリー</a>
   </div>
 </section>
 
@@ -1158,5 +1172,6 @@
 </footer>
 
 <script src="translations.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
