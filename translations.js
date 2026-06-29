@@ -32,7 +32,7 @@ window.DENBA_I18N = {
 
     /* ── index.html：THE LINEセクション ── */
     line_eyebrow: 'THE LINE',
-    line_title: '4つの製品で、<br>肌の環境を整える。',
+    line_title: '４つの製品で、<br>肌の環境を整える。',
     line_desc: 'PDRN・黒トリュフ・NAD+の核心3成分とDENBA分子浸透技術が融合した、4アイテムのスキンケアライン。',
     line_cta: 'すべての製品を見る',
 
