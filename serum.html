@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi-Dimension Aging Care Serum（HPR美容液）| DENBA Skincare</title>
+  <meta name="description" content="次世代レチノイドHPRを高濃度配合したDENBA Skincareのフラッグシップ美容液。効く・低刺激・安定の三拍子に、DENBA分子浸透技術を重ねた総合エイジングケア。¥8,800（税込）。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --gold: #C9A961;
+      --gold-dark: #8B6914;
+      --bg: #FDFBF8;
+      --bg-dark: #1A1712;
+      --text: #1A1A1A;
+      --text-mid: #5A5550;
+      --text-light: #9A9490;
+      --white: #FFFFFF;
+      --serif: 'Cormorant Garamond', 'Noto Serif JP', serif;
+      --sans: 'Noto Sans JP', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.8; overflow-x: hidden; }
+
+    /* ── HEADER ── */
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 48px;
+      background: rgba(253,251,248,0.96); backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(201,169,97,0.15);
+    }
+    .logo { font-family: var(--serif); font-size: 22px; font-weight: 300; letter-spacing: 0.25em; color: var(--text); text-decoration: none; }
+    .logo span { color: var(--gold); }
+    nav a { font-size: 12px; letter-spacing: 0.15em; color: var(--text-mid); text-decoration: none; text-transform: uppercase; margin-left: 36px; transition: color 0.3s; }
+    nav a:hover, nav a.active { color: var(--gold); }
+    .btn-header { font-size: 11px; letter-spacing: 0.2em; padding: 10px 24px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; text-transform: uppercase; transition: all 0.3s; }
+    .btn-header:hover { background: var(--gold); color: var(--white); }
+    .lang-switcher { display: flex; align-items: center; gap: 6px; margin-left: 24px; }
+    .lang-btn { background: none; border: none; cursor: pointer; font-size: 11px; letter-spacing: 0.15em; color: var(--text-mid, #5A5550); padding: 4px 2px; transition: color 0.2s; font-family: inherit; }
+    .lang-btn.active, .lang-btn:hover { color: var(--gold, #C9A961); }
+    .lang-sep { font-size: 10px; color: rgba(150,140,130,0.4); }
+    @media(max-width:768px){ .lang-switcher { margin-left: 12px; } }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      padding: 160px 80px 80px;
+      background: var(--bg-dark);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: end;
+    }
+    .hero-left {}
+    .hero-eyebrow { font-size: 10px; letter-spacing: 0.45em; color: var(--gold); text-transform: uppercase; margin-bottom: 20px; display: block; }
+    .hero-title { font-family: var(--serif); font-size: clamp(52px, 8vw, 100px); font-weight: 300; color: var(--white); letter-spacing: 0.08em; line-height: 0.95; }
+    .hero-right { padding-bottom: 8px; }
+    .hero-desc { font-size: 18px; color: rgba(255,255,255,0.6); line-height: 2.2; margin-bottom: 32px; }
+    .hero-line { width: 1px; height: 40px; background: rgba(201,169,97,0.4); margin-bottom: 32px; }
+
+    /* ── LINEUP OVERVIEW ── */
+    .lineup {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid rgba(201,169,97,0.15);
+    }
+    .lineup-item {
+      padding: 32px 28px;
+      border-right: 1px solid rgba(201,169,97,0.1);
+      background: var(--bg-dark);
+      text-decoration: none;
+      transition: background 0.3s;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .lineup-item:last-child { border-right: none; }
+    .lineup-item:hover { background: rgba(201,169,97,0.06); }
+    .lineup-num { font-family: var(--serif); font-size: 12px; letter-spacing: 0.3em; color: rgba(201,169,97,0.5); }
+    .lineup-name { font-family: var(--serif); font-size: 17px; font-weight: 300; color: var(--white); line-height: 1.4; }
+    .lineup-jp { font-size: 15px; color: rgba(255,255,255,0.5); letter-spacing: 0.1em; }
+    .lineup-price { font-family: var(--serif); font-size: 20px; color: var(--gold); margin-top: 4px; }
+    .lineup-arrow { font-size: 18px; color: rgba(201,169,97,0.3); margin-top: 8px; align-self: flex-end; transition: color 0.3s; }
+    .lineup-item:hover .lineup-arrow { color: var(--gold); }
+
+    /* ── CHAPTER HEADER ── */
+    .chapter-header {
+      padding: 80px;
+      background: var(--bg-dark);
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      border-top: 1px solid rgba(201,169,97,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+    .chapter-bg-num {
+      position: absolute;
+      right: -20px; bottom: -40px;
+      font-family: var(--serif);
+      font-size: 280px; font-weight: 300;
+      color: rgba(201,169,97,0.04);
+      line-height: 1;
+      pointer-events: none; user-select: none;
+      letter-spacing: -0.05em;
+    }
+    .chapter-left {}
+    .chapter-num { font-family: var(--serif); font-size: 11px; letter-spacing: 0.4em; color: rgba(201,169,97,0.6); margin-bottom: 14px; display: block; }
+    .chapter-jp { font-size: 12px; color: rgba(255,255,255,0.35); letter-spacing: 0.15em; margin-bottom: 10px; }
+    .chapter-en { font-family: var(--serif); font-size: clamp(36px, 5vw, 64px); font-weight: 300; color: var(--white); letter-spacing: 0.04em; line-height: 1.15; }
+    .chapter-volume { font-size: 12px; color: rgba(255,255,255,0.3); letter-spacing: 0.15em; margin-top: 10px; }
+    .chapter-right { text-align: right; padding-bottom: 4px; }
+    .chapter-tags { display: flex; gap: 8px; justify-content: flex-end; flex-wrap: wrap; margin-bottom: 20px; }
+    .chapter-tag {
+      font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase;
+      padding: 8px 18px; border: 1px solid rgba(201,169,97,0.4);
+      color: rgba(201,169,97,0.9);
+    }
+    .chapter-badge {
+      font-size: 15px; letter-spacing: 0.18em;
+      color: rgba(255,255,255,0.55);
+    }
+
+    /* ── PRODUCT BODY ── */
+    .product-body {
+      display: grid;
+      grid-template-columns: 5fr 4fr;
+      border-bottom: 1px solid rgba(201,169,97,0.08);
+    }
+
+    /* 商品画像エリア */
+    .product-image-zone {
+      background: #F5F0E8;
+      min-height: 1000px;
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+      overflow: hidden;
+      border-right: 1px solid rgba(201,169,97,0.08);
+    }
+    /* 各製品のアクセントカラー */
+    .img-lotion   { background: linear-gradient(145deg, #F0EBE0 0%, #E4D9C4 100%); }
+    .img-emulsion { background: linear-gradient(145deg, #EDE6D8 0%, #DDD0B8 100%); }
+    .img-cream    { background: linear-gradient(145deg, #E8E0D0 0%, #D8CEB8 100%); }
+    .img-serum    { background: linear-gradient(145deg, #1E1A12 0%, #2E2618 100%); }
+
+    .img-placeholder {
+      position: relative; z-index: 1;
+      text-align: center;
+    }
+    .img-placeholder-num {
+      font-family: var(--serif);
+      font-size: 120px; font-weight: 300;
+      line-height: 1;
+      display: block; margin-bottom: 12px;
+    }
+    .img-lotion   .img-placeholder-num,
+    .img-emulsion .img-placeholder-num,
+    .img-cream    .img-placeholder-num { color: rgba(201,169,97,0.2); }
+    .img-serum    .img-placeholder-num { color: rgba(201,169,97,0.15); }
+
+    .img-placeholder-label {
+      font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase;
+      display: block;
+    }
+    .img-lotion   .img-placeholder-label,
+    .img-emulsion .img-placeholder-label,
+    .img-cream    .img-placeholder-label { color: rgba(139,105,20,0.5); }
+    .img-serum    .img-placeholder-label { color: rgba(201,169,97,0.4); }
+
+    /* 実際の商品写真を入れる時は以下のように差し替え:
+       <img src="images/product-lotion.jpg" alt="Water Revital Lotion"
+            style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
+    */
+
+    /* 商品詳細サイドバー */
+    .product-sidebar {
+      padding: 56px 52px;
+      display: flex; flex-direction: column; gap: 40px;
+      background: var(--bg);
+    }
+
+    .sidebar-tagline {
+      font-family: var(--serif); font-size: 22px; font-weight: 300;
+      font-style: italic; color: var(--gold-dark);
+      line-height: 1.65; border-left: 2px solid rgba(201,169,97,0.3);
+      padding-left: 20px;
+    }
+    .sidebar-desc { font-size: 14px; color: var(--text-mid); line-height: 2.1; }
+
+    .core-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); padding: 7px 14px;
+      border: 1px solid rgba(201,169,97,0.3);
+    }
+    .core-badge::before { content:''; width:4px; height:4px; border-radius:50%; background:var(--gold); }
+
+    /* 価格・CTA */
+    .price-cta { border-top: 1px solid rgba(201,169,97,0.15); padding-top: 32px; }
+    .price-label { font-size: 9px; letter-spacing: 0.35em; text-transform: uppercase; color: var(--text-light); margin-bottom: 6px; }
+    .price-amount { font-family: var(--serif); font-size: 38px; font-weight: 300; color: var(--text); letter-spacing: 0.03em; }
+    .price-amount small { font-size: 14px; color: var(--text-light); }
+    .price-sub { font-size: 11px; color: var(--text-light); margin: 4px 0 24px; }
+    .btn-cart {
+      display: block; width: 100%;
+      padding: 16px 24px; text-align: center;
+      background: var(--bg-dark); color: var(--white);
+      font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase;
+      text-decoration: none; border: 1px solid var(--bg-dark);
+      transition: all 0.3s; margin-bottom: 10px;
+    }
+    .btn-cart:hover { background: var(--gold); border-color: var(--gold); }
+    .btn-detail {
+      display: block; width: 100%;
+      padding: 14px 24px; text-align: center;
+      background: transparent; color: var(--text-mid);
+      font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
+      text-decoration: none; border: 1px solid rgba(0,0,0,0.1);
+      transition: all 0.3s;
+    }
+    .btn-detail:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ── PRODUCT DETAIL TABS ── */
+    .product-detail {
+      background: var(--white);
+      border-bottom: 3px solid rgba(201,169,97,0.1);
+    }
+    .detail-tabs {
+      display: flex;
+      border-bottom: 1px solid rgba(201,169,97,0.1);
+    }
+    .detail-tab {
+      padding: 18px 32px;
+      font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--text-light); cursor: pointer;
+      border-bottom: 2px solid transparent; margin-bottom: -1px;
+      transition: all 0.2s; background: none; border-top: none;
+      border-left: none; border-right: none;
+      font-family: var(--sans);
+    }
+    .detail-tab.active, .detail-tab:hover { color: var(--gold); border-bottom-color: var(--gold); }
+
+    .detail-content { display: none; padding: 52px 80px; }
+    .detail-content.active { display: grid; }
+
+    /* 成分タブ */
+    .ing-grid { grid-template-columns: repeat(2, 1fr); gap: 0; }
+    .ing-item {
+      padding: 24px 32px 24px 0;
+      border-bottom: 1px solid rgba(201,169,97,0.08);
+      display: grid; grid-template-columns: auto 1fr; gap: 16px; align-items: start;
+    }
+    .ing-item:nth-child(odd) { padding-right: 48px; border-right: 1px solid rgba(201,169,97,0.08); }
+    .ing-item:nth-child(even) { padding-left: 48px; padding-right: 0; }
+    .ing-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); margin-top: 10px; flex-shrink: 0; }
+    .ing-name { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 5px; letter-spacing: 0.02em; }
+    .ing-desc { font-size: 13px; color: var(--text-mid); line-height: 1.85; }
+
+    /* 使い方タブ */
+    .howto-grid { grid-template-columns: 1fr; gap: 0; max-width: 640px; }
+    .howto-step { display: flex; gap: 28px; align-items: flex-start; padding: 24px 0; border-bottom: 1px solid rgba(201,169,97,0.08); }
+    .howto-step:first-child { padding-top: 0; }
+    .howto-num {
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 1px solid rgba(201,169,97,0.35);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--serif); font-size: 16px; color: var(--gold);
+      flex-shrink: 0;
+    }
+    .howto-text { font-size: 14px; color: var(--text-mid); line-height: 2.0; padding-top: 6px; }
+
+    /* ── SET BANNER ── */
+    .set-banner {
+      background: var(--bg-dark);
+      padding: 100px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .set-left {}
+    .set-eyebrow { font-size: 10px; letter-spacing: 0.4em; color: var(--gold); text-transform: uppercase; margin-bottom: 16px; display: block; }
+    .set-title { font-family: var(--serif); font-size: clamp(32px, 4vw, 52px); font-weight: 300; color: var(--white); line-height: 1.25; margin-bottom: 16px; }
+    .set-desc { font-size: 14px; color: rgba(255,255,255,0.45); line-height: 2.0; }
+    .set-right { text-align: right; }
+    .set-price { font-family: var(--serif); font-size: 56px; font-weight: 300; color: var(--gold); line-height: 1; margin-bottom: 6px; }
+    .set-price small { font-size: 18px; color: rgba(201,169,97,0.5); }
+    .set-breakdown { font-size: 12px; color: rgba(255,255,255,0.3); margin-bottom: 28px; letter-spacing: 0.05em; }
+    .btn-set {
+      display: inline-block; padding: 18px 48px;
+      background: var(--gold); color: var(--bg-dark);
+      font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase;
+      text-decoration: none; transition: all 0.3s; border: 1px solid var(--gold);
+    }
+    .btn-set:hover { background: transparent; color: var(--gold); }
+
+    /* ── FOOTER ── */
+    footer { background: var(--bg-dark); padding: 48px 80px; border-top: 1px solid rgba(201,169,97,0.08); }
+    .footer-inner { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+    .footer-logo { font-family: var(--serif); font-size: 18px; font-weight: 300; letter-spacing: 0.25em; color: rgba(255,255,255,0.6); }
+    .footer-logo span { color: var(--gold); }
+    .footer-note { font-size: 11px; color: rgba(255,255,255,0.2); line-height: 2.0; max-width: 560px; }
+    .footer-copy { font-size: 11px; color: rgba(255,255,255,0.25); letter-spacing: 0.1em; }
+
+    /* ── STICKY PRODUCT NAV ── */
+    .product-nav {
+      position: sticky; top: 62px; z-index: 90;
+      background: rgba(253,251,248,0.97); backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(201,169,97,0.1);
+      display: flex; justify-content: center;
+    }
+    .product-nav a {
+      padding: 16px 28px;
+      font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--text-light); text-decoration: none;
+      border-bottom: 2px solid transparent; transition: all 0.3s;
+    }
+    .product-nav a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+
+    /* ── JS TAB ── */
+    /* 初期状態は全て非表示、JSで制御 */
+
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      header { padding: 16px 20px; }
+      nav, .btn-header { display: none; }
+      .page-hero { grid-template-columns: 1fr; gap: 32px; padding: 120px 24px 48px; }
+      .lineup { grid-template-columns: repeat(2, 1fr); }
+      .lineup-item { padding: 24px 20px; border-bottom: 1px solid rgba(201,169,97,0.1); }
+      .product-nav { overflow-x: auto; justify-content: flex-start; padding: 0 16px; top: 56px; }
+      .product-nav a { padding: 14px 18px; font-size: 10px; white-space: nowrap; }
+      .chapter-header { padding: 48px 24px; flex-direction: column; gap: 24px; align-items: flex-start; }
+      .chapter-right { text-align: left; }
+      .chapter-tags { justify-content: flex-start; }
+      .chapter-bg-num { font-size: 120px; right: -10px; bottom: -20px; }
+      .product-body { grid-template-columns: 1fr; }
+      .product-image-zone { min-height: 500px; border-right: none; border-bottom: 1px solid rgba(201,169,97,0.08); }
+      .img-placeholder-num { font-size: 72px; }
+      .product-sidebar { padding: 36px 24px; }
+      .detail-content { padding: 36px 24px; }
+      .ing-grid { grid-template-columns: 1fr; }
+      .ing-item:nth-child(odd) { padding-right: 0; border-right: none; }
+      .ing-item:nth-child(even) { padding-left: 0; }
+      .set-banner { grid-template-columns: 1fr; gap: 40px; padding: 60px 24px; }
+      .set-right { text-align: left; }
+      .btn-set { display: block; text-align: center; }
+      footer { padding: 36px 24px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 24px; }
+    }
+    @media (max-width: 480px) {
+      .lineup { grid-template-columns: 1fr; }
+      .detail-tabs { overflow-x: auto; }
+      .detail-tab { padding: 14px 20px; white-space: nowrap; }
+    }
+
+    /* ── HAMBURGER / MOBILE MENU ── */
+    .ham-btn {
+      display: none; background: none; border: none; cursor: pointer;
+      padding: 6px; flex-direction: column; justify-content: center; gap: 5px; z-index: 110;
+    }
+    .ham-btn span { display: block; width: 22px; height: 1.5px; background: var(--text); transition: all 0.3s; }
+    .mob-menu {
+      display: none; position: fixed; inset: 0; z-index: 300;
+      background: rgba(26,23,18,0.97); backdrop-filter: blur(10px);
+      flex-direction: column; align-items: center; justify-content: center; gap: 36px;
+    }
+    .mob-menu.open { display: flex; }
+    .mob-close {
+      position: absolute; top: 22px; right: 24px; background: none; border: none;
+      cursor: pointer; font-size: 26px; color: rgba(255,255,255,0.5); line-height: 1; transition: color 0.2s;
+    }
+    .mob-close:hover { color: var(--white); }
+    .mob-menu-nav { display: flex; flex-direction: column; align-items: center; gap: 32px; }
+    .mob-menu-nav a {
+      font-family: var(--serif); font-size: 28px; font-weight: 300;
+      letter-spacing: 0.12em; color: rgba(255,255,255,0.85); text-decoration: none; transition: color 0.3s;
+    }
+    .mob-menu-nav a:hover { color: var(--gold); }
+    .mob-lang { display: flex; align-items: center; gap: 12px; }
+    .mob-lang .lang-btn { color: rgba(255,255,255,0.4); font-size: 13px; letter-spacing: 0.2em; }
+    .mob-lang .lang-btn.active, .mob-lang .lang-btn:hover { color: var(--gold); }
+    .mob-lang .lang-sep { color: rgba(255,255,255,0.15); font-size: 11px; }
+    .mob-shop-btn {
+      font-size: 11px; letter-spacing: 0.25em; padding: 14px 48px;
+      border: 1px solid var(--gold); color: var(--gold);
+      text-decoration: none; text-transform: uppercase; transition: all 0.3s;
+    }
+    .mob-shop-btn:hover { background: var(--gold); color: var(--bg-dark); }
+    @media (max-width: 900px) {
+      .ham-btn { display: flex; }
+      .lang-switcher { display: none !important; }
+    }
+
+    /* ══ HPR FEATURE ══ */
+    .hpr-feature { border-top: 1px solid rgba(201,169,97,0.1); }
+
+    /* Hero */
+    .hpr-hero {
+      background: #080603;
+      padding: 100px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hpr-hero-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(201,169,97,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,169,97,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+    .hpr-hero-inner { position: relative; z-index: 1; }
+    .hpr-eyebrow {
+      font-size: 10px; letter-spacing: 0.45em; color: var(--gold);
+      text-transform: uppercase; display: block; margin-bottom: 32px;
+    }
+    .hpr-big {
+      font-family: var(--serif);
+      font-size: clamp(100px, 18vw, 200px);
+      font-weight: 300; letter-spacing: 0.06em; line-height: 0.85;
+      color: var(--gold);
+      text-shadow: 0 0 120px rgba(201,169,97,0.25);
+    }
+    .hpr-fullname {
+      font-family: var(--serif); font-size: 18px; font-weight: 300;
+      color: rgba(255,255,255,0.45); letter-spacing: 0.18em;
+      margin-top: 20px; text-transform: uppercase;
+    }
+    .hpr-hero-divider {
+      width: 1px; height: 56px;
+      background: linear-gradient(to bottom, rgba(201,169,97,0.5), transparent);
+      margin: 40px auto;
+    }
+    .hpr-hero-statement {
+      font-family: var(--serif); font-size: clamp(16px, 2vw, 22px);
+      font-weight: 300; color: rgba(255,255,255,0.75);
+      line-height: 2.0; letter-spacing: 0.04em;
+    }
+
+    /* Why HPR */
+    .hpr-compare-section { background: var(--bg); padding: 96px 80px; }
+    .hpr-compare-inner { max-width: 1080px; margin: 0 auto; }
+    .hpr-section-label {
+      font-size: 10px; letter-spacing: 0.45em; color: var(--gold);
+      text-transform: uppercase; display: block; margin-bottom: 14px;
+    }
+    .hpr-section-title {
+      font-family: var(--serif); font-size: clamp(28px, 3.5vw, 44px);
+      font-weight: 300; letter-spacing: 0.05em; margin-bottom: 56px;
+      line-height: 1.3;
+    }
+    .hpr-vs-grid {
+      display: grid; grid-template-columns: 1fr 60px 1fr; gap: 0; align-items: center;
+    }
+    .hpr-vs-col { padding: 36px; }
+    .hpr-vs-old { background: rgba(100,90,80,0.08); border: 1px solid rgba(150,140,130,0.15); }
+    .hpr-vs-new { background: rgba(201,169,97,0.05); border: 1px solid rgba(201,169,97,0.2); }
+    .hpr-vs-label {
+      font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
+      margin-bottom: 24px; display: block;
+    }
+    .hpr-vs-old .hpr-vs-label { color: var(--text-light); }
+    .hpr-vs-new .hpr-vs-label { color: var(--gold); font-size: 14px; font-weight: 600; letter-spacing: 0.15em; }
+    .hpr-vs-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+    .hpr-vs-item {
+      font-size: 14px; line-height: 1.8; padding-left: 20px; position: relative;
+    }
+    .hpr-vs-item.bad { color: var(--text-mid); }
+    .hpr-vs-item.bad::before { content: '✗'; position: absolute; left: 0; color: rgba(150,140,130,0.5); }
+    .hpr-vs-item.good { color: var(--text); font-weight: 500; }
+    .hpr-vs-item.good::before { content: '✓'; position: absolute; left: 0; color: var(--gold); }
+    .hpr-vs-arrow {
+      font-family: var(--serif); font-size: 28px; color: var(--gold);
+      text-align: center;
+    }
+
+    /* DENBA × HPR */
+    .hpr-denba-section { background: #0F0D09; padding: 96px 80px; }
+    .hpr-denba-inner { max-width: 1080px; margin: 0 auto; }
+    .hpr-denba-section .hpr-section-title { color: var(--white); }
+    .hpr-denba-desc {
+      font-size: 16px; color: rgba(255,255,255,0.6);
+      line-height: 2.4; margin-bottom: 56px;
+      max-width: 720px;
+    }
+    .hpr-denba-stats {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+    }
+    .hpr-denba-stat {
+      background: rgba(201,169,97,0.04);
+      border: 1px solid rgba(201,169,97,0.12);
+      padding: 32px 28px;
+    }
+    .hpr-denba-num {
+      font-family: var(--serif); font-size: 40px; font-weight: 300;
+      color: var(--gold); display: block; margin-bottom: 8px; line-height: 1;
+    }
+    .hpr-denba-label { font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.6; }
+
+    /* Supporting Formula */
+    .hpr-formula-section { background: var(--white); padding: 96px 80px; }
+    .hpr-formula-inner { max-width: 1080px; margin: 0 auto; }
+    .hpr-formula-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+    }
+    .hpr-formula-card {
+      border: 1px solid rgba(201,169,97,0.15);
+      padding: 40px 32px;
+      position: relative;
+    }
+    .hpr-formula-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 2px; background: linear-gradient(to right, var(--gold), transparent);
+    }
+    .hpr-formula-name {
+      font-family: var(--serif); font-size: 22px; font-weight: 300;
+      color: var(--text); margin-bottom: 6px; letter-spacing: 0.02em;
+    }
+    .hpr-formula-role {
+      font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 20px;
+    }
+    .hpr-formula-desc { font-size: 14px; color: var(--text-mid); line-height: 2.0; }
+
+    /* HPR Mobile */
+    @media (max-width: 768px) {
+      .hpr-hero { padding: 72px 24px; }
+      .hpr-compare-section, .hpr-denba-section, .hpr-formula-section { padding: 64px 24px; }
+      .hpr-vs-grid { grid-template-columns: 1fr; gap: 16px; }
+      .hpr-vs-arrow { transform: rotate(90deg); text-align: center; padding: 8px 0; font-size: 24px; }
+      .hpr-denba-stats { grid-template-columns: 1fr; gap: 2px; }
+      .hpr-formula-grid { grid-template-columns: 1fr; gap: 2px; }
+      .hpr-hero-statement { font-size: 15px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="index.html" class="logo">DENBA <span>Skincare</span></a>
+  <nav>
+    <a href="index.html">TOP</a>
+    <a href="index.html#essentials">INGREDIENTS</a>
+    <a href="technology.html">TECHNOLOGY</a>
+    <a href="products.html" class="active">PRODUCTS</a>
+    <a href="index.html#shop" class="btn-header">SHOP NOW</a>
+  </nav>
+  <div class="lang-switcher">
+    <button class="lang-btn active" onclick="switchLang && switchLang('ja') || applyLanguage('ja')">JP</button>
+    <span class="lang-sep">/</span>
+    <button class="lang-btn" onclick="switchLang && switchLang('en') || applyLanguage('en')">EN</button>
+  </div>
+</header>
+
+<!-- モバイルメニュー -->
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" onclick="document.getElementById('mobMenu').classList.remove('open')">✕</button>
+  <div style="font-family:var(--serif);font-size:18px;font-weight:300;letter-spacing:0.25em;color:var(--white);">DENBA <span style="color:var(--gold)">Skincare</span></div>
+  <nav class="mob-menu-nav">
+    <a href="index.html" data-i18n="nav_top">TOP</a>
+    <a href="index.html#essentials" data-i18n="nav_ingredients">Ingredients</a>
+    <a href="technology.html" data-i18n="nav_technology">Technology</a>
+    <a href="products.html" data-i18n="nav_products">Products</a>
+  </nav>
+  <div class="mob-lang">
+    <button class="lang-btn active" data-lang="ja" onclick="applyLanguage('ja')">JA</button>
+    <span class="lang-sep">|</span>
+    <button class="lang-btn" data-lang="en" onclick="applyLanguage('en')">EN</button>
+    <span class="lang-sep">|</span>
+    <button class="lang-btn" data-lang="zh" onclick="applyLanguage('zh')">中文</button>
+  </div>
+  <a href="#serum" class="mob-shop-btn" onclick="document.getElementById('mobMenu').classList.remove('open')" data-i18n="nav_shop">Shop Now</a>
+</div>
+
+<!-- BREADCRUMB -->
+<div style="background:#0F0D09;padding:96px 80px 0;">
+  <a href="products.html" style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(201,169,97,0.7);text-decoration:none;" data-i18n="prod_back_to_line">← The Line（製品一覧へ）</a>
+</div>
+
+<!-- ════════════════════════════════════
+  No.04 美容液
+════════════════════════════════════ -->
+<div id="serum">
+
+  <div class="chapter-header" style="background: #0F0D09; padding-top: 40px;">
+    <div class="chapter-bg-num">04</div>
+    <div class="chapter-left">
+      <span class="chapter-num">No. 04 / Multi-Dimension Aging Care Serum</span>
+      <p class="chapter-jp" data-i18n="p4_type">美容液</p>
+      <h2 class="chapter-en" data-i18n="p4_name">Multi-Dimension<br>Aging Care Serum</h2>
+      <p class="chapter-volume" data-i18n="volume_2months_serum">30 ml — 約2ヶ月分</p>
+    </div>
+    <div class="chapter-right">
+      <div class="chapter-tags">
+        <span class="chapter-tag" data-i18n="p4_tag1">高濃度HPR</span>
+        <span class="chapter-tag" data-i18n="p4_tag2">総合エイジングケア</span>
+        <span class="chapter-tag" data-i18n="p4_tag3">次世代レチノイド</span>
+      </div>
+      <p class="chapter-badge" data-i18n="p4_badge">The Line 最高濃度処方</p>
+    </div>
+  </div>
+
+  <div class="product-body">
+    <div class="product-image-zone img-serum">
+      <div class="img-placeholder">
+        <span class="img-placeholder-num">04</span>
+        <span class="img-placeholder-label" data-i18n="img_placeholder_label">商品画像</span>
+      </div>
+    </div>
+
+    <div class="product-sidebar" style="background: #F7F3EC;">
+      <span class="core-badge">PDRN · Black Truffle EPS · NAD+</span>
+
+      <p class="sidebar-tagline" data-i18n-html="p4_tagline">
+        「高濃度HPRを核に、<br>多角的なエイジングケアを一本で」
+      </p>
+
+      <p class="sidebar-desc" data-i18n="p4_sidebar_desc">
+        The Lineで最も高い有効成分濃度を誇る美容液。
+        次世代レチノイド・高濃度HPRを核に、
+        BisabolR®・SynCalmine®・Bodyflux® Oliveが
+        多角的なエイジングケアを実現。
+        とろみのあるテクスチャーがなじむと軽くなり、翌朝もっちり感が続きます。
+      </p>
+
+      <div class="price-cta">
+        <p class="price-label">Price</p>
+        <p class="price-amount">¥8,800 <small data-i18n="price_tax_incl">税込</small></p>
+        <p class="price-sub" data-i18n="volume_2months_serum">30 ml — 約2ヶ月分</p>
+        <a href="#" class="btn-cart" data-i18n="btn_add_to_cart">カートに入れる</a>
+        <a href="#serum-detail" class="btn-detail" onclick="openTab('serum','ing');return false;" data-i18n="btn_view_ingredients">成分・使い方を見る</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ HPR FEATURE ══ -->
+  <div class="hpr-feature">
+
+    <!-- Hero -->
+    <div class="hpr-hero">
+      <div class="hpr-hero-grid"></div>
+      <div class="hpr-hero-inner">
+        <span class="hpr-eyebrow" data-i18n="hpr_eyebrow">Exclusive to The Serum — Next Generation Retinoid</span>
+        <p class="hpr-big">HPR</p>
+        <p class="hpr-fullname">Hydroxypinocolone Retinoate</p>
+        <div class="hpr-hero-divider"></div>
+        <p class="hpr-hero-statement" data-i18n-html="hpr_statement">
+          「効く。刺激がない。安定している。」<br>
+          レチノール研究が辿り着いた、三つの難題への唯一の答え。
+        </p>
+      </div>
+    </div>
+
+    <!-- Why HPR -->
+    <div class="hpr-compare-section">
+      <div class="hpr-compare-inner">
+        <span class="hpr-section-label" data-i18n="hpr_why_label">Why HPR</span>
+        <h3 class="hpr-section-title" data-i18n="hpr_why_title">なぜ、HPRなのか。</h3>
+
+        <div class="hpr-vs-grid">
+          <div class="hpr-vs-col hpr-vs-old">
+            <span class="hpr-vs-label" data-i18n="hpr_retinol_label">従来のレチノール</span>
+            <ul class="hpr-vs-list">
+              <li class="hpr-vs-item bad" data-i18n="hpr_retinol_con1">皮膚内でレチノイン酸に変換されて初めて効果を発揮</li>
+              <li class="hpr-vs-item bad" data-i18n="hpr_retinol_con2">変換過程で赤み・乾燥・ピーリングが起きやすい</li>
+              <li class="hpr-vs-item bad" data-i18n="hpr_retinol_con3">光・酸素に不安定で製品内で分解しやすい</li>
+              <li class="hpr-vs-item bad" data-i18n="hpr_retinol_con4">高濃度配合が難しい</li>
+            </ul>
+          </div>
+          <p class="hpr-vs-arrow">→</p>
+          <div class="hpr-vs-col hpr-vs-new">
+            <span class="hpr-vs-label" data-i18n="hpr_hpr_label">HPR（次世代レチノイド）</span>
+            <ul class="hpr-vs-list">
+              <li class="hpr-vs-item good" data-i18n="hpr_hpr_pro1">変換不要。直接レチノイン酸受容体に作用</li>
+              <li class="hpr-vs-item good" data-i18n="hpr_hpr_pro2">赤み・刺激が大幅に少ない。低刺激でありながら高効果</li>
+              <li class="hpr-vs-item good" data-i18n="hpr_hpr_pro3">光・酸素に対して高い安定性。製品の品質が保たれる</li>
+              <li class="hpr-vs-item good" data-i18n="hpr_hpr_pro4">高濃度配合が可能。DENBA Skincareでは高濃度で配合</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DENBA × HPR -->
+    <div class="hpr-denba-section">
+      <div class="hpr-denba-inner">
+        <span class="hpr-section-label" data-i18n="hpr_denba_label">DENBA × HPR</span>
+        <h3 class="hpr-section-title" data-i18n="hpr_denba_title">DENBAが、HPRをさらに深く届ける。</h3>
+        <p class="hpr-denba-desc" data-i18n-html="hpr_denba_desc">
+          HPRは優れた成分だが、浸透にはまだ壁がある。<br>
+          DENBA分子浸透技術は、HPRを含む全成分を製造段階から微粒子化し、<br>
+          角層のより深くまで届ける。成分の良さだけでなく、「届く力」を重ねた——<br>
+          それがThe Serumが他のHPR配合製品と根本的に異なる理由です。
+        </p>
+        <div class="hpr-denba-stats">
+          <div class="hpr-denba-stat">
+            <span class="hpr-denba-num">1.8×</span>
+            <span class="hpr-denba-label" data-i18n="hpr_stat1_label">浸透速度（DENBA自社比較）</span>
+          </div>
+          <div class="hpr-denba-stat">
+            <span class="hpr-denba-num">100%</span>
+            <span class="hpr-denba-label" data-i18n="hpr_stat2_label">全成分・同時に微粒子化</span>
+          </div>
+          <div class="hpr-denba-stat">
+            <span class="hpr-denba-num" data-i18n="hpr_stat3_num">特許</span>
+            <span class="hpr-denba-label" data-i18n="hpr_stat3_label">第7809311号 製造プロセス保護</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Supporting Formula -->
+    <div class="hpr-formula-section">
+      <div class="hpr-formula-inner">
+        <span class="hpr-section-label" data-i18n="hpr_formula_label">Supporting Formula</span>
+        <h3 class="hpr-section-title" data-i18n="hpr_formula_title">HPRを包む、安心の処方設計。</h3>
+        <p style="font-size:15px; color:var(--text-mid); margin-bottom:48px; line-height:2.2;" data-i18n="hpr_formula_desc">
+          高濃度HPRの効果を最大化しながら、肌への負担を最小化する。<br>3つのサポート成分が、このセラムを「攻めながら守る」処方に仕上げる。
+        </p>
+        <div class="hpr-formula-grid">
+          <div class="hpr-formula-card">
+            <p class="hpr-formula-name">BisabolR®</p>
+            <p class="hpr-formula-role" data-i18n="hpr_bisabol_role">鎮静・整肌</p>
+            <p class="hpr-formula-desc" data-i18n="hpr_bisabol_desc">高純度α-ビサボロール。HPR使用中の肌を穏やかに落ち着かせ、整肌効果でなめらかな肌質をサポートする。</p>
+          </div>
+          <div class="hpr-formula-card">
+            <p class="hpr-formula-name">SynCalmine®</p>
+            <p class="hpr-formula-role" data-i18n="hpr_syncalmine_role">感受性コントロール</p>
+            <p class="hpr-formula-desc" data-i18n="hpr_syncalmine_desc">敏感な肌の過剰反応を抑制するペプチド成分。HPR高濃度使用時でも快適な使用感を保ち、肌への負担を軽減する。</p>
+          </div>
+          <div class="hpr-formula-card">
+            <p class="hpr-formula-name">Bodyflux® Olive</p>
+            <p class="hpr-formula-role" data-i18n="hpr_bodyflux_role">バリア・弾力</p>
+            <p class="hpr-formula-desc" data-i18n="hpr_bodyflux_desc">オリーブ由来のヒト同一型トリプルヘリックスセラミド。肌密度と弾力を底上げし、HPRケアの基盤となるバリア機能を強化する。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /hpr-feature -->
+
+  <div class="product-detail" id="serum-detail">
+    <div class="detail-tabs">
+      <button class="detail-tab active" onclick="openTab('serum','ing')" data-i18n="prod_ing_tab">Key Ingredients</button>
+      <button class="detail-tab" onclick="openTab('serum','howto')" data-i18n="prod_howto_tab">How to Use</button>
+    </div>
+
+    <div class="detail-content ing-grid active" id="serum-ing">
+      <div class="ing-item">
+        <div class="ing-dot"></div>
+        <div>
+          <p class="ing-name" data-i18n="p4_ing1_name">PDRN・黒松露細胞外分泌産物・NAD+</p>
+          <p class="ing-desc" data-i18n="p4_ing1_desc">核心3成分をThe Line最高濃度で配合。セラムの高い浸透力で、成分を角層まで届けます。</p>
+        </div>
+      </div>
+      <div class="ing-item">
+        <div class="ing-dot"></div>
+        <div>
+          <p class="ing-name" data-i18n="p4_ing2_name">高濃度HPR（ヒドロキシピナコロンレチノエート）</p>
+          <p class="ing-desc" data-i18n="p4_ing2_desc">次世代レチノイド。レチノール転換なしに直接作用し、刺激が少なく安定性が高い。強力なエイジングケア効果と低刺激を両立。</p>
+        </div>
+      </div>
+      <div class="ing-item">
+        <div class="ing-dot"></div>
+        <div>
+          <p class="ing-name">BisabolR®</p>
+          <p class="ing-desc" data-i18n="p4_ing3_desc">高純度α-ビサボロール。肌の鎮静・整肌・バリア機能サポートに働く、植物由来の複合成分。</p>
+        </div>
+      </div>
+      <div class="ing-item">
+        <div class="ing-dot"></div>
+        <div>
+          <p class="ing-name" data-i18n="p4_ing4_name">SynCalmine® + Bodyflux® Olive</p>
+          <p class="ing-desc" data-i18n="p4_ing4_desc">SynCalmine®で敏感な肌の過剰反応を鎮め、Bodyflux® Olive（オリーブ由来）が弾力と肌密度をサポートする。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-content howto-grid" id="serum-howto" style="display:none;">
+      <div class="howto-step">
+        <div class="howto-num">1</div>
+        <p class="howto-text" data-i18n="p4_howto1">化粧水の後、2〜3プッシュを手のひらに取る</p>
+      </div>
+      <div class="howto-step">
+        <div class="howto-num">2</div>
+        <p class="howto-text" data-i18n="p4_howto2">顔全体、特に目元・口元・ほうれい線など気になる部分に丁寧になじませる</p>
+      </div>
+      <div class="howto-step">
+        <div class="howto-num">3</div>
+        <p class="howto-text" data-i18n="p4_howto3">クリームで蓋をする。夜使用を推奨。週2〜3回の集中ケアとしての使用も効果的</p>
+      </div>
+      <div class="howto-step">
+        <div class="howto-num">!</div>
+        <p class="howto-text" data-i18n="p4_howto4">初回使用前に必ずパッチテストを実施してください。日中ご使用の場合は日焼け止めを重ねてください</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- SET BANNER -->
+<section class="set-banner">
+  <div class="set-left">
+    <span class="set-eyebrow" data-i18n="prod_set_label">Best Value — Complete Ritual</span>
+    <h2 class="set-title">The Complete<br>Line.</h2>
+    <p class="set-desc" data-i18n="set_desc">
+      4製品すべてを揃えたDENBA Skincareの完全なルーティン。
+      化粧水・乳液・クリーム・美容液が一体となって、
+      分子浸透技術の真価を発揮します。
+    </p>
+  </div>
+  <div class="set-right">
+    <p class="set-price" data-i18n="set_total_price">¥25,300 <small>税込</small></p>
+    <p class="set-breakdown" data-i18n="set_breakdown_text">化粧水 + 乳液 + クリーム + 美容液</p>
+    <a href="#" class="btn-set" data-i18n="set_cta">4点セットを購入する</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">DENBA <span>Skincare</span></div>
+    <p class="footer-note" data-i18n="footer_note_products">
+      ※本製品は化粧品です。医薬品・医薬部外品ではありません。
+      ※効能・効果には個人差があります。
+      ※セラム（No.04）は初回使用前に必ずパッチテストを実施してください。
+    </p>
+    <p class="footer-copy" data-i18n="footer_copyright">© 2026 DENBA JAPAN Co., Ltd. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="translations.js"></script>
+<script src="js/main.js"></script>
+<script>
+// タブ切り替え
+function openTab(product, tab) {
+  var ingEl   = document.getElementById(product + '-ing');
+  var howtoEl = document.getElementById(product + '-howto');
+  var tabs = document.querySelectorAll('#' + product + '-detail .detail-tab');
+
+  if (tab === 'ing') {
+    ingEl.style.display   = 'grid';
+    ingEl.classList.add('active');
+    howtoEl.style.display = 'none';
+    howtoEl.classList.remove('active');
+    tabs[0].classList.add('active');
+    tabs[1].classList.remove('active');
+  } else {
+    howtoEl.style.display = 'grid';
+    howtoEl.classList.add('active');
+    ingEl.style.display   = 'none';
+    ingEl.classList.remove('active');
+    tabs[1].classList.add('active');
+    tabs[0].classList.remove('active');
+  }
+
+  // スクロール
+  var detailEl = document.getElementById(product + '-detail');
+  if (detailEl) {
+    setTimeout(function(){
+      detailEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 50);
+  }
+}
+</script>
+
+</body>
+</html>
