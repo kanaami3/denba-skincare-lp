@@ -22,7 +22,7 @@ window.DENBA_I18N = {
 
     /* ── index.html：THREE ESSENTIALSセクション ── */
     ess_eyebrow: 'THREE ESSENTIALS',
-    ess_title: '核心3成分の、<br>品質哲学。',
+    ess_title: '核心３成分の、<br>品質哲学。',
     ess_desc: 'DENBA Skincareが選んだ3つの核心成分。いずれも自然界で注目される高機能素材であり、その品質を最大限に保ったまま配合することにこだわっています。',
 
     /* ── index.html：PROMISEセクション ── */
@@ -427,11 +427,11 @@ window.DENBA_I18N = {
     hpr_formula_title: 'HPRを包む、安心の処方設計。',
     hpr_formula_desc: '高濃度HPRの効果を最大化しながら、肌への負担を最小化する。<br>3つのサポート成分が、このセラムを「攻めながら守る」処方に仕上げる。',
     hpr_bisabol_role: '鎮静・整肌',
-    hpr_bisabol_desc: '高純度α-ビサボロール。HPR使用中の肌を穏やかに落ち着かせ、整肌効果でなめらかな肌質をサポートする。',
+    hpr_bisabol_desc: 'α-ビサボロールは、カモミールなどの植物が紫外線や乾燥から自らを守るために蓄える天然の鎮静成分。BisabolR®はそれを高純度・高安定で再現した次世代原料です。HPRがしっかり働くあいだ、ゆらぎがちな肌を穏やかに包み込み、キメの整ったなめらかな肌印象へ。攻めのケアを、やさしさで支えます。',
     hpr_syncalmine_role: '感受性コントロール',
-    hpr_syncalmine_desc: '敏感な肌の過剰反応を抑制するペプチド成分。HPR高濃度使用時でも快適な使用感を保ち、肌への負担を軽減する。',
+    hpr_syncalmine_desc: '敏感に傾いた肌は、わずかな刺激にも過剰に反応してしまう。SynCalmine®は、その「反応しやすさ」そのものに着目して設計されたペプチド成分です。肌が本来もつ心地よさを保ちながら、高濃度HPRを使うときでもピリつきの少ない快適な使用感へ。攻めの処方を、どんな肌にもひらく鍵となります。',
     hpr_bodyflux_role: 'バリア・弾力',
-    hpr_bodyflux_desc: 'オリーブ由来のヒト同一型トリプルヘリックスセラミド。肌密度と弾力を底上げし、HPRケアの基盤となるバリア機能を強化する。',
+    hpr_bodyflux_desc: 'セラミドは、うるおいを抱え込み角層のバリアを支える要となる成分。Bodyflux® Oliveはオリーブ由来でヒトのセラミドと同じ三重らせん構造を再現し、なじみの良さと密度感を両立しました。土台となるバリアを整えることで、ハリと弾力に満ちた肌印象を支え、HPRケアが活きる肌環境をつくります。',
 
     /* ── index.html：MIJバッジ ── */
     mij_badge1_strong: 'Made in Japan',
@@ -929,11 +929,11 @@ window.DENBA_I18N = {
     hpr_formula_title: 'The Formula That Protects While It Works.',
     hpr_formula_desc: 'Maximizing the power of high-concentration HPR while minimizing skin burden.<br>Three supporting ingredients make this serum a formula that attacks and defends at once.',
     hpr_bisabol_role: 'Calming & Skin-Conditioning',
-    hpr_bisabol_desc: 'High-purity α-bisabolol. Gently soothes the skin during HPR use and supports a smooth, even-textured complexion.',
+    hpr_bisabol_desc: 'α-bisabolol is a natural calming compound that plants such as chamomile store to protect themselves from UV and dryness. BisabolR® recreates it in a high-purity, highly stable next-generation form. While HPR does its work, it gently envelops easily-unsettled skin, supporting a smooth, refined-textured look. Active care, supported by gentleness.',
     hpr_syncalmine_role: 'Sensitivity Control',
-    hpr_syncalmine_desc: 'A peptide ingredient that suppresses skin over-reactivity. Maintains comfortable skin feel even with high-concentration HPR, reducing potential burden.',
+    hpr_syncalmine_desc: 'Skin that has turned sensitive over-reacts to even the slightest stimulus. SynCalmine® is a peptide ingredient designed to address that very tendency to react. It helps preserve skin\'s innate sense of comfort, keeping use pleasant with little stinging even at high HPR concentrations — the key that opens active formulas to every skin.',
     hpr_bodyflux_role: 'Barrier & Elasticity',
-    hpr_bodyflux_desc: 'Human-identical triple-helix ceramide from olive. Reinforces skin density and elasticity, strengthening the barrier foundation for HPR care.',
+    hpr_bodyflux_desc: 'Ceramide is a cornerstone ingredient that holds moisture and supports the stratum corneum barrier. Bodyflux® Olive, derived from olive, recreates the same triple-helix structure as human ceramide, combining excellent affinity with a sense of density. By conditioning the foundational barrier, it supports a look full of firmness and elasticity, creating a skin environment where HPR care can thrive.',
 
     /* ── index.html：MIJバッジ ── */
     mij_badge1_strong: 'Made in Japan',
@@ -1431,11 +1431,11 @@ window.DENBA_I18N = {
     hpr_formula_title: '守护HPR的安心配方设计。',
     hpr_formula_desc: '在最大化高浓度HPR效果的同时，最小化对肌肤的负担。<br>三种辅助成分，让这款精华呈现「攻守兼备」的配方哲学。',
     hpr_bisabol_role: '镇静・整肌',
-    hpr_bisabol_desc: '高纯度α-没药醇。温和舒缓HPR使用中的肌肤，发挥整肌效果，助力光滑细腻的肤质。',
+    hpr_bisabol_desc: 'α-没药醇是洋甘菊等植物为抵御紫外线与干燥而储备的天然镇静成分。BisabolR®以高纯度、高稳定的次世代原料将其重现。在HPR充分发挥作用的同时，温柔包裹易波动的肌肤，引导出纹理细致、光滑顺滑的肌肤印象。以温柔，支撑进攻型护理。',
     hpr_syncalmine_role: '敏感度调控',
-    hpr_syncalmine_desc: '抑制敏感肌肤过度反应的肽类成分。即使高浓度HPR使用时也能维持舒适的使用感，减轻肌肤负担。',
+    hpr_syncalmine_desc: '偏向敏感的肌肤，会对微小刺激产生过度反应。SynCalmine®正是着眼于这种"易反应性"本身而设计的肽类成分。在保留肌肤原有舒适感的同时，即使使用高浓度HPR也能维持少有刺痛的舒适使用感——成为向每一种肌肤敞开进攻型配方的钥匙。',
     hpr_bodyflux_role: '屏障・弹力',
-    hpr_bodyflux_desc: '源自橄榄的人体同型三重螺旋神经酰胺。提升肌肤密度与弹力，强化HPR护理所需的屏障功能基础。',
+    hpr_bodyflux_desc: '神经酰胺是锁住水分、支撑角层屏障的关键成分。Bodyflux® Olive源自橄榄，重现与人体神经酰胺相同的三重螺旋结构，兼具出色的亲和力与饱满的密度感。通过调理作为根基的屏障，支撑充满紧致与弹力的肌肤印象，营造让HPR护理得以充分发挥的肌肤环境。',
 
     /* ── index.html：MIJバッジ ── */
     mij_badge1_strong: 'Made in Japan',
