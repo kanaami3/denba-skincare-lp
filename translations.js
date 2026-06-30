@@ -34,6 +34,7 @@ window.DENBA_I18N = {
     line_eyebrow: 'THE LINE',
     line_title: '４つの製品で、<br>肌の環境を整える。',
     line_desc: 'PDRN・黒トリュフ・NAD+の核心3成分とDENBA分子浸透技術が融合した、4アイテムのスキンケアライン。',
+    line_gen: '30代の“予防”ケアから、80代の本格エイジングケアまで。<br>肌は、早く整えるほど差がつく。長く寄り添う4本です。',
     line_cta: 'すべての製品を見る',
 
     /* ── index.html：CTAバナー ── */
@@ -536,6 +537,7 @@ window.DENBA_I18N = {
     line_eyebrow: 'THE LINE',
     line_title: 'Four Products to Optimize<br>the Skin Environment.',
     line_desc: 'A new generation of skincare fusing the three core ingredients — PDRN, Black Truffle, and NAD+ — with DENBA\'s molecular penetration philosophy.',
+    line_gen: 'From preventive care in your 30s to dedicated aging care in your 80s.<br>The earlier you start, the greater the difference — four products to stay with you for years.',
     line_cta: 'View All Products',
 
     /* ── index.html：CTAバナー ── */
@@ -1038,6 +1040,7 @@ window.DENBA_I18N = {
     line_eyebrow: '产品系列',
     line_title: '以四款产品，<br>调整肌肤环境。',
     line_desc: '融合PDRN、黑松露、NAD+三大核心成分与DENBA分子渗透理念的新世代护肤品。',
+    line_gen: '从30岁的"预防"护理，到80岁的本格抗衰老护理。<br>肌肤，越早调理差距越明显。是长久相伴的四款产品。',
     line_cta: '查看全部产品',
 
     /* ── index.html：CTAバナー ── */
